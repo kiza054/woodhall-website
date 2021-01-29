@@ -173,7 +173,7 @@ class SearchView(generic.View):
 
         return render(request, 'main_website/search_results.html', context)
 
-class CalendarView(LoginRequiredMixin, generic.ListView):
+class CalendarView(generic.ListView):
     model = Event
     template_name = 'calendar/calendar.html'
 

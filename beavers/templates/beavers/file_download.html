@@ -1,0 +1,26 @@
+{% extends "beavers/base.html" %}
+{% block content %}
+<html>
+    <div class="content-section">
+      <div class="media">
+        <div class="media-body">
+          <legend class="border-bottom mb-4">Downloads</legend>
+          <table class="meeting_table">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Download Link</th>
+            </tr>
+            {% for file_item in file_collection %}
+            <tr>
+              <td>{{ file_item.name }}</td>
+              <td>{{ file_item.description }}</td>
+              <td><a class="btn btn-outline-info btn-sm" href="{{ file_item.file.url }}" target="_blank" role="button">Download</a></td>
+            {% endfor %}
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</html>
+{% endblock %}

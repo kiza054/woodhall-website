@@ -1,0 +1,35 @@
+{% extends "main_website/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <h1 class="display-4">Contact Us</h1>
+    <h4>To get in touch with us, please email the respective section leader</h4>
+    <hr class=my-4>
+    <table class="meeting_table">
+        <thead>
+        <tr>
+            <th>Section</th>
+            <th>Leader Name</th>
+            <th>Leader Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Beavers</td>
+            <td>Robin Nelson</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Cubs</td>
+            <td>Matt Rudd</td>
+            <td>mrudd@aol.com</td>
+        </tr>
+        <tr>
+            <td>Scouts</td>
+            <td>Alan Bower</td>
+            <td>alanbower-scouts@outlook.com</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

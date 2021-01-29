@@ -1,0 +1,16 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Item</legend>
+                <h3>Are you sure you want to delete the item "{{ object.item_name }}"</h3>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger btn-sm mt-1 mb-1" type="submit">Yes, Delete</button>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'executive_quartermaster_database'%}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

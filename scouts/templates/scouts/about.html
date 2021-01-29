@@ -1,0 +1,35 @@
+{% extends "scouts/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="content-section">
+        <center><img class="scout_logo" src="/media/images/scouts.png" alt="Scouts Logo"></center>
+        <br>
+        <hr class="my-2">
+        <h1 class="display-4">About Us!</h1>
+        <h5>Please note that we have had a lot of success as a Troop recently. This has led to a period of Growth. As a result of this, we now need to operate a waiting list for places. Please <a href="{% url 'main_website_contact_us' %}" target="_blank">contact</a> the Beaver Leader team for more information.</h5>
+        <p>'Scouting' is about outdoor activities: camping, caving, abseiling, getting wet for the fun of it, cooking skills, bivouacking (camping without a tent), and camping in winter. Scouts wear a dark green long sleeved shirt and can be purchased from West Leeds Scout Shop (our Necker is black with a white border).</p>
+        <p>As with the other sections, scouts work towards awards & activity badges, with the highest award being the Gold Chief Scout’s Award, which involves completing a number of activities and challenges during their time in the Scout Section. The scouts will learn many skills old & new which (including first aid) which could well be useful for them later in life.</p>
+        <p>Young people can join from the age of about ten and move on to Explorers at thirteen and a half. Like cubs they are organised into small groups called Patrols each of which has a Patrol Leader in charge.</p>
+        <p>1st Woodhall scouts are lead by a team of volunteers: Alan & Brian</p>
+        <table class="meeting_table">
+          <thead>
+          <tr>
+              <th>Section</th>
+              <th>Meeting Day</th>
+              <th>Meeting Time</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Scouts (10-14yrs)</td>
+              <td>Friday</td>
+              <td>7:00pm – 9:00pm</td>
+          </tr>
+          </tbody>
+      </table>
+      <hr class="my-4">
+      <h3>Want to join our Troop?</h3>
+      <p>Click this button to Register for our waiting list</p>
+      <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+      </div>
+{% endblock content %}

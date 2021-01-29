@@ -1,0 +1,45 @@
+{% extends "main_website/base.html" %}
+{% load crispy_forms_tags %}
+<!--{% load app_tags %}-->
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img-profile" src="{{ user.profile.image.url }}">
+        <!--<img class="rounded-circle account-img" src="{{ user | gravatar:1000 }}">-->
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <h5 class="text-secondary">{{ user.email }}</h5>
+          {% if user.is_superuser or user.is_staff %}
+          <a href="{% url 'admin:index' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Administrators Dashboard</a>
+          <a href="{% url 'executive_home' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Executive Page</a>
+          {% if user.section == 'Beavers' %}
+          <a href="{% url 'beavers_blog_post_create' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Create Beavers Blog Post</a>
+          <a href="{% url 'beavers_blog_file_upload' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Upload Files</a>
+          {% endif %}
+          {% if user.section == 'Cubs' %}
+          <a href="{% url 'cubs_blog_post_create' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Create Cubs Blog Post</a>
+          <a href="{% url 'cubs_blog_file_upload' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Upload Files</a>
+          {% endif %}
+          {% if user.section == 'Scouts' %}
+          <a href="{% url 'scouts_blog_post_create' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Create Scouts Blog Post</a>
+          <a href="{% url 'scouts_blog_file_upload' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Upload Files</a>
+          {% endif %}
+          <a href="{% url 'main_website_article_create' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Create News Article</a>
+          <a href="https://www.onlinescoutmanager.co.uk/login.php" class="btn btn-outline-info my-1" role="button" aria-pressed="true">OSM</a>
+          {% endif %}
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ user_form | crispy }}
+              <hr class="my-2">
+              {{ profile_form | crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+    </div>
+{% endblock content %}

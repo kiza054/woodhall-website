@@ -1,0 +1,25 @@
+{% extends 'scouts/base.html' %}
+{% load static %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <legend class="border-bottom mb-2 h2">These are the results of your search</legend>
+        </div>
+    </div>
+</article>
+{% for post in queryset %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <h2 class="card-title">{{ post.title }}</h2>
+            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+            <small class="card-text text-muted h6">By: {{ post.author }} on {{ post.date_posted }}</small>
+            <br>
+            <p class="card-text">{{ post.content | safe | slice:":200" }}</p>
+        </div>
+        <a href="{{ post.get_absolute_url }}" class="btn btn-outline-info">Read More &rarr;</a>
+    </div>
+</article>
+{% endfor %}
+{% endblock %}

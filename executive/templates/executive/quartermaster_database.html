@@ -1,0 +1,29 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+{% include 'executive/navbar.html' %}
+<div class="content-section">
+    <h1>Quartermasters Database</h1>
+    <table class="meeting_table">
+        <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Category</th>
+            <th>Added On</th>
+            <th>Updated On</th>
+        </tr>
+        </thead>
+        {% for q in queryset %}
+        <tbody>
+        <tr>
+            <td>{{ q.item_name }}</td>
+            <td>{{ q.category }}</td>
+            <td>{{ q.added_on }}</td>
+            <td>{{ q.updated_on }}</td>
+            <td><a class="btn btn-secondary btn-sm" href="{% url 'executive_quartermaster_database_edit' q.slug %}">Update Item</a></td>
+            <td><a class="btn btn-danger btn-sm" href="{% url 'executive_quartermaster_database_delete' q.slug %}">Delete Item</a></td
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</div> 
+{% endblock content %}

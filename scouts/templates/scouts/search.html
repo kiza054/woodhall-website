@@ -1,0 +1,12 @@
+{% block content %}
+<div class="content-section">
+    <form action="{% url 'scouts_blog_search' %}" class="form-inline my-2 my-lg-0" id="searchar" autocomplete="off">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="search">
+        <button class="btn btn-outline-info my-2 my-sm-0"><span class='fas fa-search'></span> Search</button>
+    </form>
+    <hr class="my-2">
+    <div class="list-group list-group-flush">
+        <li class="list-group-item"><a href="{% url 'scouts_blog_downloads' %}">Download Files</a></li>
+    </div>
+</div>
+{% endblock content %}

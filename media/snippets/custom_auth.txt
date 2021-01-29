@@ -1,0 +1,55 @@
+from django.contrib.auth import authenticate, login, logout
+
+class LoginView(generic.View):
+    def get(self, request):
+        template_name = "accounts/login.html"
+        form = AuthenticationForm
+        articles = Article.objects.filter(status=1).order_by('-date_posted')
+        context = {
+            'form': form,
+            'articles': articles
+        }
+        return render(request, template_name, context)
+
+    def form_valid(self, request, form):
+        credentials = form.cleaned_data
+        user = authenticate(username=credentials['email'], password=credentials['password'])
+        if user is not None:
+            login(self.request, user)
+            return redirect(reverse_lazy('main_website_home'))
+        else:
+            messages.success(request, f'Incorrect Email or Password, please try again!')
+            return redirect(reverse_lazy('login'))
+
+class LogoutView(generic.View):
+    def get(self, request):
+        template_name = 'accounts/logout.html'
+        articles = Article.objects.filter(status=1).order_by('-date_posted')
+        context = {
+            'articles': articles,
+            'title': 'Logout',
+        }
+        return render(request, template_name, context)
+    def post(self, request):
+        if request.method == "POST":
+            logout(request)
+            return redirect('main_website.home')
+
+class UserLoginView(LoginView):
+    def get(self, request):
+        form = UserLoginForm()
+        articles = Article.objects.filter(status=1).order_by('-date_posted')
+        context = {
+            'form': form,
+            'title': 'Login',
+            'articles': articles
+        }
+        return render(request, 'accounts/login.html', context)
+
+    def post(self, request):
+        form = UserLoginForm(request.POST or None)
+        if request.method == 'POST':
+            if form.is_valid():
+                user = authenticate(request, username=form.username, password=form.password)
+                login(request, user)
+                return redirect('main_website_home')

@@ -1,0 +1,40 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <h1 class="display-4">Welcome</h1>
+        <p class="lead">Hello and welcome to the 1st Woodhall Scout Group website</p>
+        <p>1st Woodhall Scouts is located at 1st Pudsey (Parish Church) Group Headquarters, Greenside, Pudsey, LS28 8LP and has been established since 1957</p>
+        <p>Scouting is a world wide value based institution. 1st Woodhall is an active and friendly group and welcome boys and girls from all backgrounds and all religious beliefs to make new friends, get outdoors, learn exciting skills and most importanty have fun!</p>
+        <p>If you want to find out more, please browse our section pages,  get in touch via the contact us page or find us at 1st Pudsey (Parish Church) Group Headquarters at the following times (during term time):</p>
+        <table class="meeting_table">
+            <thead>
+            <tr>
+                <th>Section</th>
+                <th>Meeting Day</th>
+                <th>Meeting Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Beavers</td>
+                <td>Friday</td>
+                <td>5:30pm – 6:30pm</td>
+            </tr>
+            <tr>
+                <td>Cubs</td>
+                <td>Thursday</td>
+                <td>7:00pm – 8:30pm</td>
+            </tr>
+            <tr>
+                <td>Scouts</td>
+                <td>Friday</td>
+                <td>7:00pm – 9:00pm</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr class="my-4">
+        <h3>Want to join the Group?</h3>
+        <p>Click this button to Register for our waiting list</p>
+        <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+    </div>
+{% endblock content %}

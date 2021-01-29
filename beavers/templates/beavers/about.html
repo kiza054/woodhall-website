@@ -1,0 +1,37 @@
+{% extends "beavers/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="content-section">
+        <center><img class="beaver_logo" src="/media/images/beavers_rgb.png" alt="Beavers Logo"></center>
+        <br>
+        <hr class="my-2">
+        <h1 class="display-4">About Us!</h1>
+        <h5>Please note that we have had a lot of success as a Colony recently. This has led to a period of Growth. As a result of this, we now need to operate a waiting list for places. Please <a href="{% url 'main_website_contact_us' %}" target="_blank">contact</a> the Beaver Leader team for more information.</h5>
+        <p>Our Beavers meet every Friday during term time between 18:00 and 19:10 in the church hall at 1st Pudsey (Parish Church) Group Headquarters, Greenside, Pudsey, LS28 8LP</p>
+        <p>At 1st Woodhall, the Beaver leaders are Robin and sometimes assisted by parents (Thank You!). Being based at Greenside, we are easy to get to from West Leeds and East Bradford, including Pudsey, Thornbury, Farsley, Calverley, Rodley and Bramley.</p>
+        <p>Beavers, or more correctly Beaver Scouts, are the youngest group of the Scouting family aged from five years and nine months to eight years. Their activities are based around being creative, crafty things, learning about camping, playing games, getting out and about and finding out about nature, learning how to be a good scout, and especially how to be a good friend.
+        Beavers are easily recognised by the turquoise jumpers as seen in the image. these have the logo on the bottom right hand side of the jumper, also personalised t-shirts are available for a small cost of £5 which are mainly used for camps and sleepovers.</p>
+        <p>The cost of attending Beavers is £2 per week (the first 4 weeks are free). Unfortunately, we have to ask for subs for any missed weeks. This is because the District, County and National teams charge 1st Woodhall fees on a per member basis, and we do have to make sure the group can cover these costs.</p>
+        <p>Beavers will need a uniform before they can be invested into the colony. Uniforms can be purchased from West Leeds Scout Shop. Currently, we only ask that Beavers have a uniform sweatshirt and necker (our necker is black with a white border).</p>
+        <table class="meeting_table">
+          <thead>
+          <tr>
+              <th>Section</th>
+              <th>Meeting Day</th>
+              <th>Meeting Time</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>Beavers (5yrs 9mths to 8yrs)</td>
+              <td>Friday</td>
+              <td>5:30pm – 6:30pm</td>
+          </tr>
+          </tbody>
+      </table>
+      <hr class="my-4">
+      <h3>Want to join our Colony?</h3>
+      <p>Click this button to Register for our waiting list</p>
+      <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+      </div>
+{% endblock content %}

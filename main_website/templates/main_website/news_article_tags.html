@@ -1,0 +1,27 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+      <div class="article-metadata">
+          <legend class="border-bottom mb-2 h2">{% if tag %} Articles tagged with <span class="mr-1 badge badge-pill badge-info">{{ tag.name }}</span>{% endif %}</legend>
+      </div>
+  </div>
+</article>
+{% for article in articles %}
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <h2 class="card-title">{{ article.article_name }}</h2>
+      <img class="rounded-circle article-img" src="{{ article.author.profile.image.url }}">
+      <small class="card-text text-muted h6">By: {{ article.author }} on {{ article.date_posted }} |</small>
+      {% for tag in article.tags.all %}
+        <a href="{% url 'main_website_article_tags' tag.slug %}" class="mr-1 badge badge-pill badge-info">{{ tag }}</a>
+      {% endfor %}
+      <hr class="my-4">
+      <p class="card-text">{{ article.content | safe | slice:":200" }}</p>
+    </div>
+    <a href="{% url 'main_website_article_detail' article.slug  %}" class="btn btn-outline-info">Read More &rarr;</a>
+  </div>
+</article>
+{% endfor %}
+{% endblock content %}

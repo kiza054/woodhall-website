@@ -1,0 +1,11 @@
+{% extends "calendar/base.html" %}
+{% block content %}
+<div class="calendar-section">
+    <div class="clearfix">
+        <a class="btn btn-outline-info left" href="{% url 'main_website_calendar' %}?{{ prev_month }}">Previous Month</a>
+        <a class="btn btn-outline-info left" href="{% url 'main_website_calendar' %}?{{ next_month }}"> Next Month</a>
+        <a class="btn btn-outline-info right" href="{% url 'main_website_calendar_new_event' %}">New Event</a>
+    </div>
+    {{ calendar }}  
+</div>
+{% endblock %}

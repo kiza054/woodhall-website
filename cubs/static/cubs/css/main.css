@@ -14,7 +14,7 @@
 
 body {
     font-family: "system";
-    background: #168218;
+    background: #37ab47;
     /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
     color: #fff;
     position: relative;
@@ -71,14 +71,14 @@ small {
 }
 
 .cub_logo {
-    height: 290px !important; 
-    width: 104px !important;
+    width: 100% !important;
+    height: 100% !important;
     vertical-align: middle;
 }
 
 .badge-info {
     color: #fff;
-    background-color: #168218 !important;
+    background-color: #37ab47 !important;
 }
 
 .badge-info:hover {
@@ -104,8 +104,8 @@ small {
 
 .btn-outline-info, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:visited {
     color: #ffffff !important;
-    border-color: #168218 !important;
-    background-color: #168218 !important;
+    border-color: #37ab47 !important;
+    background-color: #37ab47 !important;
 }
 
 .btn-outline-info:hover {
@@ -122,13 +122,13 @@ small {
 
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
-    border-color: #168218 !important;
-    background-color: #168218 !important;
+    border-color: #37ab47 !important;
+    background-color: #37ab47 !important;
 }
 
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
-    border-color:  #168218 !important;
+    border-color:  #37ab47 !important;
     background-color: transparent !important;
 }
 
@@ -191,20 +191,20 @@ table.meeting_table {
     background-color: #383838;
     border-collapse: collapse;
     border-width: 2px;
-    border-color: #168218;
+    border-color: #37ab47;
     border-style: solid;
     color: #ffffff;
 }
 
 table.meeting_table td, table.meeting_table th {
     border-width: 2px;
-    border-color: #168218;
+    border-color: #37ab47;
     border-style: solid;
     padding: 3px;
 }
 
 table.meeting_table thead {
-    background-color: #168218;
+    background-color: #37ab47;
 }
 
 .form-control {
@@ -242,7 +242,7 @@ table.meeting_table thead {
     background-color: #454d55;
     border-color: #454d55;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem #168218;
+    box-shadow: 0 0 0 0.1rem #37ab47;
 }
 
 .list-group-flush>.list-group-item {
@@ -258,7 +258,7 @@ table.meeting_table thead {
 }
 
 .footer {
-    background-color: #168218;
+    background-color: #37ab47;
     position: absolute;
     clear: both;
     bottom: 0;

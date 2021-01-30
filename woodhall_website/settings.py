@@ -181,9 +181,9 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 # Amazon S3 Settings/Variables
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') #or 'AKIAXXDZN6ETRZCRER4T'
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') #or '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'
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') #or 'woodhall-website'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') or 'AKIAXXDZN6ETRZCRER4T'
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') or '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'
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') or 'woodhall-website'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME

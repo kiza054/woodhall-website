@@ -90,8 +90,8 @@ WSGI_APPLICATION = 'woodhall_website.wsgi.application'
 
 # Media files (Images, PDF, docx, etc)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -181,14 +181,15 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 # Amazon S3 Settings/Variables
 
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') or 'AKIAXXDZN6ETRZCRER4T'
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') or '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'
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') or 'woodhall-website'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') or 'AKIAXXDZN6ETU3IDJD7X'
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') or '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'
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME') or 'woodhall-website-storage'
 
 AWS_S3_FILE_OVERWRITE = False
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = 'public-read'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+DEFAULT_FILE_STORAGE = 'main_website.storages.MediaStorage'
 
 # django_heroku Settings/Variables
 

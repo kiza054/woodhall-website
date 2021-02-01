@@ -1,6 +1,7 @@
 import calendar
 from taggit.models import Tag
 from django.db.models import Q
+from django.conf import settings
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponse
@@ -29,7 +30,8 @@ class AboutView(generic.View):
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
         context = { 
             'title': 'About',
-            'articles': articles
+            'articles': articles,
+            'api_key': settings.GOOGLE_MAPS_API_KEY
         }
         return render(request, 'main_website/about.html', context)
 

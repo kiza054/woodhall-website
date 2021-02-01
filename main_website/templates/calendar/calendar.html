@@ -6,6 +6,7 @@
         <a class="btn btn-outline-info left" href="{% url 'main_website_calendar' %}?{{ next_month }}"> Next Month</a>
         <a class="btn btn-outline-info right" href="{% url 'main_website_calendar_new_event' %}">New Event</a>
     </div>
+    <br>
     {{ calendar }}  
 </div>
 {% endblock %}

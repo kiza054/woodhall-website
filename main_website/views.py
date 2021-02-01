@@ -256,3 +256,11 @@ def error_404_view(request, exception):
         'articles': articles,
     }
     return render(request, 'main_website/errors/404_error.html', context)
+
+def error_500_view(request, exception):
+    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+    context = {
+        'title': '500 Error',
+        'articles': articles,
+    }
+    return render(request, 'main_website/errors/500_error.html', context)

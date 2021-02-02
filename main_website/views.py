@@ -7,14 +7,14 @@ from django.contrib import messages
 from django.http import HttpResponse
 from main_website.utils import Calendar
 from django.utils.safestring import mark_safe
-from main_website.models import Article, Event
 from datetime import datetime, timedelta, date
 from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.decorators import login_required
+from main_website.models import Article, Event, ImageGallery
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from main_website.forms import ArticleForm, WaitingListForm, EventForm, ContactForm
+from main_website.forms import ArticleForm, WaitingListForm, EventForm, UploadImageForm, ContactForm
 
 class IndexView(generic.View):
     def get(self, request):
@@ -240,7 +240,32 @@ def tagged(request, slug):
     }
     return render(request, 'main_website/news_article_tags.html', context)
 
-# Gallery view
+@login_required()
+def gallery(request):
+    img = ImageGallery.objects.all()
+    context = {'img' : img}
+    return render(request, "main_website/gallery.html", context)
+
+@login_required
+def upload_images(request):
+    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+    if request.method == 'POST':
+        form = UploadImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            messages.success(request, 'Images Successfully Uploaded')
+            return redirect('main_website_gallery_upload')
+    else:
+        form = UploadImageForm()
+
+    context = { 
+        'title': 'Upload File',
+        'articles': articles,
+        'form': form
+    }
+
+    return render(request, 'cubs/file_upload.html', context)
 
 def error_403_view(request, exception):
     data = {}

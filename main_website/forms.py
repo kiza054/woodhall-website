@@ -2,7 +2,7 @@ from django import forms
 from taggit.forms import TagField
 from django.forms import DateInput
 from taggit_labels.widgets import LabelWidget
-from main_website.models import Article, WaitingList, Event
+from main_website.models import Article, WaitingList, Event, ImageGallery
 
 class ArticleForm(forms.ModelForm):
     tags = TagField(required=False, widget=LabelWidget)
@@ -52,3 +52,8 @@ class EventForm(forms.ModelForm):
         # input_formats parses HTML5 datetime-local input to datetime field
         self.fields['start_time'].input_formats = ('%Y-%m-%dT%H:%M',)
         self.fields['end_time'].input_formats = ('%Y-%m-%dT%H:%M',)
+
+class UploadImageForm(forms.ModelForm):
+    class Meta:
+        model = ImageGallery
+        fields = ('file_name', 'image')

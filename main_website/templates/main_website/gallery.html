@@ -2,5 +2,44 @@
 {% block content %}
 <div class="content-section">
     <h1>Gallery</h1>
+    {% load photo_tags %}
+
+    {% block body %}
+        {% if img %}
+            {% for img in image_gallery.image.all %}
+                {% with image|split:'.' as strs %}
+                    {% with strs|length as str_arr_len %}
+                        {% with str_arr_len|add:'-1' as ext_idx %}
+                            {% if strs|get_by_index:ext_idx == 'jpg' %}
+                                <a href="{{ img.image.url }}" class="d-block mb-4 h-100">
+                                    <img class="img-fluid img-thumbnail" src="{{ img.image.url }}" alt="{{ post.title }}" target="_blank">
+                                </a>
+                            {% endif %}
+                        {% endwith %}
+                    {% endwith %}
+                {% endwith %}
+                {% if forloop.counter|divisibleby:4 %}
+                    <div class="clear"></div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No images available at the moment</p>
+        {% endif %}
+    {% endblock body %}
+
+    {% block extra_js %}
+	<script type='text/javascript'>
+		$(document).ready(function() {
+			$('.gallery a').simpleLightbox();
+		});
+	</script>
+    {% endblock extra_js %}
 </div>
 {% endblock %}
+{% for img in post.cubs_blog_post_images.all %}
+<div class="col-lg-3 col-md-4 col-6">
+    <a href="{{ img.image.url }}" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" src="{{ img.image.url }}" alt="{{ post.title }}" target="_blank">
+    </a>
+</div>
+{% endfor %}

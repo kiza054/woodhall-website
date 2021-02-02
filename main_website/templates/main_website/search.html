@@ -4,5 +4,11 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="search">
         <button class="btn btn-outline-info my-2 my-sm-0"><span class='fas fa-search'></span> Search</button>
     </form>
+    {% if user.is_superuser or user.is_staff %}
+    <hr class="my-2">
+    <div class="list-group list-group-flush">
+        <li class="list-group-item"><a href="{% url 'main_website_gallery_upload' %}">Upload Images to Gallery</a></li>
+    </div>
+    {% endif %}
 </div>
 {% endblock content %}

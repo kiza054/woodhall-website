@@ -75,7 +75,7 @@ class Event(models.Model):
 
 class ImageGallery(models.Model):
     file_name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='media/image_gallery/%Y/%B/', blank=False, null=False)
+    image = models.ImageField(upload_to='image_gallery/%Y/%B/', blank=False, null=False)
 
     def __str__(self):
         return self.file_name

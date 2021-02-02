@@ -242,8 +242,13 @@ def tagged(request, slug):
 
 @login_required()
 def gallery(request):
+    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     img = ImageGallery.objects.all()
-    context = {'img' : img}
+    context = {
+        'img': img,
+        'articles': articles,
+        'title': 'Gallery'
+    }
     return render(request, "main_website/gallery.html", context)
 
 @login_required
@@ -260,7 +265,7 @@ def upload_images(request):
         form = UploadImageForm()
 
     context = { 
-        'title': 'Upload File',
+        'title': 'Upload Images',
         'articles': articles,
         'form': form
     }

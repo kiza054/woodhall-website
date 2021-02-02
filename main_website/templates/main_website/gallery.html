@@ -6,7 +6,7 @@
 
     {% block body %}
         {% if img %}
-            {% for img in image_gallery.image.all %}
+            {% for img in ImageGallery.image.all %}
                 {% with image|split:'.' as strs %}
                     {% with strs|length as str_arr_len %}
                         {% with str_arr_len|add:'-1' as ext_idx %}
@@ -36,7 +36,7 @@
     {% endblock extra_js %}
 </div>
 {% endblock %}
-{% for img in post.cubs_blog_post_images.all %}
+{% for img in image_gallery.all %}
 <div class="col-lg-3 col-md-4 col-6">
     <a href="{{ img.image.url }}" class="d-block mb-4 h-100">
         <img class="img-fluid img-thumbnail" src="{{ img.image.url }}" alt="{{ post.title }}" target="_blank">

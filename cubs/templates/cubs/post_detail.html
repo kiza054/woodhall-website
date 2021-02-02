@@ -17,7 +17,7 @@
       <!--<img src="{{ img.image.url }}" alt="{{ post.title }}" width="200" height="300">-->
 			<div class="container">	
 				<div class="row text-center text-lg-left">
-        {% for img in post.post_images.all %}
+        {% for img in post.cubs_blog_post_images.all %}
 				<div class="col-lg-3 col-md-4 col-6">
 					<a href="{{ img.image.url }}" class="d-block mb-4 h-100">
 						<img class="img-fluid img-thumbnail" src="{{ img.image.url }}" alt="{{ post.title }}">

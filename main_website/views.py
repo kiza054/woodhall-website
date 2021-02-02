@@ -240,27 +240,31 @@ def tagged(request, slug):
     }
     return render(request, 'main_website/news_article_tags.html', context)
 
+# Gallery view
 
 def error_403_view(request, exception):
+    data = {}
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     context = {
         'title': '404 Error',
         'articles': articles,
     }
-    return render(request, 'main_website/errors/403_error.html', context)
+    return render(request, 'main_website/errors/403_error.html', context, status=403)
 
 def error_404_view(request, exception):
+    data = {}
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     context = {
         'title': '404 Error',
         'articles': articles,
     }
-    return render(request, 'main_website/errors/404_error.html', context)
+    return render(request, 'main_website/errors/404_error.html', context, status=404)
 
-def error_500_view(request, exception):
+def error_500_view(request, *args, **argv):
+    data = {}
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     context = {
         'title': '500 Error',
         'articles': articles,
     }
-    return render(request, 'main_website/errors/500_error.html', context)
+    return render(request, 'main_website/errors/500_error.html', context, status=500)

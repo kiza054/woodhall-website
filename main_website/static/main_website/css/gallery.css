@@ -1,0 +1,49 @@
+/* Gallery CSS */
+* {
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+    float: none;
+    width: 100%;
+}
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container .gallery a img {
+    float: left;
+    width: 20%;
+    height: auto;
+    border: 2px solid #fff;
+    -webkit-transition: -webkit-transform .15s ease;
+    -moz-transition: -moz-transform .15s ease;
+    -o-transition: -o-transform .15s ease;
+    -ms-transition: -ms-transform .15s ease;
+    transition: transform .15s ease;
+    position: relative;
+}
+
+.container .gallery a:hover img {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    z-index: 5;
+}
+
+.container .gallery a.big img {
+    width: 40%;
+}
+
+.align-center {
+    text-align: center;
+}

@@ -243,9 +243,9 @@ def tagged(request, slug):
 @login_required()
 def gallery(request):
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
-    img = ImageGallery.objects.all()
+    queryset = ImageGallery.objects.all()
     context = {
-        'img': img,
+        'images': queryset,
         'articles': articles,
         'title': 'Gallery'
     }

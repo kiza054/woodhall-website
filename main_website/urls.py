@@ -10,7 +10,8 @@ from main_website.views import (
     CalendarView, 
     HelpUsView, 
     SearchView, 
-    ContactUsView, upload_images
+    ContactUsView,
+    DonateView
 )
 
 urlpatterns = [
@@ -29,5 +30,6 @@ urlpatterns = [
     path('gallery', views.gallery, name='main_website_gallery'),
     path('gallery/upload', views.upload_images, name='main_website_gallery_upload'),
     path('help_us', HelpUsView.as_view(), name='main_website_help_us'),
+    path('ways_to_donate', DonateView.as_view(), name='main_website_ways_to_donate'),
     path('contact_us', ContactUsView.as_view(), name='main_website_contact_us')
 ]

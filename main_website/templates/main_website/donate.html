@@ -1,0 +1,22 @@
+{% extends "main_website/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="content-section">
+        <h1 class="display-4">Ways of Donating</h1>
+        <h4>Donate via easyfundraising.org.uk</h4>
+        <img class="easyfundraising_img" src="{% static 'main_website/img/easyfundraising_trans.png' %}" >
+        <hr class="my-4">
+        <p>Did you know that whenever you buy anything online – from your weekly shop to your annual holiday – you could be raising free donations for 1st Woodhall Scout Group with easyfundraising?</p>
+        <p>There are over 4,000 shops and sites on board ready to make a donation – including eBay, Argos, John Lewis, ASOS, Booking.com and M&S – and it won’t cost you a penny extra to help us raise funds.</p>
+        <ol>
+            <li>Go to <a href="https://www.easyfundraising.org.uk/causes/1stwoodhallsg/?utm_campaign=raise-more">easyfundraising.org.uk</a> and join for free.</li>
+            <li>Every time you shop online, go to easyfundraising first to find the site you want and start shopping.</li>
+            <li>After you’ve checked out, the retailer will make a donation to 1st Woodhall Scout Group at no extra cost to you whatsoever!</li>
+        </ol>
+        <p>There are no catches or hidden charges and 1st Woodhall Scout Group will be really grateful for your donations.</p>
+        <p>Thank you for your support.</p>
+        <hr class="my-4">
+        <a onclick="scroll_to_top()" id="back_to_top" class="btn btn-outline-info btn-sm mt-1 mb-1">Back to top of page</a>
+        <script src="{% static 'main_website/js/back_to_top.js' %}"></script>
+    </div>
+{% endblock content %}

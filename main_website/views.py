@@ -147,6 +147,15 @@ class HelpUsView(generic.View):
         }
         return render(request, 'main_website/help_us.html', context)
 
+class DonateView(generic.View):
+    def get(self, request):
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+        context = {
+            'title': 'Ways to Donate',
+            'articles': articles
+        }
+        return render(request, 'main_website/donate.html', context)
+
 class ContactUsView(generic.View):
     def get(self, request):
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]

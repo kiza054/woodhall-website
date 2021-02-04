@@ -6,7 +6,7 @@
 
     {% block body %}
         {% if images %}
-            {% for img in images %}
+            {% for img in images.all %}
                 {% with image|split:'.' as strs %}
                     {% with strs|length as str_arr_len %}
                         {% with str_arr_len|add:'-1' as ext_idx %}

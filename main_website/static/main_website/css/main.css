@@ -65,6 +65,10 @@ small {
     color: #fff;
 }
 
+.easyfundraising_img {
+    vertical-align: middle !important;
+}
+
 .badge-info {
     color: #fff;
     background-color: #7414dc !important;

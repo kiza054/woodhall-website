@@ -36,9 +36,9 @@ class PostAdmin(SummernoteModelAdmin):
     make_draft.short_description = "Mark selected Posts as Draft"
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'date_posted', 'active')
+    list_display = ('name', 'comment', 'post', 'date_posted', 'active')
     list_filter = ('active', 'date_posted')
-    search_fields = ('name', 'email', 'body')
+    search_fields = ('name', 'email', 'comment')
     actions = ['approve_comments']
 
     def approve_comments(self, request, queryset):

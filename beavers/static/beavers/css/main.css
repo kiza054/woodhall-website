@@ -76,6 +76,13 @@ small {
     vertical-align: middle;
 }
 
+.easyfundraising_img_sm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
 .badge-info {
     color: #fff;
     background-color: #0095c8 !important;

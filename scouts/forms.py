@@ -30,7 +30,7 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'email', 'body')
+        fields = ('name', 'email', 'comment')
 
 class UploadFileForm(forms.ModelForm):
     class Meta:

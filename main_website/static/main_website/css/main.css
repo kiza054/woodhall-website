@@ -66,7 +66,17 @@ small {
 }
 
 .easyfundraising_img {
-    vertical-align: middle !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.easyfundraising_img_sm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .badge-info {

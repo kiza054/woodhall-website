@@ -43,6 +43,9 @@
                         <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fas fa-hands-helping"></span> Help Us</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"><span class="fas fa-money-bill-wave"></span> Donate</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fas fa-images"></span> Gallery</a>
                     </li>
                     <li class="nav-item">
@@ -102,6 +105,7 @@
                     {% include "scouts/search.html" %}
                     {% include "main_website/latest_news.html" %}
                     {% include "main_website/useful_links.html" %}
+                    {% include "main_website/donate_link.html" %}
                 </div>
             </div>
         </main>

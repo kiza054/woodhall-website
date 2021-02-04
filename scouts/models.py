@@ -42,7 +42,7 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='scouts_blog_comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
-    body = models.TextField()
+    comment = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     active = models.BooleanField(default=False)
 
@@ -50,7 +50,7 @@ class Comment(models.Model):
         ordering = ['date_posted']
 
     def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.name)
+        return 'Comment {} by {}'.format(self.comment, self.name)
 
 class File(models.Model):
     name = models.CharField(max_length=25, blank=True)

@@ -11,7 +11,7 @@ SECTION = [
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect)
-    #section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple)
+    #section = forms.ModelMultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, queryset=User.objects.all())
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section']
@@ -27,7 +27,7 @@ class UserLoginForm(AuthenticationForm):
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
     section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect)
-    #section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple)
+    #section = forms.ModelMultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, queryset=User.objects.all())
     class Meta:
         model = User
         fields = ['username', 'email', 'section']

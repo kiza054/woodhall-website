@@ -10,22 +10,16 @@ from django.shortcuts import render, redirect, resolve_url
 from accounts.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm#, ContactForm
 
 def register(request):
-    section = []
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            #if request.POST.get('section'):
+                #form.section = request.POST.get('section')
+            #form.save()
             username = form.cleaned_data.get('username')
             section = form.cleaned_data.get('section')
             messages.success(request, f'Your account has been created! You are now able to log in')
-
-            #section_list = request.POST.getlist('section[]')
-            #section.append(form.data['section'])
-            #form_obj = form.save(commit=False)
-            #form_obj.values = sum(section_list)
-            #form_obj.save()
-
             return redirect('login')
     else:
         form = UserRegisterForm()

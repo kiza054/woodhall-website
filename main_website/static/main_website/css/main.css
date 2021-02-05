@@ -131,8 +131,11 @@ small {
 
 .alert {
     font-size: 15px;
+    margin-top: 20px !important;
     margin-bottom: 20px !important;
     margin: 0 auto;
+    height: 60px !important;
+    padding: 1rem 1.25rem;
 }
 
 .article-title {

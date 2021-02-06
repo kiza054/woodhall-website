@@ -254,7 +254,7 @@ def gallery(request):
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     queryset = ImageGallery.objects.all()
     context = {
-        'images': queryset,
+        'queryset': queryset,
         'articles': articles,
         'title': 'Gallery'
     }

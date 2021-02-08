@@ -279,7 +279,7 @@ def upload_images(request):
         'form': form
     }
 
-    return render(request, 'cubs/file_upload.html', context)
+    return render(request, 'main_website/image_upload.html', context)
 
 def error_403_view(request, exception):
     data = {}

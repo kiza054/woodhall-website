@@ -20,7 +20,14 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 from django.contrib.auth import views as auth_views
+from main_website.sitemaps import StaticViewSitemap#, NewsUpdatesSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    #'news_updates': NewsUpdatesSitemap
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +38,7 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('main_website.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('admin/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),
     path('admin/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='accounts/password_reset.html'), name='password_reset'),

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sitemaps',
     'django.contrib.staticfiles',
 
     'django_summernote',
@@ -53,7 +54,8 @@ INSTALLED_APPS = [
     'taggit',
 ]
 
-SITE_ID = 1
+SITE_ID = 1 
+
 AUTH_USER_MODEL = 'accounts.User'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -197,7 +199,7 @@ AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 DEFAULT_FILE_STORAGE = 'main_website.storages.MediaStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # django_heroku Settings/Variables
 

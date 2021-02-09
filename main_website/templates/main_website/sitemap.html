@@ -2,10 +2,8 @@
 {% load static %}
 
 {% block content %}
-<?xml version="1.0" encoding="UTF-8" type='text/css' href='#'?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<?xml version="1.0" encoding="UTF-8" type="text/css" href="{% static 'main_website/css/main.css' %}"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 {% spaceless %}
 {% for url in urlset %}
   <url>
@@ -13,10 +11,12 @@
     {% if url.lastmod %}<lastmod>{{ url.lastmod|date:"Y-m-d" }}</lastmod>{% endif %}
     {% if url.changefreq %}<changefreq>{{ url.changefreq }}</changefreq>{% endif %}
     {% if url.priority %}<priority>{{ url.priority }}</priority>{% endif %}
+    <!-- 
     <news:news>
       <news:tag1> blabla  </news:tag1>
       <news:tag2> blabla </news:tag2>
     </news:news>
+    -->
    </url>
 {% endfor %}
 {% endspaceless %}

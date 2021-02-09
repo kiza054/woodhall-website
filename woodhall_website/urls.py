@@ -22,11 +22,14 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from django.contrib.auth import views as auth_views
-from main_website.sitemaps import StaticViewSitemap#, NewsUpdatesSitemap
+from cubs.sitemaps import CubsStaticViewSitemap, CubsBlogPostsSitemap
+from main_website.sitemaps import StaticViewSitemap, NewsUpdatesSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
-    #'news_updates': NewsUpdatesSitemap
+    'cubs_static': CubsStaticViewSitemap,
+    'news_updates': NewsUpdatesSitemap,
+    'cubs_blog_posts': CubsBlogPostsSitemap
 }
 
 urlpatterns = [

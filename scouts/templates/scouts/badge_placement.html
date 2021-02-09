@@ -1,0 +1,15 @@
+{% extends "scouts/base.html" %}
+{% load static %}
+{% block content %}
+<div class="content-section">
+    <legend class="border-bottom h1 mb-4">Uniform and Badge Placement</legend>
+    <h3>What do Scouts wear?</h3>
+    <p>Scouts wear a uniform during their weekly meetings and sometimes on trips away, depending on where they're going and what they're doing. Usually, this consists of a teal green shirt or blouse with their badges sewn on, which they pair with a scarf, known as a necker.</p>
+    <p>Alongside their shirts, Scouts might wear the accompanying blue uniform trousers or skirt, or they might save their uniform bottoms to wear for special occasions like awards ceremonies and public events – choosing to wear something more casual with their shirt during the week. Optional accessories such as hats, hoodies, are also available.</p>
+    <h3>Where to buy your uniform</h3>
+    <p>You can buy your uniform from <a href="https://westleedsscouts.com/shop/" target="_blank">West Leeds Scout Shop</a></p>
+    <h3>Here's where to sew your badges...</h3>
+    <br>
+    <center><img class="scouts_badge_placement" src="{% static 'scouts/img/scouts_badge_placement_sm.jpeg' %}" alt="Scouts Badge Placement"></center>
+</div>
+{% endblock %}

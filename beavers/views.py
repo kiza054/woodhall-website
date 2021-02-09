@@ -171,6 +171,15 @@ class AboutView(generic.View):
         }
         return render(request, 'beavers/about.html', context)
 
+class BadgePlacementView(generic.View):
+    def get(self, request):
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+        context = { 
+            'title': 'Badge Placement',
+            'articles': articles
+        }
+        return render(request, 'beavers/badge_placement.html', context)
+
 class SearchView(generic.View):
     def get(self, request, *args, **kwargs):
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]

@@ -76,6 +76,12 @@ small {
     vertical-align: middle;
 }
 
+.beaver_badge_placement {
+    vertical-align: middle;
+    border-style: none;
+    width: 100%;
+}
+
 .easyfundraising_img_sm {
     display: block;
     margin-left: auto;

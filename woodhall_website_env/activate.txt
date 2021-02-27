@@ -1,3 +1,5 @@
+cd /mnt/d/Programming/Python/Django/woodhall_website
+
 source woodhall_website_env/bin/activate
 
 deactivate

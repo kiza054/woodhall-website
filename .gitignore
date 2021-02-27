@@ -94,7 +94,13 @@ celerybeat-schedule
 # Environments
 .env
 .venv
-woddhall_website_env/
+woodhall_website_env/
+woodhall_website_env/bin/
+woodhall_website_env/include/
+woodhall_website_env/lib/
+woodhall_website_env/lib64/
+woodhall_website_env/share/
+woodhall_website_env/pyvenv.cfg
 venv/
 ENV/
 env.bak/

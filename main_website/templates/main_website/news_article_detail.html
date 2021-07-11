@@ -1,14 +1,12 @@
 {% extends 'main_website/base.html' %} 
 {% load crispy_forms_tags %}
-<!--{% load app_tags %}-->
 {% block content %}
 <article class="content-section">
 	<div class="media-body">
 		<div class="article-metadata">
 			<h1 class="card-title">{% block title %} {{ article.article_name }} {% endblock title %}</h1>
 			<img class="rounded-circle article-img" src="{{ user.profile.image.url }}">
-			<!--<img class="rounded-circle account-img-grav" src="{{ user | gravatar:55 }}">-->
-			<small class="card-text text-muted h6">By: <a class="mr-2">{{ article.author.get_full_name }}</a>on {{ article.date_posted }}</small>
+			<small class="card-text text-muted h6">By: <a class="mr-2">{{ article.author.get_full_name }}</a> on {{ article.date_posted }}</small>
 			{% for tag in article.tags.all %}
 				<a href="{% url 'main_website_article_tags' tag.slug %}" class="mr-1 badge badge-pill badge-info">{{ tag }}</a>
 			{% endfor %}

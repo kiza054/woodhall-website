@@ -15,10 +15,14 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             #if request.POST.get('section'):
-                #form.section = request.POST.get('section')
-            #form.save()
-            username = form.cleaned_data.get('username')
-            section = form.cleaned_data.get('section')
+                #form.section = request.POST.getlist('section')
+                #to_str = form.section
+                #string = str(to_str)[1:-1]
+            #form.save(string)
+            user = form.save(commit=False)
+            user.username = request.POST.get('username')
+            user.section = request.POST.get('section')
+            user.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
     else:

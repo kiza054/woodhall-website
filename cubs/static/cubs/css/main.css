@@ -86,6 +86,7 @@ small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 250px !important;
     width: 100%;
 }
 
@@ -199,7 +200,7 @@ small {
     color: #ffffff;
 }
 
-table.meeting_table {
+table.download_table {
     width: 100%;
     background-color: #383838;
     border-collapse: collapse;
@@ -209,15 +210,31 @@ table.meeting_table {
     color: #ffffff;
 }
 
-table.meeting_table td, table.meeting_table th {
+table.download_table td, table.download_table th {
     border-width: 2px;
     border-color: #37ab47;
     border-style: solid;
     padding: 3px;
 }
 
-table.meeting_table thead {
+table.download_table thead {
     background-color: #37ab47;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    border-radius: 0;
+    background-color: #454d55 !important;
+    color: #fff !important;
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    background-color: #383838 !important;
+}
+
+.accordion-item {
+    background-color: #454d55 !important;
+    border: 1px solid #454d55 !important;
 }
 
 .form-control {
@@ -238,15 +255,20 @@ table.meeting_table thead {
 @media (min-width: 576px) {
     .form-inline .form-control {
         display: inline-block;
-        width: 67.8%;
+        width: 70%;
         vertical-align: middle;
     }
 }
 
 @media (min-width: 768px) {
     .pb-md-0, .py-md-0 {
-        padding-bottom: 0!important;
+        padding-bottom: 0 !important;
         height: 38px !important;
+    }
+
+    .col-md-4 {
+        flex: 0 0 auto !important;
+        width: 33.33333333% !important;
     }
 }
 
@@ -279,11 +301,10 @@ table.meeting_table thead {
     height: auto;
 }
 
-.footer {
-    background-color: #37ab47;
-    position: absolute;
-    clear: both;
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
     bottom: 0;
-    width: 100%;
-    height: 50px;
+    background-color: #37ab47;
 }

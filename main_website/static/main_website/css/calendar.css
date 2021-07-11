@@ -16,7 +16,7 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 1100px;
+    width: 1250px;
   }
 
 .calendar {
@@ -66,8 +66,10 @@ a {
     float: right;
 }
 
-.footer#calendar_footer {
+.footer-container {
     position: relative;
-    bottom: -800px !important;
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #7414dc;
 }

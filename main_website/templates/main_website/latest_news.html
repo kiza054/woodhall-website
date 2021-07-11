@@ -2,6 +2,7 @@
 <div class="content-section">
     <div class="list-group list-group-flush">
         <h2>Latest News</h2>
+        {% if article %}
         {% for article in articles %}
         <div class="list-group-item rounded-sm">
             <div class="d-flex w-100 justify-content-between">
@@ -15,6 +16,13 @@
             <a href="{% url 'main_website_article_detail' article.slug  %}" class="btn btn-outline-info btn-sm mt-1 mb-1">Read More &rarr;</a>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="list-group-item rounded-sm">
+            <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">There is no news at the moment!</h6>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

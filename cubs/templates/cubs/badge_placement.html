@@ -2,15 +2,56 @@
 {% load static %}
 {% block content %}
 <div class="content-section">
-    <legend class="border-bottom h1 mb-4">Uniform and Badge Placement</legend>
-    <h3>What do Cubs wear?</h3>
-    <p>Cub uniform consists of a green sweatshirt with your badges sewn on and a coloured scarf or 'necker' to represent your local group. There are lots of other optional accessories you can wear such as hats, hoodies, navy blue trousers or shorts.</p>
-    <h3>Why is uniform important?</h3>
-    <p>Wearing a uniform is comfy and practical. It means no one feels uncomfortable or left out and helps everyone feel part of the Pack. It also gives you a place to show off all the badges you earn.</p>
-    <h3>Where to buy your uniform</h3>
-    <p>You can buy your uniform from <a href="https://westleedsscouts.com/shop/" target="_blank">West Leeds Scout Shop</a></p>
-    <h3>Here's where to sew your badges...</h3>
-    <br>
-    <center><img class="cub_badge_placement" src="{% static 'cubs/img/cubs_badge_placement.jpeg' %}" alt="Cub Badge Placement"></center>
+	<legend class="border-bottom h1 mb-2">Uniform and Badge Placement</legend>
+	<div class="accordion accordion-flush" id="accordionFlush">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingOne">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+					What do Cubs wear?
+				</button>
+		  	</h2>
+		  	<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlush">
+				<div class="accordion-body">
+					Cub uniform consists of a green sweatshirt with your badges sewn on and a coloured scarf or 'necker' to represent your local group. There are lots of other optional accessories you can wear such as hats, hoodies, navy blue trousers or shorts.
+				</div>
+		  	</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingTwo">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+					Why is uniform important?
+				</button>
+		  	</h2>
+			<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlush">
+				<div class="accordion-body">
+					Wearing a uniform is comfy and practical. It means no one feels uncomfortable or left out and helps everyone feel part of the Pack. It also gives you a place to show off all the badges you earn.
+				</div>
+		 	</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingThree">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+					Where to buy your uniform
+				</button>
+		  	</h2>
+		  	<div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlush">
+				<div class="accordion-body">
+					You can buy your uniform from <a href="https://westleedsscouts.com/shop/" target="_blank">West Leeds Scout Shop</a>
+				</div>
+		  	</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="flush-headingFour">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+					Here's where to sew your badges...
+				</button>
+			</h2>
+			<div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlush">
+				<div class="accordion-body">
+					<img class="cub_badge_placement" src="{% static 'cubs/img/cubs_badge_placement.jpeg' %}" alt="Cub Badge Placement">
+			  	</div>
+			</div>
+		</div>
+	</div>
 </div>
 {% endblock %}

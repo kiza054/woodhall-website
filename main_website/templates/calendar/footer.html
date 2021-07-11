@@ -1,5 +1,7 @@
-<footer id="calendar_footer" class="footer">
-    <div class="container">
-        <center><span class="text-muted"></span><span class="fas fa-copyright"></span> Copyright 2021, 1st Woodhall Scout Group, All Rights Reserved</span></center>
+<footer class="footer-container">
+    <div class="footer-child">
+        <span class="text-muted"></span>
+        <span class="fas fa-copyright"></span> Copyright <script>document.write(new Date().getFullYear())</script>, 1st Woodhall Scout Group, All Rights Reserved </span>
+        <a class="sitemap-link" href="{% url 'django.contrib.sitemaps.views.sitemap' %}">Sitemap</a>
     </div>
 </footer>

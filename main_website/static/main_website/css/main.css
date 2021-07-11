@@ -23,8 +23,7 @@ body {
 body::after {
     content: '';
     display: block;
-    height: 50px; /* Set same as footer's height */
-  }
+}
 
 h1, h2, h3, h4, h5, h6 {
     color: #fff;
@@ -76,7 +75,12 @@ small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 250px !important;
     width: 100%;
+}
+
+.bg-info {
+    background-color: #7414dc!important;
 }
 
 .badge-info {
@@ -152,22 +156,26 @@ small {
     margin-right: 10px !important;
 }
 
-.account-img-grav {
-    height: 55px !important;
-    width: 55px !important;
-    margin-right: 10px !important;
+.profile-details-wrapper { 
+    display: table-row; 
 }
 
-.account-img-profile {
+.profile-picture {
     height: 125px;
     width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
+    display: table-cell; 
+    vertical-align: top; 
+    margin-right: 10px;
+}
+
+.profile-details { 
+    display: table-cell; 
+    vertical-align: top; 
 }
 
 .article-metadata {
     padding-bottom: 1px;
-    margin-bottom: 4px;
+    margin-bottom: 40px !important;
 }
 
 .article-metadata a:hover {
@@ -213,11 +221,27 @@ table.meeting_table thead {
     background-color: #7414dc;
 }
 
+.accordion-flush .accordion-item .accordion-button {
+    border-radius: 0;
+    background-color: #454d55 !important;
+    color: #fff !important;
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    background-color: #383838 !important;
+}
+
+.accordion-item {
+    background-color: #454d55 !important;
+    border: 1px solid #454d55 !important;
+}
+
 .form-control {
     display: block;
     width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -228,10 +252,46 @@ table.meeting_table thead {
     border-radius: .25rem;
 }
 
+.form-control:focus {
+    color: #ffffff;
+    background-color: #454d55;
+    border-color: #454d55;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem #7414dc;
+}
+
+.form-check-input[type=radio] {
+    border-radius: 50%;
+}
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #454d55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+}
+
+.form-check-input:checked {
+    background-color: #7414dc !important;
+    border-color: #7414dc !important;
+}
+
 @media (min-width: 576px) {
     .form-inline .form-control {
         display: inline-block;
-        width: 67.8%;
+        width: 70%;
         vertical-align: middle;
     }
 }
@@ -241,14 +301,11 @@ table.meeting_table thead {
         padding-bottom: 0!important;
         height: 38px !important;
     }
-}
 
-.form-control:focus {
-    color: #ffffff;
-    background-color: #454d55;
-    border-color: #454d55;
-    outline: 0;
-    box-shadow: 0 0 0 0.1rem #7414dc;
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
 }
 
 .list-group-flush>.list-group-item {
@@ -272,11 +329,18 @@ table.meeting_table thead {
     height: auto;
 }
 
-.footer {
-    background-color: #7414dc;
-    position: absolute;
-    clear: both;
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
     bottom: 0;
-    width: 100%;
-    height: 50px;
+    background-color: #7414dc;
+}
+
+.sitemap-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #7414dc;
 }

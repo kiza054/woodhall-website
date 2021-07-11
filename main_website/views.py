@@ -123,8 +123,8 @@ def waiting_list_register(request):
     if request.method == 'POST':
         form = WaitingListForm(request.POST)
         if form.is_valid():
+            form.section_of_interest = request.POST.get('section_of_interest')
             form.save()
-            section_of_interest = form.cleaned_data.get('section_of_interest')
             messages.success(request, f'Your child has been added to the waiting list, we\'ll get back to you as soon as possible!')
             return redirect('main_website_home')
     else:

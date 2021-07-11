@@ -1,8 +1,0 @@
-Change into current working directory by typing:
-cd /mnt/d/Programming/Python/Django/woodhall_website
-
-Activate the venv by typing:
-source venv/bin/activate
-
-Deactivate the venv by typing:
-deactivate

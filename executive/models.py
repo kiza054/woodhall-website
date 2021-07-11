@@ -13,6 +13,7 @@ CATEGORIES = (
 )
 
 class QuartermastersItemInventory(models.Model):
+    id = models.AutoField(primary_key=True)
     item_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(choices=CATEGORIES, default=0, help_text=_('Category of item'), max_length=200)

@@ -2,7 +2,7 @@
 <div class="content-section">
     <div class="list-group list-group-flush">
         <h2>Latest News</h2>
-        {% if article %}
+        {% if article is defined %}
         {% for article in articles %}
         <div class="list-group-item rounded-sm">
             <div class="d-flex w-100 justify-content-between">

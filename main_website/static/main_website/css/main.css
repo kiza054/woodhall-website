@@ -121,6 +121,28 @@ small {
     background-color: #530f9b !important;
 }
 
+label.form-label {
+    display: block;
+}
+
+.taggit-labels.taggit-list {
+    position: absolute;
+    display: contents;
+    background-color: transparent;
+}
+
+.taggit-labels.taggit-list .taggit-tag {
+    display: inline-block;
+    margin: 0 5px 10px 5px;
+    margin-left: 0 !important;
+    padding: 5px 10px;
+    border: 1px solid #454d55 !important;
+    border-radius: 3px;
+    background-color: #454d55 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
     border-color: #7414dc !important;
@@ -130,7 +152,7 @@ small {
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
     border-color:  #7414dc !important;
-    background-color: transparent !important;
+    background-color: #454d55 !important;
 }
 
 .alert {
@@ -171,6 +193,82 @@ small {
 .profile-details { 
     display: table-cell; 
     vertical-align: top; 
+}
+
+@media (width: 375px) {
+    /* This width is iPhone 6/7/8 & iPhone X specific */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell; 
+        vertical-align: top; 
+        margin-right: 10px; 
+    }
+
+    .profile-details { 
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+         -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+          -o-transform: scale(0.9); /* Opera 10.5+ */ 
+    }
+}
+
+@media (width: 400px) {
+    /* This width suits most mobile phones */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell; 
+        vertical-align: top; 
+        margin-right: 10px;
+    }
+
+    .profile-details { 
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+         -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+          -o-transform: scale(0.9); /* Opera 10.5+ */ 
+    }
+}
+
+@media (width: 414px) {
+    /* This width is iPhone 6/7/8 Plus specific */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell; 
+        vertical-align: top; 
+        margin-right: 10px;
+    }
+
+    .profile-details { 
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+         -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+          -o-transform: scale(0.9); /* Opera 10.5+ */ 
+    }
+}
+
+@media (width: 480px) {
+    /* This width is Samsung Galaxy S20/S20 Ultra specific */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell; 
+        vertical-align: top; 
+        margin-right: 10px;
+    }
+
+    .profile-details { 
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+         -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+          -o-transform: scale(0.9); /* Opera 10.5+ */ 
+    }
 }
 
 .article-metadata {
@@ -250,6 +348,24 @@ table.meeting_table thead {
     background-clip: padding-box;
     border: 1px solid #454d55;
     border-radius: .25rem;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #454d55;
+    border: 1px solid #454d55;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .form-control:focus {

@@ -339,6 +339,16 @@ table.download_table thead {
     border-radius: .25rem;
 }
 
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #454d55;
+    border: 1px solid #454d55;
+}
+
 .tickertape {
     font-size:16px;
     line-height:1.3em;

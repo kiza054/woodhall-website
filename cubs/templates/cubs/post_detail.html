@@ -44,28 +44,24 @@
 	</div>
 </article>
 <article class="media content-section">
-	<div class="media-body">
-		<div class="article-metadata">
-			<div class="card-body">
-				{% if comments.count == 1 %}
-				<h2>{{ comments.count }} Comment</h2>
-				{% else %}
-				<h2>{{ comments.count }} Comments</h2>
-				{% endif %}
-				{% for comment in comments %}
-				<div class="comments" style="padding: 10px;">
-					<p class="font-weight-bold">
-						{{ comment.name }}
-						<span class="text-muted font-weight-normal">
-							{{ comment.date_posted }}
-						</span>
-					</p>
-					{{ comment.comment | linebreaks }}
-				</div>
-				{% endfor %}
-			</div>
+	{% if comments.count == 1 %}
+	<h2>{{ comments.count }} Comment</h2>
+	{% else %}
+	<h2>{{ comments.count }} Comments</h2>
+	{% endif %}
+	<hr class="my-2">
+	{% for comment in comments %}
+	<div class="comments list-group">
+		<div class="list-group-item">
+			<div class="d-flex w-100 justify-content-between">
+				<h5 class="mb-1">{{ comment.name }}</h5>
+				<small>{{ comment.date_posted }}</small>
+		  	</div>
+			<hr class="my-1">
+		  	{{ comment.comment | linebreaks }}
 		</div>
 	</div>
+	{% endfor %}
 </article>
 <article class="media content-section">
 	<div class="media-body">

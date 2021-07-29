@@ -8,7 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
 class PostList(LoginRequiredMixin, ListView):
     queryset = Post.objects.filter(status=1).order_by('-date_posted')
@@ -41,38 +41,46 @@ class UserPostList(LoginRequiredMixin, ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
-@login_required        
-def post_detail(request, slug):
+class PostDetail(LoginRequiredMixin, DetailView):
+    model = Post
+    form_class = CommentForm
     template_name = "beavers/post_detail.html"
-    post = get_object_or_404(Post, slug=slug)
-    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
-    comments = post.beavers_blog_comments.filter(active=True).order_by('-date_posted')
-    new_comment = None
-    # Comment posted
-    if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            # Create Comment object but don't save to database yet
-            new_comment = comment_form.save(commit=False)
+
+    def get_form(self):
+        form = self.form_class(instance=self.object)
+        return form
+
+    def post(self, request, slug): 
+        new_comment = None
+        post = get_object_or_404(Post)
+        form = CommentForm(request.POST) 
+        if form.is_valid(): 
+            # Create new_comment object but don't save to the database yet
+            new_comment = form.save(commit=False)
             # Assign the current post to the comment
             new_comment.post = post
             # Save the comment to the database
             new_comment.save()
-    else:
-        comment_form = CommentForm()
+            messages.warning(request, "Your comment is awaiting moderation, once moderated it will be published")
+            return redirect('beavers_blog_post_detail', slug=slug) 
+        else: 
+            return render(request, self.template_name, {'form': form}) 
 
-    return render(
-        request,
-        template_name,
-        {
-            "post": post,
-            "articles": articles,
-            "comments": comments,
-            "new_comment": new_comment,
-            "comment_form": comment_form,
-            "title": 'Post Details',
-        },
-    )
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = get_object_or_404(Post)
+        comments = post.beavers_blog_comments.filter(active=True).order_by('-date_posted')
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+        
+        context['articles'] = articles
+        context['comments'] = comments
+        context['title'] = 'Post Details'
+
+        context.update({
+            'comment_form': self.get_form(),
+        })
+
+        return context
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post

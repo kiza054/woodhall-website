@@ -46,7 +46,7 @@ def post_detail(request, slug):
     template_name = "beavers/post_detail.html"
     post = get_object_or_404(Post, slug=slug)
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
-    comments = post.cubs_blog_comments.filter(active=True).order_by('-date_posted')
+    comments = post.beavers_blog_comments.filter(active=True).order_by('-date_posted')
     new_comment = None
     # Comment posted
     if request.method == "POST":

@@ -26,12 +26,20 @@
         {% endfor %}
         </div>
       </div>
+			<hr class="my-4">
 			{% if post.author == user %}
-			<div>
-				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'beavers_blog_post_update' post.slug %}">Update Post</a>
-				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'beavers_blog_post_delete' post.slug %}">Delete Post</a>
+			<div class="crud-buttons" style="float: right;">
+				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'cubs_blog_post_update' post.slug %}">Update Post</a>
+				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'cubs_blog_post_delete' post.slug %}">Delete Post</a>
 			</div>
 			{% endif %}
+      <div class="social-buttons" style="float: left;">
+        <a type="button" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
+          Like Post
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </a>
+			</div>
+      <div style="clear: both;"></div>
 		</div>
 	</div>
 </article>

@@ -240,8 +240,8 @@ table.download_table thead {
 .form-control {
     display: block;
     width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -250,6 +250,60 @@ table.download_table thead {
     background-clip: padding-box;
     border: 1px solid #454d55;
     border-radius: .25rem;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #454d55;
+    border: 1px solid #454d55;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-control:focus {
+    color: #ffffff;
+    background-color: #454d55;
+    border-color: #454d55;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem #7414dc;
+}
+
+.form-check-input[type=radio] {
+    border-radius: 50%;
+}
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #454d55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+}
+
+.form-check-input:checked {
+    background-color: #7414dc !important;
+    border-color: #7414dc !important;
 }
 
 @media (min-width: 576px) {
@@ -262,22 +316,14 @@ table.download_table thead {
 
 @media (min-width: 768px) {
     .pb-md-0, .py-md-0 {
-        padding-bottom: 0 !important;
+        padding-bottom: 0!important;
         height: 38px !important;
     }
 
     .col-md-4 {
-        flex: 0 0 auto !important;
-        width: 33.33333333% !important;
+        flex: 0 0 auto;
+        width: 33.33333333%;
     }
-}
-
-.form-control:focus {
-    color: #ffffff;
-    background-color: #454d55;
-    border-color: #454d55;
-    outline: 0;
-    box-shadow: 0 0 0 0.1rem #37ab47;
 }
 
 .list-group-flush>.list-group-item {
@@ -307,4 +353,20 @@ table.download_table thead {
     justify-content: center;
     bottom: 0;
     background-color: #37ab47;
+}
+
+.sitemap-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #37ab47;
+}
+
+/* Summernote CSS */
+
+.note-popover .popover-content, .card-header.note-toolbar {
+    padding: 0 0 5px 5px;
+    margin: 0;
+    background: #454d55;
 }

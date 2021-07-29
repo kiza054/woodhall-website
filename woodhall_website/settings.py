@@ -129,7 +129,7 @@ SUMMERNOTE_CONFIG = {
     'lazy': False,
     # You can add custom css for SummernoteWidget.
     'css': (
-        '/static/css/summernote.css',
+        'main_website/static/main_website/css/summernote.css',
     ),
 }
 

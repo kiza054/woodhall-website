@@ -69,6 +69,11 @@
                             <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fas fa-home"></span> Main Website</a>
                         </li>
                         {% endif %}
+                        {% if user.is_superuser or user.is_staff %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'beavers_blog_post_create' %}"><span class="fas fa-plus"></span> New Post</a>
+                        </li>
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'profile' %}"><span class="fas fa-users"></span> Profile</a>

@@ -34,10 +34,23 @@
 			</div>
 			{% endif %}
 			<div class="social-buttons" style="float: left;">
-				<a type="button" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
-					Like Post
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-				</a>
+				{% if liked %}
+				<form action="{% url 'cubs_blog_post_like' post.slug %}" method="POST">
+					{% csrf_token %}
+					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
+						Unlike Post
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
+					</button>
+				</form>
+				{% else %}
+				<form action="{% url 'cubs_blog_post_like' post.slug %}" method="POST">
+					{% csrf_token %}
+					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
+						Like Post
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
+					</button>
+				</form>
+				{% endif %}
 			</div>
 			<div style="clear: both;"></div>
 		</div>

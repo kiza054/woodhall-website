@@ -17,6 +17,7 @@ urlpatterns = [
     path('badge_placement', views.BadgePlacementView.as_view(), name='beavers_blog_badge_placement'),
     path('user/<str:username>', UserPostList.as_view(), name='beavers_blog_user_posts'),
     path('post/new_post/', PostCreate.as_view(), name='beavers_blog_post_create'),
+    path('post/<slug:slug>/like/', views.PostLikeView, name='beavers_blog_post_like'),
     path('post/<slug:slug>/', views.PostDetail.as_view(), name="beavers_blog_post_detail"),
     path('post/update/<slug:slug>/', PostUpdate.as_view(), name='beavers_blog_post_update'),
     path('post/delete/<slug:slug>/', PostDelete.as_view(), name='beavers_blog_post_delete'),

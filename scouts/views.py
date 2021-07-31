@@ -5,8 +5,10 @@ from accounts.models import User
 from main_website.models import Article
 from django.contrib import messages
 from django.db.models import Q
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 
@@ -72,8 +74,18 @@ class PostDetail(LoginRequiredMixin, DetailView):
         comments = post.scouts_blog_comments.filter(active=True).order_by('-date_posted')
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
         
+        post_likes = get_object_or_404(Post, slug=self.kwargs['slug'])
+        total_likes = post_likes.total_likes()
+
+        if post_likes.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        else:
+            liked = False
+
+        context['liked'] = liked
         context['articles'] = articles
         context['comments'] = comments
+        context['total_likes'] = total_likes
         context['title'] = 'Post Details'
 
         context.update({
@@ -137,6 +149,18 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         context['articles'] = articles
         context['title'] = 'Delete Post'
         return context
+
+def PostLikeView(request, slug):
+    post = get_object_or_404(Post, slug=request.POST.get('scouts_blog_post_slug'))
+    
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('scouts_blog_post_detail', args=[str(slug)]))
 
 @login_required
 def upload(request):

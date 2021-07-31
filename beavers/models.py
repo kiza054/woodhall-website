@@ -17,12 +17,16 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
+    likes = models.ManyToManyField(User, related_name="beavers_blog_posts_likes")
 
     class Meta:
         ordering = ['-date_posted']
 
     def __str__(self):
         return self.title
+
+    def total_likes(self):
+        return self.likes.count()
     
     def get_absolute_url(self):
         return reverse("beavers_blog_post_detail", kwargs={"slug": str(self.slug)})

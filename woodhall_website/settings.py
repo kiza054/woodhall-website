@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'taggit_helpers',
     'taggit_labels',
     'debug_toolbar',
+    'admin_reorder',
     'crispy_forms',
     'storages',
     'taggit',
@@ -74,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'woodhall_website.urls'
@@ -108,6 +110,18 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Django Admin-Reorder Settings
+
+ADMIN_REORDER = (
+    # Keep original label and models
+    'beavers',
+    'cubs',
+    'scouts',
+    'main_website',
+    'executive',
+    'accounts',
+)
 
 # Django Summernote Variables
 

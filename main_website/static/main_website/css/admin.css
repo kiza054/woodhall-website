@@ -40,7 +40,7 @@ body {
 }
 
 #header {
-    background: #343a40;
+    background:  #454d55;
 }
 
 #branding h1, #branding h1 a:link, #branding h1 a:visited {
@@ -300,11 +300,17 @@ div.breadcrumbs {
     color: #fff;
 }
 
+#content-main {
+    float: left;
+    width: 200%;
+}
+
 #content-related .module h2 {
-    background: none;
+    background: #454d55;
     padding: 16px;
     margin-bottom: 16px;
-    border-bottom: 1px solid #515a63;
+    border-bottom: none;
+    /* border-bottom: 1px solid #515a63; */
     font-size: 18px;
     color: #ffffff;
 }
@@ -322,13 +328,19 @@ div.breadcrumbs {
 
 #content-related {
     color: #ffffff;
-    background: #343a40
+    background: #343a40;
+    float: right;
+    width: 350px;
+    position: relative;
+    margin-right: -400px;
 }
 
 .module {
     border: none;
     margin-bottom: 30px;
     background: #ffffff;
+    display: inline-table !important;
+    width: 350px;
 }
 
 .module h2, .module caption, .inline-group h2 {
@@ -337,7 +349,7 @@ div.breadcrumbs {
     font-weight: 400;
     font-size: 13px;
     text-align: left;
-    background: #343a40;
+    background: #454d55;
     color: #ffffff;
 }
 

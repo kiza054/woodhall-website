@@ -3,7 +3,8 @@
 <div class="content-section">
 	<div class="media">
 		<div class="media-body">
-			<legend class="border-bottom mb-4">Downloads</legend>
+			<legend class="border-bottom mb-2">Downloads</legend>
+			{% if file_collection is defined %}
 			<table class="download_table">
 				<thead>
 					<th scope="col">Name</th>
@@ -18,6 +19,11 @@
 				</tr>
 				{% endfor %}
 			</table>
+			{% else %}
+			<div class="list-group list-group-flush">
+				<li class="list-group-item">There are no files to download at the moment</li>
+			</div>
+			{% endif %}
 		</div>
 	</div>
 </div>

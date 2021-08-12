@@ -53,8 +53,8 @@ class WaitingList(models.Model):
     date_of_submission = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = 'Waiting List Entry'
-        verbose_name_plural = 'Waiting List Entries'
+        verbose_name = 'Waiting List Submission'
+        verbose_name_plural = 'Waiting List Submissions'
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -70,12 +70,20 @@ class Event(models.Model):
         url = reverse('main_website_calendar_edit_event', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
 
+    class Meta:
+        verbose_name = 'Group Event'
+        verbose_name_plural = 'Group Events'
+
     def __str__(self):
         return f"{self.title}"
 
 class ImageGallery(models.Model):
     file_name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='image_gallery/%Y/%B/', blank=False, null=False)
+
+    class Meta:
+        verbose_name = 'Image Gallery'
+        verbose_name_plural = 'Image Galleries'
 
     def __str__(self):
         return self.file_name

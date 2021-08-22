@@ -460,3 +460,49 @@ table.meeting_table thead {
     bottom: 0;
     background-color: #7414dc;
 }
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+    overflow: hidden; /* HIDE SCROLL BAR */
+    /* background: #eee; */
+}
+   
+/* (B) MOVING TICKER WRAPPER */
+.hmove { 
+    display: flex; 
+}
+  
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+    color: #FFFFFF;
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+   
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-400%, 0, 0); }
+}
+
+.hmove { 
+    animation: tickerh linear 10s infinite; 
+}
+
+.hmove:hover { 
+    animation-play-state: paused; 
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 2px !important;
+    background-color: #7414dc;
+    border-radius: 50%;
+    display: inline-block
+}

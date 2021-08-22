@@ -87,3 +87,22 @@ class ImageGallery(models.Model):
 
     def __str__(self):
         return self.file_name
+
+class UrgentAnnouncements(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='urgent_announcements')
+    updated_on = models.DateTimeField(auto_now=True)
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Urgent Announcement'
+        verbose_name_plural = 'Urgent Announcements'
+
+    def __str__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(UrgentAnnouncements, self).save(*args, **kwargs)

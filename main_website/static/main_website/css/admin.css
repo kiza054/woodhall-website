@@ -7,7 +7,7 @@
 
 body {
     font-family: "system";
-  }
+}
 
 #container {
     position: relative;
@@ -18,6 +18,10 @@ body {
 
 .dashboard {
     background: #7414dc;
+}
+
+.dashboard #content {
+    width: 79.5% !important ;
 }
 
 .login {
@@ -300,6 +304,12 @@ div.breadcrumbs {
     color: #fff;
 }
 
+#content-main {
+    float: left;
+    width: 100%;
+    display: inline-table !important;
+}
+
 #content-related .module h2 {
     background: none;
     padding: 16px;
@@ -316,13 +326,13 @@ div.breadcrumbs {
     margin: 0 0 16px;
 }
 
-#site-name {
-    color: #ffffff;
-}
-
 #content-related {
     color: #ffffff;
     background: #343a40
+}
+
+#site-name {
+    color: #ffffff;
 }
 
 .module {
@@ -339,6 +349,60 @@ div.breadcrumbs {
     text-align: left;
     background: #343a40;
     color: #ffffff;
+}
+
+.app-beavers.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-cubs.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-scouts.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-main_website.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-executive.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-accounts.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-sites.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-django_summernote.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
+}
+
+.app-taggit.module {
+    width: 260px;
+    display: inline-grid;
+    margin-right: 20px;
 }
 
 a:link, a:visited {

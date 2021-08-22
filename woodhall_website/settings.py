@@ -118,9 +118,11 @@ ADMIN_REORDER = (
     'beavers',
     'cubs',
     'scouts',
-    'main_website',
-    'executive',
     'accounts',
+    'executive',
+    'main_website',
+    'sites',
+    'django_summernote',
 )
 
 # Django Summernote Variables

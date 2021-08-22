@@ -3,7 +3,7 @@ from taggit.models import Tag
 from django.contrib import admin
 from django.http import HttpResponse
 from taggit_helpers.admin import TaggitStackedInline
-from main_website.models import Article, Event, ImageGallery, WaitingList
+from main_website.models import Article, Event, ImageGallery, WaitingList, UrgentAnnouncements
 
 class ExportCSVMixin:
     def export_as_csv(self, request, queryset):
@@ -69,6 +69,7 @@ class WaitingListAdmin(admin.ModelAdmin, ExportCSVMixin):
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('file_name', 'image')
 
+admin.site.register(UrgentAnnouncements)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(ImageGallery, GalleryAdmin)

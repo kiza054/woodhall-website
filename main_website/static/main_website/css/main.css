@@ -111,6 +111,14 @@ small {
     margin-top: 20px;
 }
 
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    background-color: #7414dc;
+}
+
 .btn-outline-info, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:visited {
     color: #ffffff !important;
     border-color: #7414dc !important;
@@ -453,6 +461,21 @@ table.meeting_table thead {
 .list-group-flush>.list-group-item {
     border-width: 0 0 1px;
     border-radius: .25rem;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #7414dc;
+    border: 1px solid #7414dc;
+    border-radius: 0.25rem;
 }
 
 .tickertape {

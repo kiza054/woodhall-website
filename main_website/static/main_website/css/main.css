@@ -111,14 +111,6 @@ small {
     margin-top: 20px;
 }
 
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    background-color: #7414dc;
-}
-
 .btn-outline-info, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:visited {
     color: #ffffff !important;
     border-color: #7414dc !important;

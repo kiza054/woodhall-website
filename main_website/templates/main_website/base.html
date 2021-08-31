@@ -102,11 +102,16 @@
                     {% block content %}{% endblock %}                   
                 </div>
                 <div class="col-md-4">
+                    {% if categories %}
+                    {% include "main_website/search.html" %}
+                    {% include "main_website/image_navbar.html" %}
+                    {% else %}
                     <!--{% include "main_website/tickertape.html" %}-->
                     {% include "main_website/search.html" %}
                     {% include "main_website/latest_news.html" %}
                     {% include "main_website/useful_links.html" %}
                     {% include "main_website/donate_link.html" %}
+                    {% endif %}
                 </div>
             </div>
         </main>

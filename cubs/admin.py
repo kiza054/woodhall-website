@@ -1,6 +1,6 @@
-from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
 from cubs.models import Post, Image, Comment, File
+from django_summernote.admin import SummernoteModelAdmin
 
 class PostImageInline(admin.StackedInline):
     model = Image

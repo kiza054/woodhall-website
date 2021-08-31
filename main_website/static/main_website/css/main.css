@@ -68,6 +68,7 @@ small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
     width: 80%;
 }
 
@@ -75,6 +76,7 @@ small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 0.25rem;
     height: 250px !important;
     width: 100%;
 }
@@ -123,6 +125,30 @@ small {
 
 label.form-label {
     display: block;
+}
+
+.card {
+    /* width: 200px !important; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #454d55;
+    background-clip: border-box;
+    border: 1px solid #454d55;
+    border-radius: 0.25rem;
+}
+
+#gallery-row {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#gallery-row .col-md-4 {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }
 
 .taggit-labels.taggit-list {

@@ -1,0 +1,23 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+<div class="content-section">
+    <h1>Gallery</h1>
+    <div class="container">
+        <div class="row" id="gallery-row">
+            {% for image in images %}
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <img class="image-thumbnail img-fluid rounded" src="{{ image.image.url }}" alt="Image">
+                    <div class="card-body">
+                        <small>Category: {{ image.category.name }}</small>
+                    </div>
+                    <a href="{% url 'main_website_gallery_image_detail' image.id %}" class="btn btn-outline-info btn-sm">View Image</a>
+                </div>
+            </div>
+            {% empty %}
+            <h4>There are no images to show!</h4>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

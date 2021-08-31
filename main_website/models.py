@@ -77,13 +77,27 @@ class Event(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+class ImageGalleryCategory(models.Model):
+    class Meta:
+        verbose_name = 'Image Category'
+        verbose_name_plural = 'Image Categories'
+
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
 class ImageGallery(models.Model):
-    file_name = models.CharField(max_length=200)
+    category = models.ForeignKey(ImageGalleryCategory, on_delete=models.SET_NULL, null=True, blank=True)
+    file_name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='image_gallery/%Y/%B/', blank=False, null=False)
+    # image = models.ImageField(upload_to='image_gallery/' + str(category) + '/%Y/%B/', blank=False, null=False)
+    description = models.TextField(null=False, blank=False, default=None)
 
     class Meta:
         verbose_name = 'Image Gallery'
-        verbose_name_plural = 'Image Galleries'
+        verbose_name_plural = 'Image Gallery'
 
     def __str__(self):
         return self.file_name

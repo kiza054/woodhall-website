@@ -4,17 +4,15 @@ from django.db.models import Q
 from django.conf import settings
 from django.views import generic
 from django.contrib import messages
-from django.http import HttpResponse
 from main_website.utils import Calendar
 from django.utils.safestring import mark_safe
 from datetime import datetime, timedelta, date
-from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.decorators import login_required
-from main_website.models import Article, Event, ImageGallery
+from main_website.models import Article, Event, ImageGallery, ImageGalleryCategory
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from main_website.forms import ArticleForm, WaitingListForm, EventForm, UploadImageForm, ContactForm
+from main_website.forms import ArticleForm, WaitingListForm, EventForm, UploadImageForm, AddImageCategoryForm
 
 class IndexView(generic.View):
     def get(self, request):
@@ -249,37 +247,60 @@ def tagged(request, slug):
     }
     return render(request, 'main_website/news_article_tags.html', context)
 
-@login_required()
-def gallery(request):
-    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
-    queryset = ImageGallery.objects.all()
-    context = {
-        'queryset': queryset,
-        'articles': articles,
-        'title': 'Gallery'
-    }
-    return render(request, "main_website/gallery.html", context)
+def ImageGalleryView(request):
+    category = request.GET.get('category')
+    if category == None:
+        images = ImageGallery.objects.all()
+    else:
+        images = ImageGallery.objects.filter(category__name=category)
 
-@login_required
-def upload_images(request):
-    articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+    categories = ImageGalleryCategory.objects.all()
+    context = {
+        'images': images,
+        'categories': categories,
+        'title': 'Image Gallery'
+    }
+    return render(request, 'main_website/image_gallery.html', context)
+
+def ImageDetailView(request, pk):
+    images = ImageGallery.objects.get(id=pk)
+    context = {
+        'images': images,
+        'title': 'Image Details'
+    }
+    return render(request, 'main_website/image_detail.html', context)
+
+def ImageAddView(request):
     if request.method == 'POST':
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
-            instance = form.save(commit=False)
-            instance.save()
-            messages.success(request, 'Images Successfully Uploaded')
-            return redirect('main_website_gallery_upload')
+            form.save()
+            messages.success(request, 'Image Successfully Uploaded')
+            return redirect('main_website_gallery')
     else:
         form = UploadImageForm()
 
-    context = { 
-        'title': 'Upload Images',
-        'articles': articles,
-        'form': form
+    context = {
+        'form': form,
+        'title': 'Add Image'
     }
-
     return render(request, 'main_website/image_upload.html', context)
+
+def ImageCategoryAddView(request):
+    if request.method == 'POST':
+        form = AddImageCategoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Category Successfully Added')
+            return redirect('main_website_gallery')
+    else:
+        form = AddImageCategoryForm()
+
+    context = {
+        'form': form,
+        'title': 'Add Image'
+    }
+    return render(request, 'main_website/image_add_category.html', context)
 
 def error_403_view(request, exception):
     data = {}

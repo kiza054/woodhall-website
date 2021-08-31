@@ -2,7 +2,7 @@ from django import forms
 from taggit.forms import TagField
 from django.forms import DateInput
 from taggit_labels.widgets import LabelWidget
-from main_website.models import Article, WaitingList, Event, ImageGallery
+from main_website.models import Article, WaitingList, Event, ImageGallery, ImageGalleryCategory
 
 class ArticleForm(forms.ModelForm):
     tags = TagField(required=False, widget=LabelWidget)
@@ -56,4 +56,15 @@ class EventForm(forms.ModelForm):
 class UploadImageForm(forms.ModelForm):
     class Meta:
         model = ImageGallery
-        fields = ('file_name', 'image')
+        fields = ('category', 'file_name', 'image', 'description')
+        
+    def __init__(self, *args, **kwargs):
+        super(UploadImageForm, self).__init__(*args, **kwargs)
+        self.fields['description'].widget.attrs['rows'] = 4
+        self.fields['description'].widget.attrs['cols'] = 40
+        self.fields['description'].widget.attrs['columns'] = 15
+
+class AddImageCategoryForm(forms.ModelForm):
+    class Meta:
+        model = ImageGalleryCategory
+        fields = ('user', 'name')

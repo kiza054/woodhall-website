@@ -14,10 +14,10 @@
                     <a href="{% url 'main_website_gallery_image_detail' image.id %}" class="btn btn-outline-info btn-sm">View Image</a>
                 </div>
             </div>
+            {% empty %}
+            <h4 style="float: left;">Sorry, there are no images to show at the moment!</h4>
+            {% endfor %}
         </div>
-        {% empty %}
-        <h4>Sorry, there are no images to show at the moment!</h4>
-        {% endfor %}
     </div>
 </div>
 {% endblock content %}

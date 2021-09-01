@@ -61,7 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 		return full_name.strip()
 
 	def get_short_name(self):
-		# Returns the short name for the user
+		# Returns the short name (first name) for the user
 		return self.first_name
 
 	#def email_user(self, subject, message, from_email=None):
@@ -70,7 +70,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	image = models.ImageField(default='/media/profile_pics/default.jpg', upload_to='profile_pics')
+	image = models.ImageField(default='/profile_pics/default.jpg', upload_to='profile_pics')
 
 	def __str__(self):
 		return f'{self.user.username} Profile'

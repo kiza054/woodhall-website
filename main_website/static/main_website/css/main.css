@@ -430,6 +430,18 @@ table.meeting_table thead {
     border-color: #7414dc !important;
 }
 
+/* Other Browsers */
+input[type="file"]::file-selector-button {
+    color: #ffffff !important;
+	background-color: #7414dc !important;
+}
+
+/* Chrome, Edge & Safari */
+input[type="file"]::-webkit-file-upload-button {
+    color: #ffffff !important;
+	background-color: #7414dc !important;
+}
+
 @media (min-width: 576px) {
     .form-inline .form-control {
         display: inline-block;

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from cubs.models import Post, Image, File
+from cubs.models import Post, File
 from cubs.forms import PostForm, CommentForm, UploadFileForm
 from accounts.models import User
 from main_website.models import Article

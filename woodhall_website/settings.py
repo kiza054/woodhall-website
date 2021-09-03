@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os, django_heroku
 from pathlib import Path
+# from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# get_random_secret_key()
 SECRET_KEY = os.environ.get('SECRET_KEY') or '0890a21f94a04c73d94a8654029271b72342c06a23056936'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') or 'True')
 
 ALLOWED_HOSTS = ['*', '127.0.0.1', '.ngrok.io', '.herokuapp.com']
 
@@ -219,7 +220,7 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-DEFAULT_FILE_STORAGE = 'main_website.storages.MediaStorage'
+# DEFAULT_FILE_STORAGE = 'main_website.storages.MediaStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # django_heroku Settings/Variables

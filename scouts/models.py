@@ -4,19 +4,19 @@ from accounts.models import User
 from django.utils import timezone
 from django.utils.text import slugify
 
-STATUS = (
-    (0,"Draft"),
-    (1,"Published")
-)
-
 class Post(models.Model):
+
+    class Status(models.IntegerChoices):
+        Draft = 0
+        Published = 1
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='scouts_blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=Status.choices, default=Status.Draft)
     likes = models.ManyToManyField(User, related_name="scouts_blog_posts_likes")
 
     class Meta:
@@ -35,7 +35,7 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
-class Image(models.Model):
+class PostImage(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='scouts_blog_post_images')
     image = models.ImageField(upload_to='media/post_images/scouts/%Y/%B/', blank=True, null=True)
 

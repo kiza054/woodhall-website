@@ -4,19 +4,18 @@ from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
-CATEGORIES = (
-    ("Unspecified", "Unspecified"),
-    ("Camp Equipment", "Camp Equipment"),
-    ("Sports Equipment", "Sports Equipment"), 
-    ("Cooking Equipment", "Cooking Equipment"),
-    ("General Equipment", "General Equipment")
-)
-
 class QuartermastersItemInventory(models.Model):
-    id = models.AutoField(primary_key=True)
+
+    class Categories(models.TextChoices):
+        Unspecified = 'U', _('Unspecified')
+        Camp_Equipment = 'CAE', _('Camp Equipment')
+        Sports_Equipement = 'SE', _('Sports Equipment')
+        Cooking_Equipment = 'COE', _('Cooking Equipment')
+        General_Equipment = 'GE', _('General Equipment')
+
     item_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    category = models.CharField(choices=CATEGORIES, default=0, help_text=_('Category of item'), max_length=200)
+    category = models.CharField(choices=Categories.choices, default=Categories.Unspecified, help_text=_('Category of item'), max_length=200)
     added_on = models.DateTimeField(default=timezone.now)
     updated_on = models.DateTimeField(auto_now=True)
     notes = models.TextField()

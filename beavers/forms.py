@@ -4,7 +4,7 @@ from django import forms
 from taggit_labels.widgets import LabelWidget
 from django_summernote.widgets import SummernoteWidget
 from django.core.mail import send_mail, EmailMultiAlternatives
-from beavers.models import Post, Image, Comment, File
+from beavers.models import Post, PostImage, Comment, File
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(widget=SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}))

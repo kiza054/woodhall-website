@@ -1,9 +1,9 @@
 from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
-from scouts.models import Post, Image, Comment, File
+from scouts.models import Post, PostImage, Comment, File
 
 class PostImageInline(admin.StackedInline):
-    model = Image
+    model = PostImage
     extra = 3
 
 class PostAdmin(SummernoteModelAdmin):

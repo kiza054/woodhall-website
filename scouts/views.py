@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from scouts.models import Post, Image, File
+from scouts.models import Post, File
 from scouts.forms import PostForm, CommentForm, UploadFileForm
 from accounts.models import User
 from main_website.models import Article

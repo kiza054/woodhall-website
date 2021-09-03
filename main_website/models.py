@@ -6,19 +6,12 @@ from django.utils.text import slugify
 from taggit.managers import TaggableManager
 from django.utils.translation import ugettext_lazy as _
 
-STATUS = (
-    (0, "Draft"),
-    (1, "Published")
-)
-
-SECTIONS = (
-    (0, "Beavers"),
-    (1, "Cubs"), 
-    (2, "Scouts"),
-    (3, "Unsure of Section")
-)
-
 class Article(models.Model):
+
+    class Status(models.IntegerChoices):
+        Draft = 0
+        Published = 1
+
     article_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news_updates')
@@ -26,7 +19,7 @@ class Article(models.Model):
     content = models.TextField()
     tags = TaggableManager()
     date_posted = models.DateTimeField(default=timezone.now)
-    status = models.IntegerField(choices=STATUS, default=0, help_text=_('Decide whether you want to Publish the news article or save it as a Draft'))
+    status = models.IntegerField(choices=Status.choices, default=Status.Draft, help_text=_('Decide whether you want to Publish the news article or save it as a Draft'))
 
     class Meta:
         ordering = ['-date_posted']
@@ -42,10 +35,17 @@ class Article(models.Model):
         super(Article, self).save(*args, **kwargs)
 
 class WaitingList(models.Model):
+
+    class Sections(models.IntegerChoices):
+        Beavers = 0
+        Cubs = 1
+        Scouts = 2
+        Unsure_of_Section = 3
+
     first_name = models.CharField(_('first name'), max_length=200)
     last_name = models.CharField(_('last name'), max_length=200)
     date_of_birth = models.DateField(_('date of birth'), max_length=200, help_text=_('DD/MM/YYYY or DD-MM-YYYY'))
-    section_of_interest = models.IntegerField(choices=SECTIONS, default=3, help_text=_('Section that your child wants to join'))
+    section_of_interest = models.IntegerField(choices=Sections.choices, default=Sections.Unsure_of_Section, help_text=_('Section that your child wants to join'))
     name_of_parent_carer = models.CharField(_('name of parent/carer'), max_length=200)
     parent_carer_email = models.EmailField(_('email of parent/carer'), max_length=254)
     parent_carer_phone_number = models.CharField(_('phone number of parent/carer'), max_length=20)
@@ -79,7 +79,7 @@ class Event(models.Model):
 
 class ImageGalleryCategory(models.Model):
     class Meta:
-        verbose_name = 'Image Category'
+        verbose_name = 'Category'
         verbose_name_plural = 'Image Categories'
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
@@ -91,12 +91,11 @@ class ImageGalleryCategory(models.Model):
 class ImageGallery(models.Model):
     category = models.ForeignKey(ImageGalleryCategory, on_delete=models.SET_NULL, null=True, blank=True)
     file_name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='image_gallery/%Y/%B/', blank=False, null=False)
-    # image = models.ImageField(upload_to='image_gallery/' + str(category) + '/%Y/%B/', blank=False, null=False)
+    image = models.ImageField(upload_to='media/image_gallery/%Y/%B/', blank=False, null=False)
     description = models.TextField(null=False, blank=False, default=None)
-
+    
     class Meta:
-        verbose_name = 'Image Gallery'
+        verbose_name = 'Image'
         verbose_name_plural = 'Image Gallery'
 
     def __str__(self):
@@ -111,7 +110,7 @@ class UrgentAnnouncements(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        verbose_name = 'Urgent Announcement'
+        verbose_name = 'Announcement'
         verbose_name_plural = 'Urgent Announcements'
 
     def __str__(self):

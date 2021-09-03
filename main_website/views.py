@@ -247,60 +247,62 @@ def tagged(request, slug):
     }
     return render(request, 'main_website/news_article_tags.html', context)
 
-def ImageGalleryView(request):
-    category = request.GET.get('category')
-    if category == None:
-        images = ImageGallery.objects.all()
-    else:
-        images = ImageGallery.objects.filter(category__name=category)
+class ImageGalleryView(LoginRequiredMixin, generic.View):
+    def get(self, request):
+        category = request.GET.get('category')
+        if category == None:
+            images = ImageGallery.objects.all()
+        else:
+            images = ImageGallery.objects.filter(category__name=category)
 
-    categories = ImageGalleryCategory.objects.all()
-    context = {
-        'images': images,
-        'categories': categories,
-        'title': 'Image Gallery'
-    }
-    return render(request, 'main_website/image_gallery.html', context)
+        categories = ImageGalleryCategory.objects.all()
+        context = {
+            'images': images,
+            'categories': categories,
+            'title': 'Image Gallery'
+        }
+        return render(request, 'main_website/image_gallery.html', context)
 
-def ImageDetailView(request, pk):
-    images = ImageGallery.objects.get(id=pk)
-    context = {
-        'images': images,
-        'title': 'Image Details'
-    }
-    return render(request, 'main_website/image_detail.html', context)
+class ImageDetailView(LoginRequiredMixin, generic.View):
+    def get(self, request, pk):
+        images = ImageGallery.objects.get(id=pk)
+        context = {
+            'images': images,
+            'title': 'Image Details'
+        }
+        return render(request, 'main_website/image_detail.html', context)
 
-def ImageAddView(request):
-    if request.method == 'POST':
+class ImageAddView(LoginRequiredMixin, generic.View):
+    def get(self, request):
+        form = UploadImageForm()
+        context = {
+            'form': form,
+            'title': 'Add Image'
+        }
+        return render(request, 'main_website/image_upload.html', context)
+
+    def post(self, request):
         form = UploadImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Image Successfully Uploaded')
             return redirect('main_website_gallery')
-    else:
-        form = UploadImageForm()
 
-    context = {
-        'form': form,
-        'title': 'Add Image'
-    }
-    return render(request, 'main_website/image_upload.html', context)
+class ImageCategoryAddView(LoginRequiredMixin, generic.View):
+    def get(self, request):
+        form = AddImageCategoryForm()
+        context = {
+            'form': form,
+            'title': 'Add Category'
+        }
+        return render(request, 'main_website/image_add_category.html', context)
 
-def ImageCategoryAddView(request):
-    if request.method == 'POST':
+    def post(self, request):
         form = AddImageCategoryForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Category Successfully Added')
             return redirect('main_website_gallery')
-    else:
-        form = AddImageCategoryForm()
-
-    context = {
-        'form': form,
-        'title': 'Add Image'
-    }
-    return render(request, 'main_website/image_add_category.html', context)
 
 def error_403_view(request, exception):
     data = {}

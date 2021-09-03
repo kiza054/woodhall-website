@@ -91,7 +91,7 @@ class ImageGalleryCategory(models.Model):
 class ImageGallery(models.Model):
     category = models.ForeignKey(ImageGalleryCategory, on_delete=models.SET_NULL, null=True, blank=True)
     file_name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='media/image_gallery/%Y/%B/', blank=False, null=False) # When in development remove 'media/' in upload_to
+    image = models.ImageField(upload_to='image_gallery/%Y/%B/', blank=False, null=False) # When in development remove 'media/' in upload_to
     description = models.TextField(null=False, blank=False, default=None)
     
     class Meta:

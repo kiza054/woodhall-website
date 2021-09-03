@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.conf import settings
 from django.views import generic
 from django.contrib import messages
-from main_website.utils import Calendar
+from main_website.utils import Calendar, get_date, prev_month, next_month
 from django.utils.safestring import mark_safe
 from datetime import datetime, timedelta, date
 from django.contrib.auth.decorators import login_required
@@ -197,55 +197,42 @@ class CalendarView(generic.ListView):
         context['title'] = 'Calendar'
         return context
 
-def get_date(req_month):
-    if req_month:
-        year, month = (int(x) for x in req_month.split('-'))
-        return date(year, month, day=1)
-    return datetime.today()
-
-def prev_month(d):
-    first = d.replace(day=1)
-    prev_month = first - timedelta(days=1)
-    month = 'month=' + str(prev_month.year) + '-' + str(prev_month.month)
-    return month
-
-def next_month(d):
-    days_in_month = calendar.monthrange(d.year, d.month)[1]
-    last = d.replace(day=days_in_month)
-    next_month = last + timedelta(days=1)
-    month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
-    return month
-
-@login_required()
-def event(request, event_id=None):
-    instance = Event()
-    if event_id:
-        instance = get_object_or_404(Event, pk=event_id)
-    else:
+class EventView(LoginRequiredMixin, generic.View):
+    def get(self, request, event_id=None):
         instance = Event()
+        if event_id:
+            instance = get_object_or_404(Event, pk=event_id)
+        else:
+            instance = Event()
 
-    form = EventForm(request.POST or None, instance=instance)
-    if request.POST and form.is_valid():
-        form.save()
-        return redirect('main_website_calendar')
-    
-    context = { 
-        'form': form,
-        'title': 'New Event',
-    }
-    return render(request, 'calendar/event.html', context)
+        form = EventForm()
 
-def tagged(request, slug):
-    tag = get_object_or_404(Tag, slug=slug)
-    common_tags = Article.tags.most_common()[:4]
-    # Filter articles by tag name  
-    articles = Article.objects.filter(tags=tag)
-    context = {
-        'tag': tag,
-        'articles': articles,
-        'common_tags': common_tags
-    }
-    return render(request, 'main_website/news_article_tags.html', context)
+        context = { 
+            'form': form,
+            'instance': instance,
+            'title': 'New Event',
+        }
+        return render(request, 'calendar/event.html', context)
+
+    def post(self, request):
+        instance = Event()
+        form = EventForm(request.POST or None, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('main_website_calendar')
+
+class TaggedView(LoginRequiredMixin, generic.View):
+    def get(self, request, slug):
+        tag = get_object_or_404(Tag, slug=slug)
+        common_tags = Article.tags.most_common()[:4]
+        # Filter articles by tag name  
+        articles = Article.objects.filter(tags=tag)
+        context = {
+            'tag': tag,
+            'articles': articles,
+            'common_tags': common_tags
+        }
+        return render(request, 'main_website/news_article_tags.html', context)
 
 class ImageGalleryView(LoginRequiredMixin, generic.View):
     def get(self, request):

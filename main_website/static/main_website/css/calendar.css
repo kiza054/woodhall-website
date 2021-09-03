@@ -16,14 +16,14 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 1250px;
-  }
+    width: 1250px !important;
+}
 
 .calendar {
     width: 100%;
     margin: auto;
     font-size: 13px;
-  }
+}
   
 .calendar tr, .calendar td {
     border: 1px solid #ffffff;

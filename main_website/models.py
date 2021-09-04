@@ -82,14 +82,14 @@ class ImageGalleryCategory(models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Image Categories'
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100, null=False, blank=False)
 
     def __str__(self):
         return self.name
 
 class ImageGallery(models.Model):
-    category = models.ForeignKey(ImageGalleryCategory, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.ForeignKey(ImageGalleryCategory, on_delete=models.CASCADE, null=True, blank=True)
     file_name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='media/image_gallery/%Y/%B/', blank=False, null=False) # When in development remove 'media/' in upload_to
     description = models.TextField(null=False, blank=False, default=None)

@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 from accounts.models import User
-from django.utils import timezone
 from django.utils.text import slugify
 
 class Post(models.Model):
@@ -15,7 +14,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='beavers_blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status.choices, default=Status.Draft)
     likes = models.ManyToManyField(User, related_name="beavers_blog_posts_likes")
 
@@ -47,7 +46,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     email = models.EmailField()
     comment = models.TextField()
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
 
     class Meta:

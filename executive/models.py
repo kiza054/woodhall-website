@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
@@ -16,7 +15,7 @@ class QuartermastersItemInventory(models.Model):
     item_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     category = models.CharField(choices=Categories.choices, default=Categories.Unspecified, help_text=_('Category of item'), max_length=200)
-    added_on = models.DateTimeField(default=timezone.now)
+    added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     notes = models.TextField()
 

@@ -110,7 +110,12 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
+# Whitenoise Variables
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_MIMETYPES = {
+    '.css': 'text/css',
+    '.html': 'text/html'
+}
 
 # Django Admin-Reorder Settings
 
@@ -131,7 +136,7 @@ ADMIN_REORDER = (
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
 SUMMERNOTE_CONFIG = {
-    'iframe': False,
+    'iframe': True,
     'summernote': {
         # As an example, using Summernote Air-mode
         'airMode': False,

@@ -131,7 +131,7 @@ ADMIN_REORDER = (
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_THEME = 'bs4'
 SUMMERNOTE_CONFIG = {
-    'iframe': True,
+    'iframe': False,
     'summernote': {
         # As an example, using Summernote Air-mode
         'airMode': False,
@@ -146,7 +146,7 @@ SUMMERNOTE_CONFIG = {
     'lazy': False,
     # You can add custom css for SummernoteWidget.
     'css': (
-        'main_website/static/main_website/css/summernote.css',
+        '/main_website/static/main_website/css/summernote/summernote.css',
     ),
 }
 
@@ -225,4 +225,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # django_heroku Settings/Variables
 
-django_heroku.settings(locals())
+django_heroku.settings(locals()) 

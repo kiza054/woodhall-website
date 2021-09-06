@@ -40,6 +40,7 @@ urlpatterns = [
     path('executive/', include('executive.urls')),
     path('', include('accounts.urls')),
     path('', include('main_website.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('admin/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),

@@ -14,8 +14,7 @@
         <!-- Custom CSS Files -->
 		<link rel="stylesheet" type="text/css" href="{% static 'cubs/css/main.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'main_website/css/gallery.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'main_website/css/simple-lightbox.min.css' %}">
-		{% if title %}
+        {% if title %}
 			<title>1st Woodhall Cubs Blog | {{ title }}</title>
 		{% else %}
 			<title>1st Woodhall Cubs Blog</title>
@@ -118,7 +117,5 @@
         <!-- Optional JavaScript -->
         <!-- JavaScript Bundle with Popper.js -->
         <script type="text/javascript" src="{% static 'main_website/js/bootstrap/bootstrap.bundle.min.js' %}" ></script>
-        <!-- Custom JavaScript -->
-        <script type="text/javascript" src="{% static 'main_website/js/simple-lightbox.min.js' %}"></script>
     </body>  
 </html>

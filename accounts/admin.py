@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from accounts.models import User, Profile
 from django.utils.html import format_html
 from django.contrib.auth.models import Group
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.admin import UserAdmin as CustomUserAdmin
 
 class ExportCSVMixin:
@@ -49,7 +50,7 @@ class UserAdmin(CustomUserAdmin, ExportCSVMixin):
 class ProfileAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
         return format_html('<img src="{}" height="42" width="42"/>'.format(obj.image.url))
-    
+
     ordering = ('id',)
     search_fields = ('user', 'id')
     list_filter = ('user',)

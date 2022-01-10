@@ -2,10 +2,10 @@ from PIL import Image
 from django.db import models
 from django.utils import timezone
 from django.dispatch import receiver
-from django.utils.http import urlquote
+from django.utils.http import urlencode
 from django.core.mail import send_mail
 from django.db.models.signals import post_save
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class UserManager(BaseUserManager):
@@ -53,7 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 		verbose_name_plural = _('users')
 
 	def get_absolute_url(self):
-		return "/users/%s/" % urlquote(self.email)
+		return "/users/%s/" % urlencode(self.email)
 
 	def get_full_name(self):
         # Returns the first_name plus the last_name, with a space in between

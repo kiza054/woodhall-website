@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from accounts.models import User, Profile
 from django.utils.html import format_html
 from django.contrib.auth.models import Group
-from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.admin import UserAdmin as CustomUserAdmin
 
 class ExportCSVMixin:

@@ -214,6 +214,23 @@ class EventView(LoginRequiredMixin, generic.View):
         }
         return render(request, 'calendar/event.html', context)
 
+class EditEventView(LoginRequiredMixin, generic.View):
+    def get(self, request, event_id=None):
+        instance = Event()
+        if event_id:
+            instance = get_object_or_404(Event, pk=event_id)
+        else:
+            instance = Event()
+
+        form = EventForm()
+
+        context = { 
+            'form': form,
+            'instance': instance,
+            'title': 'Edit Event',
+        }
+        return render(request, 'calendar/edit_event.html', context)
+
     def post(self, request):
         instance = Event()
         form = EventForm(request.POST or None, instance=instance)

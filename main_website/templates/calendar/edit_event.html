@@ -1,0 +1,15 @@
+{% extends 'calendar/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="calendar-section">
+    <form method="POST">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4">Edit Event</legend>
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+    </form>
+    <hr>
+    <a class="btn btn-outline-info" href="{% url 'main_website_calendar' %}">Back to Calendar</a>
+</div>
+{% endblock %}

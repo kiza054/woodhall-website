@@ -125,13 +125,33 @@ small {
     margin-top: 20px;
 }
 
-.btn-outline-info, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:visited {
+.btn-outline-info, 
+.btn-outline-info:active, 
+.btn-outline-info:active:focus, 
+.btn-outline-info:visited {
     color: #ffffff !important;
     border-color: #43737a !important;
     background-color: #43737a !important;
 }
 
+.btn-outline-info#scouts_search,
+.btn-outline-info#scouts_search:active,
+.btn-outline-info#scouts_search:active:focus,
+.btn-outline-info#search:visited {
+    color: #fff !important;
+    border-color: #43737a !important;
+    background-color: #43737a !important;
+    width: 92px;
+    font-size: 15px;
+}
+
 .btn-outline-info:hover {
+    color: #ffffff !important;
+    border-color: #1a2d30 !important;
+    background-color: #1a2d30 !important;
+}
+
+.btn-outline-info#scouts_search:hover {
     color: #ffffff !important;
     border-color: #1a2d30 !important;
     background-color: #1a2d30 !important;

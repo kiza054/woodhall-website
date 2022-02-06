@@ -10,6 +10,8 @@
                     <img class="image-thumbnail img-fluid rounded" src="{{ image.image.url }}" alt="Image">
                     <div class="card-body">
                         <small>Category: {{ image.category.name }}</small>
+                        <br>
+                        <small>Date Uploaded: {{ image.date_time_stamp }}</small>
                     </div>
                     <a href="{% url 'main_website_gallery_image_detail' image.id %}" class="btn btn-outline-info btn-sm">View Image</a>
                 </div>

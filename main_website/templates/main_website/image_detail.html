@@ -5,10 +5,20 @@
         <div class="row justify-content-center">
             <div class="col">
                 <img class="img-fluid rounded" src="{{ images.image.url }}">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h4>Image Information</h4>
                 <hr class="my-6">
-                <p>{{ images.description }}</p>
+                <p>Date Uploaded: {{ images.date_time_stamp }}</p>
+                <p>Image Description: {{ images.description }}</p>
                 <hr class="my-6">
-                <a href="{% url 'main_website_gallery' %}" class="btn btn-outline-info my-3">Go Back to Gallery</a>
+                <a href="{% url 'main_website_gallery' %}" class="btn btn-outline-info my-3" >Go Back to Gallery</a>
             </div>
         </div>
     </div>

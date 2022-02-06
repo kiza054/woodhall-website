@@ -6,15 +6,17 @@
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <a href="{% url 'main_website_gallery' %}">All</a>
+                <a href="{% url 'main_website_gallery' %}">All Images</a>
             </li>
-            {% for category in categories %}
             <li class="list-group-item">
-                <a href="{% url 'main_website_gallery' %}?category={{ category.name }}">
-                    {{ category.name }}
-                </a>
-            </li>
-            {% endfor %}            
+                {% for category in categories %}
+                <span class="badge badge-info">
+                    <a href="{% url 'main_website_gallery' %}?category={{ category.name }}">
+                        {{ category.name }}
+                    </a>
+                </span>
+                {% endfor %} 
+            </li>           
         </ul>
     </div>
 </div>

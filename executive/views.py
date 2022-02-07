@@ -11,7 +11,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 class ExecutiveIndexView(generic.View, LoginRequiredMixin):
     def get(self, request):
-        if not request.user.is_staff or not request.user.is_superuser:
+        if not request.user.is_executive or not request.user.is_superuser:
             raise PermissionDenied
         else:
             articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
@@ -23,7 +23,7 @@ class ExecutiveIndexView(generic.View, LoginRequiredMixin):
 
 class QuartermastersDatabaseView(generic.View, LoginRequiredMixin):
     def get(self, request):
-        if not request.user.is_staff or not request.user.is_superuser:
+        if not request.user.is_executive or not request.user.is_superuser:
             raise PermissionDenied
         else:
             articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]

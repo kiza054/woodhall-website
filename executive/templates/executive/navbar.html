@@ -1,18 +1,23 @@
 <div class="content-section">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #454d55;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'executive_home' %}">Executive</a>
-                <button class="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <em class="fa fa-bars"></em>
-                </button>
-                <div class="navbar-collapse collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item py-0"><a href="{% url 'executive_home' %}" class="nav-link">Home</a></li>
-                        <li class="nav-item py-0"><a href="{% url 'executive_quartermaster_database' %}" class="nav-link">Quartermasters Database</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+		<nav class="navbar navbar-expand-lg navbar-dark" id="exec_navbar" style="background-color: #383838;">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="{% url 'executive_home' %}">Executive</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'executive_quartermaster_database' %}">Quartermasters Database</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Meet the Team</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </div>

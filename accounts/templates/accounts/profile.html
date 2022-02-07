@@ -11,8 +11,10 @@
 					<h5 class="text-secondary">{{ user.email }}</h5>
 					{% if user.is_superuser or user.is_staff %}
 						<a href="{% url 'admin:index' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Administrators Dashboard</a>
+					{% if user.is_superuser or user.is_executive %}
 						<a href="{% url 'executive_home' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Executive Page</a>
-					{% if user.section == 'Beavers' %}
+					{% endif %}
+						{% if user.section == 'Beavers' %}
 						<a href="{% url 'beavers_blog_post_create' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Create Beavers Blog Post</a>
 						<a href="{% url 'beavers_blog_file_upload' %}" class="btn btn-outline-info my-1" role="button" aria-pressed="true">Upload Files</a>
 					{% endif %}

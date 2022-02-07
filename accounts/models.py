@@ -9,14 +9,14 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 class UserManager(BaseUserManager):
-	def _create_user(self, username, email, password, is_staff, is_superuser, **extra_fields):
+	def _create_user(self, username, email, password, is_staff, is_executive, is_superuser, **extra_fields):
 		now = timezone.now()
 		if not email:
 			raise ValueError(_('Users must have an email address'))
 		if not username:
 			raise ValueError(_('Users must have a username'))
 		email = self.normalize_email(email)
-		user = self.model(username=username, email=email, is_staff=is_staff, is_active=True, is_superuser=is_superuser, last_login=now, date_joined=now, **extra_fields)
+		user = self.model(username=username, email=email, is_staff=is_staff, is_active=True, is_executive=is_executive, is_superuser=is_superuser, last_login=now, date_joined=now, **extra_fields)
 		user.set_password(password)
 		user.save(using=self._db)
 		return user
@@ -39,6 +39,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 		help_text=_('Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
 	is_staff = models.BooleanField(_('staff status'), default=False,
 		help_text=_('Designates whether the user can log into this admin site.'))
+	is_executive = models.BooleanField(_('executive status'), default=False, 
+		help_text=_('Designates that this user is part of the executive committee.'))
 	is_superuser = models.BooleanField(_('superuser status'), default=False, 
 		help_text=_('Designates that this user has all permissions without explicitly assigning them.'))
 	date_joined = models.DateTimeField(_('date joined'), default=timezone.now)

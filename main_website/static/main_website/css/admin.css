@@ -247,7 +247,7 @@ div.breadcrumbs {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 12px 15px !important;
+    padding: 13.5px 15px !important;
     margin-bottom: 12px;
     border-bottom: none;
 }
@@ -332,6 +332,16 @@ div.breadcrumbs {
 }
 
 #site-name {
+    color: #ffffff;
+}
+
+#nav-filter {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    margin: 5px 0;
+    border: 1px solid #343a40;
+    background-color: #343a40;
     color: #ffffff;
 }
 

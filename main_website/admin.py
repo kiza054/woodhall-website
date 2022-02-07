@@ -1,7 +1,8 @@
 import csv
-from taggit.models import Tag
+from taggit.admin import Tag
 from django.contrib import admin
 from django.http import HttpResponse
+from django_summernote.models import Attachment
 from taggit_helpers.admin import TaggitStackedInline
 from main_website.models import Article, Event, ImageGallery, ImageGalleryCategory, WaitingList, UrgentAnnouncements
 
@@ -72,6 +73,8 @@ class ImageGalleryAdmin(admin.ModelAdmin):
 class ImageGalleryCategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'user')
 
+admin.site.unregister(Tag)
+admin.site.unregister(Attachment)
 admin.site.register(UrgentAnnouncements)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)

@@ -11,21 +11,19 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 class ExecutiveIndexView(generic.View, LoginRequiredMixin):
     def get(self, request):
-        if not request.user.is_executive or not request.user.is_superuser:
-            raise PermissionDenied
-        else:
+        if request.user.is_executive or request.user.is_superuser:
             articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
             context = {
                 'title': 'Home',
                 'articles': articles
             }
             return render(request, 'executive/home.html', context)
+        else:
+            raise PermissionDenied
 
 class QuartermastersDatabaseView(generic.View, LoginRequiredMixin):
     def get(self, request):
-        if not request.user.is_executive or not request.user.is_superuser:
-            raise PermissionDenied
-        else:
+        if request.user.is_executive or request.user.is_superuser:
             articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
             queryset = QuartermastersItemInventory.objects.all()
             context = {
@@ -34,6 +32,8 @@ class QuartermastersDatabaseView(generic.View, LoginRequiredMixin):
                 'queryset': queryset
             }
             return render(request, 'executive/quartermaster_database.html', context)
+        else:
+            raise PermissionDenied
 
 class QuartermastersDatabaseEditView(LoginRequiredMixin, UpdateView):
     model = QuartermastersItemInventory

@@ -253,6 +253,7 @@ class TaggedView(LoginRequiredMixin, generic.View):
 
 class ImageGalleryView(LoginRequiredMixin, generic.View):
     def get(self, request):
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
         category = request.GET.get('category')
         if category == None:
             images = ImageGallery.objects.all()
@@ -262,6 +263,7 @@ class ImageGalleryView(LoginRequiredMixin, generic.View):
         categories = ImageGalleryCategory.objects.all()
         context = {
             'images': images,
+            'articles': articles,
             'categories': categories,
             'title': 'Image Gallery'
         }

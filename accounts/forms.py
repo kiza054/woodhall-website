@@ -10,8 +10,11 @@ SECTION = [
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect)
-    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple)
+    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect, 
+        help_text='Please select the section that your child currently attends.')
+    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, 
+        #help_text='Please select the section(s) that your child currently attends.')
+        
     class Meta:
         model = User
         fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section']
@@ -26,8 +29,10 @@ class UserLoginForm(AuthenticationForm):
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
-    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect)
-    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple)
+    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect, 
+        help_text='Please select the section that your child currently attends.')
+    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, 
+        #help_text='Please select the section(s) that your child currently attends.')
     class Meta:
         model = User
         fields = ['username', 'email', 'section']

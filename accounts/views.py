@@ -1,10 +1,6 @@
-from django.views import generic
-from accounts.models import User
 from django.contrib import messages
 from main_website.models import Article
-from accounts.forms import UserLoginForm
 from django.contrib.auth import views as auth_views
-from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, resolve_url
 from accounts.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm#, ContactForm
@@ -14,14 +10,10 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            #if request.POST.get('section'):
-                #form.section = request.POST.getlist('section')
-                #to_str = form.section
-                #string = str(to_str)[1:-1]
-            #form.save(string)
             user = form.save(commit=False)
             user.username = request.POST.get('username')
             user.section = request.POST.get('section')
+            # user.section = ", ".join(request.POST.getlist('section'))
             user.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
@@ -67,6 +59,8 @@ def profile(request):
                                    request.FILES,
                                    instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
+            #user_form.save(commit=False)
+            #user_form.section = ', '.join(request.POST.getlist('section'))
             user_form.save()
             profile_form.save()
             messages.success(request, f'Your account has been updated!')

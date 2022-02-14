@@ -3,7 +3,7 @@ from main_website.models import Article
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, resolve_url
-from accounts.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm#, ContactForm
+from accounts.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 def register(request):
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
@@ -13,7 +13,7 @@ def register(request):
             user = form.save(commit=False)
             user.username = request.POST.get('username')
             user.section = request.POST.get('section')
-            # user.section = ", ".join(request.POST.getlist('section'))
+            user.second_section = request.POST.get('second_section')
             user.save()
             messages.success(request, f'Your account has been created! You are now able to log in')
             return redirect('login')
@@ -59,8 +59,6 @@ def profile(request):
                                    request.FILES,
                                    instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
-            #user_form.save(commit=False)
-            #user_form.section = ', '.join(request.POST.getlist('section'))
             user_form.save()
             profile_form.save()
             messages.success(request, f'Your account has been updated!')

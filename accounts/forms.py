@@ -8,16 +8,22 @@ SECTION = [
     ('Scouts', 'Scouts'),
 ]
 
+SECOND_SECTION = [
+    ('Beavers', 'Beavers'),
+    ('Cubs', 'Cubs'),
+    ('Scouts', 'Scouts'),
+    ('N/A', 'Not Applicable')
+]
+
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect, 
-        help_text='Please select the section that your child currently attends.')
-    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, 
-        #help_text='Please select the section(s) that your child currently attends.')
-        
+    section = forms.ChoiceField(label='Childs Section', choices=SECTION, help_text='Please select the section that your child currently attends.')
+    second_section = forms.ChoiceField(label='Childs Second Section', choices=SECOND_SECTION, 
+        help_text='Please only use this if you have a child in another section, otherwise select N/A.')
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section']
+        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section', 'second_section']
 
 class UserLoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(
@@ -29,13 +35,13 @@ class UserLoginForm(AuthenticationForm):
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
-    section = forms.ChoiceField(label='Childs Section', choices=SECTION, widget=forms.RadioSelect, 
-        help_text='Please select the section that your child currently attends.')
-    #section = forms.MultipleChoiceField(label='Childs Section', choices=SECTION, widget=forms.CheckboxSelectMultiple, 
-        #help_text='Please select the section(s) that your child currently attends.')
+    section = forms.ChoiceField(label='Childs Section', choices=SECTION, help_text='Please select the section that your child currently attends.')
+    second_section = forms.ChoiceField(label='Childs Second Section', choices=SECOND_SECTION, 
+        help_text='Please only use this if you have a child in another section, otherwise select N/A.')
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'section']
+        fields = ['username', 'email', 'section', 'second_section']
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

@@ -41,7 +41,7 @@ class UserAdmin(CustomUserAdmin, ExportCSVMixin):
             'fields': ('email', 'password1', 'password2')}
         ),
     )
-    list_display = ('email', 'first_name', 'last_name', 'section', 'is_staff', 'is_executive', 'is_superuser')
+    list_display = ('email', 'first_name', 'last_name', 'section', 'second_section', 'is_staff', 'is_executive', 'is_superuser')
     list_filter = ('is_staff', 'is_superuser', 'is_executive', 'is_active', 'section')
     search_fields = ('email', 'first_name', 'last_name', 'section')
     ordering = ('id', 'email')

@@ -35,6 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	first_name = models.CharField(_('first name'), max_length=30, blank=True)
 	last_name = models.CharField(_('last name'), max_length=30, blank=True)
 	section = models.CharField(max_length=30)
+	second_section = models.CharField(max_length=30, blank=True)
 	is_active = models.BooleanField(_('active'), default=True,
 		help_text=_('Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
 	is_staff = models.BooleanField(_('staff status'), default=False,
@@ -69,6 +70,12 @@ class User(AbstractBaseUser, PermissionsMixin):
 	#def email_user(self, subject, message, from_email=None):
         # Sends an email to this User
 		#send_mail(subject, message, from_email, [self.email])
+
+class UserSection(models.Model):
+    section_name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
 
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)

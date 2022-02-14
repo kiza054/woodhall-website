@@ -71,12 +71,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         # Sends an email to this User
 		#send_mail(subject, message, from_email, [self.email])
 
-class UserSection(models.Model):
-    section_name = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.name
-
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	image = models.ImageField(default='media/profile_pics/default.jpg', upload_to='profile_pics') # When in development remove 'media/' in upload_to

@@ -8,7 +8,7 @@
 		<!-- Shortcut Icon -->
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'main_website/img/favicon.png' %}">
 		<!-- FontAwesome Logos -->
-        <script type="text/javascript" src="{% static 'main_website/js/fontawesome.js' %}" ></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'main_website/icons/fontawesome/css/all.css' %}">
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="{% static 'main_website/css/bootstrap/bootstrap.min.css' %}">
         <!-- Custom CSS Files -->
@@ -25,68 +25,63 @@
         <!-- Nav class creates a navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #383838;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'cubs_blog_home' %}">1st Woodhall Cubs Blog</a>
+                <a class="navbar-brand" href="{% url 'main_website_home' %}">1st Woodhall Cubs Blog</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><span class="fas fa-home"></span> Home</a>
+                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fa-solid fa-house"></span> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_about' %}"><span class="fas fa-info-circle"></span> About Us</a>
+                            <a class="nav-link" href="{% url 'main_website_about' %}"><span class="fa-solid fa-circle-info"></span> About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><span class="fas fa-calendar-week"></span> Events</a>
+                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><span class="fa-solid fa-calendar-days"></span> Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fas fa-hands-helping"></span> Help Us</a>
+                            <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fa-solid fa-handshake-angle"></span> Help Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <span class="fas fa-money-bill-wave"></span> Donate</a>
+                            <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <span class="fa-solid fa-money-bill-1-wave"></span> Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fas fa-images"></span> Gallery</a>
+                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fa-solid fa-images"></span> Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><span class="fas fa-mail-bulk"></span> Contact Us</a>
+                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><span class="fa-solid fa-address-card"></span> Contact Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                        {% if user.section == 'Beavers' %}
+                        {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fas fa-home"></span> Main Website</a>
+                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><span class="fa-brands fa-microblog"></span> Beavers Blog</a>
                         </li>
                         {% endif %}
-                        {% if user.section == 'Cubs' %}
+                        {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fas fa-home"></span> Main Website</a>
+                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><span class="fa-brands fa-microblog"></span> Cubs Blog</a>
                         </li>
                         {% endif %}
-                        {% if user.section == 'Scouts' %}
+                        {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fas fa-home"></span> Main Website</a>
-                        </li>
-                        {% endif %}
-                        {% if user.is_superuser or user.is_staff %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cubs_blog_post_create' %}"><span class="fas fa-plus"></span> New Post</a>
+                            <a class="nav-link" href="{% url 'scouts_blog_home' %}"><span class="fa-brands fa-microblog"></span> Scouts Blog</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}"><span class="fas fa-users"></span> Profile</a>
+                            <a class="nav-link" href="{% url 'profile' %}"><span class="fa-solid fa-user-check"></span> Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}"><span class="fas fa-sign-out-alt"></span> Logout</a>
+                            <a class="nav-link" href="{% url 'logout' %}"><span class="fa-solid fa-arrow-right-from-bracket"></span> Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}"><span class="fas fa-sign-in-alt"></span> Login</a>
+                            <a class="nav-link" href="{% url 'login' %}"><span class="fa-solid fa-arrow-right-to-bracket"></span> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}"><span class="fas fa-user-plus"></span> Register</a>
+                            <a class="nav-link" href="{% url 'register' %}"><span class="fa-solid fa-user-plus"></span> Register</a>
                         </li>
                         {% endif %}
                     </ul>

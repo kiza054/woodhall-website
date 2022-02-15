@@ -29,8 +29,14 @@
 			<hr class="my-4">
 			{% if post.author == user %}
 			<div class="crud-buttons" style="float: right;">
-				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'cubs_blog_post_update' post.slug %}">Update Post</a>
-				<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'cubs_blog_post_delete' post.slug %}">Delete Post</a>
+				<button class="btn btn-secondary btn-sm mt-1 mb-1">
+					<i class="fa-solid fa-pen fa-lg"></i>
+					<a href="{% url 'cubs_blog_post_update' post.slug %}">Update Post</a>
+				</button>
+				<button class="btn btn-danger btn-sm mt-1 mb-1">
+					<i class="fa-solid fa-trash fa-lg"></i>
+					<a href="{% url 'cubs_blog_post_delete' post.slug %}">Delete Post</a>
+				</button>
 			</div>
 			{% endif %}
 			<div class="social-buttons" style="float: left;">
@@ -56,6 +62,7 @@
 		</div>
 	</div>
 </article>
+{% if comment is defined %}
 <article class="media content-section">
 	{% if comments.count == 1 %}
 	<h2>{{ comments.count }} Comment</h2>
@@ -76,6 +83,7 @@
 	</div>
 	{% endfor %}
 </article>
+{% endif %}
 <article class="media content-section">
 	<div class="media-body">
 		<div class="article-metadata">

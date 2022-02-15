@@ -24,7 +24,7 @@ body::after {
     content: '';
     display: block;
     height: 50px; /* Set same as footer's height */
-  }
+    }
 
 h1, h2, h3, h4, h5, h6 {
     color: #fff;
@@ -82,10 +82,20 @@ small {
     width: 100%;
 }
 
+.easyfundraising_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    width: 80%;
+}
+
 .easyfundraising_img_sm {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
+    height: 250px !important;
     width: 100%;
 }
 
@@ -115,10 +125,24 @@ small {
     margin-top: 20px;
 }
 
-.btn-outline-info, .btn-outline-info:active, .btn-outline-info:active:focus, .btn-outline-info:visited {
+.btn-outline-info, 
+.btn-outline-info:active, 
+.btn-outline-info:active:focus, 
+.btn-outline-info:visited {
     color: #ffffff !important;
     border-color: #37ab47 !important;
     background-color: #37ab47 !important;
+}
+
+.btn-outline-info#cubs_search,
+.btn-outline-info#cubs_search:active,
+.btn-outline-info#cubs_search:active:focus,
+.btn-outline-info#cubs_search:visited {
+    color: #fff !important;
+    border-color: #37ab47 !important;
+    background-color: #37ab47 !important;
+    width: 92px;
+    font-size: 15px;
 }
 
 .btn-outline-info:hover {
@@ -126,6 +150,13 @@ small {
     border-color: #0d4d0e !important;
     background-color: #0d4d0e !important;
 }
+
+.btn-outline-info#cubs_search:hover {
+    color: #ffffff !important;
+    border-color: #0d4d0e !important;
+    background-color: #0d4d0e !important;
+    }
+    
 
 .btn-info {
     color: #fff;
@@ -141,14 +172,17 @@ small {
 
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
-    border-color:  #37ab47 !important;
+    border-color:    #37ab47 !important;
     background-color: transparent !important;
 }
 
 .alert {
     font-size: 15px;
+    margin-top: 20px !important;
     margin-bottom: 20px !important;
     margin: 0 auto;
+    height: 60px !important;
+    padding: 1rem 1.25rem;
 }
 
 .article-title {
@@ -199,7 +233,7 @@ small {
     color: #ffffff;
 }
 
-table.meeting_table {
+table.download_table {
     width: 100%;
     background-color: #383838;
     border-collapse: collapse;
@@ -209,22 +243,38 @@ table.meeting_table {
     color: #ffffff;
 }
 
-table.meeting_table td, table.meeting_table th {
+table.download_table td, table.download_table th {
     border-width: 2px;
     border-color: #37ab47;
     border-style: solid;
     padding: 3px;
 }
 
-table.meeting_table thead {
+table.download_table thead {
     background-color: #37ab47;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    border-radius: 0;
+    background-color: #454d55 !important;
+    color: #fff !important;
+}
+
+.accordion-body {
+    padding: 1rem 1.25rem;
+    background-color: #383838 !important;
+}
+
+.accordion-item {
+    background-color: #454d55 !important;
+    border: 1px solid #454d55 !important;
 }
 
 .form-control {
     display: block;
     width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -235,19 +285,40 @@ table.meeting_table thead {
     border-radius: .25rem;
 }
 
-@media (min-width: 576px) {
-    .form-inline .form-control {
-        display: inline-block;
-        width: 67.8%;
-        vertical-align: middle;
-    }
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #454d55;
+    border: 1px solid #454d55;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-@media (min-width: 768px) {
-    .pb-md-0, .py-md-0 {
-        padding-bottom: 0!important;
-        height: 38px !important;
-    }
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #454d55;
+    background-clip: padding-box;
+    border: 1px solid #454d55;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .form-control:focus {
@@ -258,9 +329,69 @@ table.meeting_table thead {
     box-shadow: 0 0 0 0.1rem #37ab47;
 }
 
+.form-check-input[type=radio] {
+    border-radius: 50%;
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em;
+}
+
+.form-check-input {
+    width: 1em;
+    height: 1em;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #454d55;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+}
+
+.form-check-input:checked {
+    background-color: #7414dc !important;
+    border-color: #7414dc !important;
+}
+
+@media (min-width: 576px) {
+    .form-inline .form-control {
+        display: inline-block;
+        width: 70%;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 768px) {
+    .pb-md-0, .py-md-0 {
+        padding-bottom: 0!important;
+        height: 38px !important;
+    }
+
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
 .list-group-flush>.list-group-item {
     border-width: 0 0 1px;
     border-radius: .25rem;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #454d55;
+    border: 1px solid #454d55;
 }
 
 .tickertape {
@@ -279,11 +410,18 @@ table.meeting_table thead {
     height: auto;
 }
 
-.footer {
-    background-color: #37ab47;
-    position: absolute;
-    clear: both;
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
     bottom: 0;
-    width: 100%;
-    height: 50px;
+    background-color: #37ab47;
+}
+
+.sitemap-link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #37ab47;
 }

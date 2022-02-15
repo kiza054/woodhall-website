@@ -1,0 +1,75 @@
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+body {
+    font-family: "system";
+}
+
+.calendar-section {
+    background: #383838;
+    padding: 10px 20px;
+    border: 1px solid #383838;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 1250px !important;
+}
+
+.calendar {
+    width: 100%;
+    margin: auto;
+    font-size: 13px;
+}
+  
+.calendar tr, .calendar td {
+    border: 1px solid #ffffff;
+}
+  
+.calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+  
+.calendar td {
+    width: 200px;
+    height: 125px;
+    padding: 20px 0px 0px 5px;
+}
+  
+.month {
+    font-size: 25px;
+}
+  
+.date {
+    font-size: 16px;
+}
+  
+ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+}
+  
+a {
+    color: #17a2b8;
+}
+
+.left {
+    float: left;
+}
+  
+.right {
+    float: right;
+}
+
+.footer-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #7414dc;
+}

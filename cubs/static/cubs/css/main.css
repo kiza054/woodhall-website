@@ -355,8 +355,20 @@ table.download_table thead {
 }
 
 .form-check-input:checked {
-    background-color: #7414dc !important;
-    border-color: #7414dc !important;
+    background-color: #37ab47 !important;
+    border-color: #37ab47 !important;
+}
+
+/* Other Browsers */
+input[type='file']::file-selector-button {
+    color: #ffffff !important;
+    background-color: #37ab47 !important;
+}
+
+/* Chrome, Edge & Safari */
+input[type='file']::-webkit-file-upload-button {
+    color: #ffffff !important;
+    background-color: #37ab47 !important;
 }
 
 @media (min-width: 576px) {

@@ -10,6 +10,7 @@
             <thead>
             <tr>
                 <th>Section</th>
+                <th>Ages</th>
                 <th>Meeting Day</th>
                 <th>Meeting Time</th>
             </tr>
@@ -17,24 +18,27 @@
             <tbody>
             <tr>
                 <td>Beavers</td>
+                <td>6 to 8 years old</td>
                 <td>Friday</td>
-                <td>5:30pm – 6:30pm</td>
+                <td>5:30pm - 6:30pm</td>
             </tr>
             <tr>
                 <td>Cubs</td>
+                <td>8 to 10 and a half years old</td>
                 <td>Thursday</td>
-                <td>6:30pm – 8:00pm</td>
+                <td>6:30pm - 8:00pm</td>
             </tr>
             <tr>
                 <td>Scouts</td>
+                <td>10 and a half to 14 years old</td>
                 <td>Friday</td>
-                <td>7:30pm – 9:00pm</td>
+                <td>7:30pm - 9:00pm</td>
             </tr>
             </tbody>
         </table>
         <hr class="my-4">
         <h3>Want to join the Group?</h3>
         <p>Click this button to Register for our waiting list</p>
-        <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+        <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button"><i class="fa-duotone fa-user-plus"></i> Register</a>
     </div>
 {% endblock content %}

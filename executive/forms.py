@@ -4,4 +4,4 @@ from executive.models import QuartermastersItemInventory
 class QuartermastersItemInventoryForm(forms.ModelForm):
     class Meta:
         model = QuartermastersItemInventory
-        fields = ['item_name', 'category', 'notes']
+        fields = ['item_name', 'item_quantity', 'category', 'notes']

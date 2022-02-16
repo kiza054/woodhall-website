@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    	<!-- Required meta tags -->
+    	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Shortcut Icon -->
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'main_website/img/favicon.png' %}">
+		<!-- FontAwesome Logos -->
+        <link rel="stylesheet" type="text/css" href="{% static 'main_website/icons/fontawesome/css/all.min.css' %}">
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'main_website/css/bootstrap/bootstrap.min.css' %}">
+        <!-- Custom CSS Files -->
+		<link rel="stylesheet" type="text/css" href="{% static 'main_website/css/main.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'main_website/css/gallery.css' %}">
+		{% if title %}
+			<title>1st Woodhall Scout Group | {{ title }}</title>
+		{% else %}
+			<title>1st Woodhall Scout Group</title>
+		{% endif %}
+	</head>
+    <body>
+        <!-- Nav class creates a navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #383838;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'main_website_home' %}">1st Woodhall Scout Group</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fa-duotone fa-house-chimney"></span> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_about' %}"><span class="fa-duotone fa-circle-info"></span> About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><span class="fa-duotone fa-calendar-days"></span> Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fa-duotone fa-handshake-angle"></span> Help Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <span class="fa-duotone fa-money-bill-1-wave"></span> Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fa-duotone fa-images"></span> Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><span class="fa-duotone fa-address-card"></span> Contact Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><span class="fa-duotone fa-blog"></span> Beavers Blog</a>
+                        </li>
+                        {% endif %}
+                        {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><span class="fa-duotone fa-blog"></span> Cubs Blog</a>
+                        </li>
+                        {% endif %}
+                        {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'scouts_blog_home' %}"><span class="fa-duotone fa-blog"></span> Scouts Blog</a>
+                        </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}"><span class="fa-duotone fa-user-check"></span> Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}"><span class="fa-duotone fa-arrow-right-from-bracket"></span> Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}"><span class="fa-duotone fa-arrow-right-to-bracket"></span> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}"><span class="fa-duotone fa-user-plus"></span> Register</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-custom navbar-dark" style="background-color: #454d55;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'executive_home' %}">1st Woodhall Scout Group Executive Comittee</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+							<a class="nav-link" href="{% url 'executive_quartermaster_database' %}">
+                                <i class="fa-duotone fa-database"></i> Quartermasters Database
+                            </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+                                <i class="fa-duotone fa-screen-users"></i> Meet the Team
+                            </a>
+						</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                <span class="fa-duotone fa-trash-can"></span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% block content %}{% endblock %}                   
+                </div>
+                <div class="col-md-4">
+                    {% if categories %}
+                    {% include "main_website/search.html" %}
+                    {% include "main_website/latest_news.html" %}
+                    {% include "main_website/image_navbar.html" %}
+                    {% else %}
+                    <!--{% include "main_website/tickertape.html" %}-->
+                    {% include "main_website/search.html" %}
+                    {% include "main_website/latest_news.html" %}
+                    {% include "main_website/useful_links.html" %}
+                    {% include "main_website/donate_link.html" %}
+                    {% endif %}
+                </div>
+            </div>
+        </main>
+        {% include "main_website/footer.html" %}
+        <!-- Optional JavaScript -->
+        <!-- JavaScript Bundle with Popper.js -->
+        <script type="text/javascript" src="{% static 'main_website/js/bootstrap/bootstrap.bundle.min.js' %}" ></script>
+    </body>  
+</html>

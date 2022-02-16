@@ -76,6 +76,10 @@ small {
     color: #fff;
 }
 
+.navbar-custom {
+    height: 40px;
+}
+
 .easyfundraising_img {
     display: block;
     margin-left: auto;
@@ -379,6 +383,27 @@ table.meeting_table thead {
     background-color: #7414dc;
 }
 
+table.inventory_table {
+    width: 100%;
+    background-color: #383838;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #7414dc;
+    border-style: solid;
+    color: #ffffff;
+}
+
+table.inventory_table td, table.inventory_table th {
+    border-width: 2px;
+    border-color: #7414dc;
+    border-style: solid;
+    padding: 3px;
+}
+
+table.inventory_table thead {
+    background-color: #7414dc;
+}
+
 .accordion-flush .accordion-item .accordion-button {
     border-radius: 0;
     background-color: #454d55 !important;
@@ -498,6 +523,7 @@ input[type='file']::-webkit-file-upload-button {
 }
 
 .list-group-flush > .list-group-item {
+    color: #fff !important;
     border-width: 0 0 1px;
     border-radius: 0.25rem;
 }

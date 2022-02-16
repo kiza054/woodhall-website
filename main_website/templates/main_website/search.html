@@ -9,6 +9,9 @@
     <div class="list-group list-group-flush">
         <li class="list-group-item"><a href="{% url 'main_website_gallery_upload' %}">Upload Images to Gallery</a></li>
         <li class="list-group-item"><a href="{% url 'main_website_gallery_add_category' %}">Add Image Category</a></li>
+        {% if user.is_executive %}
+        <li class="list-group-item"><a href="{% url 'executive_quartermaster_database_add' %}">Add Items to Quartermasters Database</a></li>
+        {% endif %}
     </div>
     {% endif %}
 </div>

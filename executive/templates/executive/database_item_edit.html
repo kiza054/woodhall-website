@@ -1,7 +1,6 @@
-{% extends "main_website/base.html" %}
+{% extends "executive/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-{% include 'executive/navbar.html' %}
 <div class="content-section">
     <form method="POST">
         {% csrf_token %}
@@ -10,7 +9,9 @@
             {{ form | crispy }}
         </fieldset>
         <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Submit</button>
+            <button class="btn btn-outline-info" type="submit">
+                <i class="fa-duotone fa-arrow-up-right-from-square"></i> Submit
+            </button>
         </div>
     </form>
 </div>

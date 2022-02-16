@@ -1,29 +1,44 @@
-{% extends "main_website/base.html" %}
+{% extends "executive/base.html" %}
 {% block content %}
-{% include 'executive/navbar.html' %}
 <div class="content-section">
-    <h1>Quartermasters Database</h1>
-    <table class="meeting_table">
-        <thead>
-        <tr>
-            <th>Item Name</th>
-            <th>Category</th>
-            <th>Added On</th>
-            <th>Updated On</th>
-        </tr>
-        </thead>
-        {% for q in queryset %}
-        <tbody>
-        <tr>
-            <td>{{ q.item_name }}</td>
-            <td>{{ q.category }}</td>
-            <td>{{ q.added_on }}</td>
-            <td>{{ q.updated_on }}</td>
-            <td><a class="btn btn-secondary btn-sm" href="{% url 'executive_quartermaster_database_edit' q.slug %}">Update Item</a></td>
-            <td><a class="btn btn-danger btn-sm" href="{% url 'executive_quartermaster_database_delete' q.slug %}">Delete Item</a></td
-        </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-</div> 
+	<div class="media">
+		<div class="media-body">
+			<legend class="border-bottom mb-2">Quartermasters Database</legend>
+			{% if queryset %}
+			<table class="inventory_table">
+				<thead>
+					<th scope="col">Item Name</th>
+                    <th scope="col">Item Quantity</th>
+					<th scope="col">Category</th>
+					<th scope="col">Added On</th>
+                    <th scope="col">Updated On</th>
+				</thead>
+				{% for q in queryset %}
+				<tr>
+					<td>{{ q.item_name }}</td>
+                    <td>{{ q.item_quantity }}</td>
+                    <td>{{ q.category }}</td>
+                    <td>{{ q.added_on }}</td>
+                    <td>{{ q.updated_on }}</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'executive_quartermaster_database_edit' q.slug %}">
+                            <i class="fa-duotone fa-pen"></i> Update Item
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'executive_quartermaster_database_delete' q.slug %}">
+                            <i class="fa-duotone fa-trash-can-check"></i> Delete Item
+                        </a>
+                    </td>
+				</tr>
+				{% endfor %}
+			</table>
+			{% else %}
+			<div class="list-group list-group-flush">
+				<li class="list-group-item">There are no items in the database at the moment</li>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
 {% endblock content %}

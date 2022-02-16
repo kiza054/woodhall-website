@@ -7,7 +7,7 @@ from django.core.exceptions import PermissionDenied
 from executive.models import QuartermastersItemInventory
 from django.contrib.auth.mixins import LoginRequiredMixin
 from executive.forms import QuartermastersItemInventoryForm
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 class ExecutiveIndexView(generic.View, LoginRequiredMixin):
     def get(self, request):
@@ -35,7 +35,21 @@ class QuartermastersDatabaseView(generic.View, LoginRequiredMixin):
         else:
             raise PermissionDenied
 
+class QuartermastersDatabaseAddView(LoginRequiredMixin, CreateView):
+    success_url = reverse_lazy('executive_quartermaster_database')
+    model = QuartermastersItemInventory
+    template_name = 'executive/database_item_add.html'  # <app>/<model>_<viewtype>.html
+    form_class = QuartermastersItemInventoryForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+        context['articles'] = articles
+        context['title'] = 'Add Item'
+        return context
+
 class QuartermastersDatabaseEditView(LoginRequiredMixin, UpdateView):
+    success_url = reverse_lazy('executive_quartermaster_database')
     model = QuartermastersItemInventory
     template_name = 'executive/database_item_edit.html'  # <app>/<model>_<viewtype>.html
     form_class = QuartermastersItemInventoryForm
@@ -56,5 +70,5 @@ class QuartermastersDatabaseDeleteView(LoginRequiredMixin, DeleteView):
         context = super().get_context_data(**kwargs)
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
         context['articles'] = articles
-        context['title'] = 'Update Item'
+        context['title'] = 'Delete Item'
         return context

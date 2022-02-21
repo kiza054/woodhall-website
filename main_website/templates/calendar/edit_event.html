@@ -7,13 +7,13 @@
         {% csrf_token %}
         <legend class="border-bottom mb-4">Edit Current Event</legend>
         {{ form | crispy }}
-        <button type="submit" class="btn btn-outline-info">
+        <button type="submit" class="btn btn-custom-purple">
             <i class="fa-duotone fa-calendar-plus"></i> 
             Submit
         </button>
     </form>
     <hr>
-    <button class="btn btn-outline-info">
+    <button class="btn btn-custom-purple">
         <i class="fa-duotone fa-angles-left"></i>
         <a href="{% url 'main_website_calendar' %}"> Back to Calendar</a>
     </button>

@@ -125,19 +125,19 @@ small {
     margin-top: 20px;
 }
 
-.btn-outline-info, 
-.btn-outline-info:active, 
-.btn-outline-info:active:focus, 
-.btn-outline-info:visited {
+.btn-custom-green, 
+.btn-custom-green:active, 
+.btn-custom-green:active:focus, 
+.btn-custom-green:visited {
     color: #ffffff !important;
     border-color: #37ab47 !important;
     background-color: #37ab47 !important;
 }
 
-.btn-outline-info#cubs_search,
-.btn-outline-info#cubs_search:active,
-.btn-outline-info#cubs_search:active:focus,
-.btn-outline-info#cubs_search:visited {
+.btn-custom-green#cubs_search,
+.btn-custom-green#cubs_search:active,
+.btn-custom-green#cubs_search:active:focus,
+.btn-custom-green#cubs_search:visited {
     color: #fff !important;
     border-color: #37ab47 !important;
     background-color: #37ab47 !important;
@@ -145,13 +145,13 @@ small {
     font-size: 15px;
 }
 
-.btn-outline-info:hover {
+.btn-custom-green:hover {
     color: #ffffff !important;
     border-color: #0d4d0e !important;
     background-color: #0d4d0e !important;
 }
 
-.btn-outline-info#cubs_search:hover {
+.btn-custom-green#cubs_search:hover {
     color: #ffffff !important;
     border-color: #0d4d0e !important;
     background-color: #0d4d0e !important;

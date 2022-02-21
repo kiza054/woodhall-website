@@ -5,10 +5,10 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form | crispy }}
-        <button class="btn btn-outline-info" type="submit">
+        <button class="btn btn-custom-purple" type="submit">
             <i class="fa-duotone fa-plus"></i> Add Category
         </button>
-        <button class="btn btn-outline-info my-3">
+        <button class="btn btn-custom-purple my-3">
             <a href="{% url 'main_website_gallery' %}"><i class="fa-duotone fa-angles-left"></i> Go Back to Gallery</a>
         </button>
     </form>

@@ -10,42 +10,42 @@
 					<h4 class="account-heading">{{ user.username }}</h4>
 					<h5 class="text-secondary">{{ user.email }}</h5>
 					{% if user.is_superuser or user.is_staff %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'admin:index' %}"><i class="fa-duotone fa-folder-gear"></i> Administrators Dashboard</a>
 					</button>
 					{% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'beavers_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Beavers Blog Post</a>
 					</button>
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'beavers_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Beavers</a>
 					</button>
 					{% endif %}
 					{% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'cubs_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Cubs Blog Post</a>
 					</button>
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'cubs_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Cubs</a>
 					</button>
 					{% endif %}
 					{% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'scouts_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Scouts Blog Post</a>
 					</button>
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'scouts_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Scouts</a>
 					</button>
 					{% endif %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'main_website_article_create' %}"><i class="fa-duotone fa-newspaper"></i> Create News Article</a>
 					</button>
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="https://www.onlinescoutmanager.co.uk/login.php"><i class="fa-duotone fa-cloud-arrow-up"></i> OSM</a>
 					</button>
 					{% endif %}
 					{% if user.is_superuser or user.is_executive %}
-					<button class="btn btn-sm btn-outline-info my-1" role="button" aria-pressed="true">
+					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'executive_home' %}"><i class="fa-duotone fa-user-tie"></i> Executive Page</a>
 					</button>
 					{% endif %}
@@ -62,7 +62,7 @@
 			{{ profile_form | crispy }}
 		</fieldset>	
 		<div class="form-group">
-			<button class="btn btn-outline-info" type="submit">
+			<button class="btn btn-custom-purple" type="submit">
 				<i class="fa-duotone fa-square-pen fa-lg"></i> Update
 			</button>
 		</div>

@@ -1,0 +1,26 @@
+{% block content %}
+<div class="content-section">
+    <div class="list-group list-group-flush">
+        <h2>Latest News</h2>
+        {% for article in articles %}
+        <div class="list-group-item rounded-sm">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ article.article_name }}</h5>
+                <small>{{ article.date_posted }}</small>
+            </div>
+            {% for tag in article.tags.all %}
+                <a href="{% url 'main_website_article_tags' tag.slug %}" class="mr-1 badge badge-pill badge-info">{{ tag }}</a>
+            {% endfor %}
+            <hr class="my-1">
+            <a href="{% url 'main_website_article_detail' article.slug  %}" class="btn btn-custom-green btn-sm mt-1 mb-1"><i class="fa-duotone fa-book-open-reader"></i> Read More</a>
+        </div>
+        {% empty %}
+        <div class="list-group-item rounded-sm">
+            <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">There is no news at the moment!</h6>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

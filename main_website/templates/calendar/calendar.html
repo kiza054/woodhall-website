@@ -2,13 +2,13 @@
 {% block content %}
 <div class="calendar-section">
     <div class="clearfix">
-        <a class="btn btn-outline-info left" href="{% url 'main_website_calendar' %}?{{ prev_month }}">
+        <a class="btn btn-custom-purple left" href="{% url 'main_website_calendar' %}?{{ prev_month }}">
             <i class="fa-duotone fa-angles-left"></i> Previous Month
         </a>
-        <a class="btn btn-outline-info left" href="{% url 'main_website_calendar' %}?{{ next_month }}">
+        <a class="btn btn-custom-purple left" href="{% url 'main_website_calendar' %}?{{ next_month }}">
             <i class="fa-duotone fa-angles-right"></i> Next Month
         </a>
-        <button class="btn btn-outline-info right">
+        <button class="btn btn-custom-purple right">
             <i class="fa-duotone fa-calendar-plus"></i>
             <a href="{% url 'main_website_calendar_new_event' %}">New Event</a>
         </button>

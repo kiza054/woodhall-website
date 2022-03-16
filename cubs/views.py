@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView, MonthArchiveView
 
 class PostList(LoginRequiredMixin, ListView):
     queryset = Post.objects.filter(status=1).order_by('-date_posted')
@@ -161,6 +161,20 @@ def PostLikeView(request, slug):
         post.likes.add(request.user)
         liked = True
     return HttpResponseRedirect(reverse('cubs_blog_post_detail', args=[str(slug)]))
+
+class PostArchiveView(LoginRequiredMixin, generic.View):
+    def get(self, request):
+        return render(request, 'cubs/post_archive.html')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
+        context['articles'] = articles
+        context['title'] = 'Post Archive'
+        return context
+
+    def get_queryset(self):
+        return Post.objects.all().order_by('-date_posted')
 
 @login_required
 def upload(request):

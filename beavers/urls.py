@@ -1,5 +1,6 @@
 from beavers import views
 from django.urls import path
+from main_website import views as main_website_views
 from beavers.views import (
     PostList,
     PostCreate,
@@ -21,5 +22,6 @@ urlpatterns = [
     path('post/<slug:slug>/', views.PostDetail.as_view(), name="beavers_blog_post_detail"),
     path('post/update/<slug:slug>/', PostUpdate.as_view(), name='beavers_blog_post_update'),
     path('post/delete/<slug:slug>/', PostDelete.as_view(), name='beavers_blog_post_delete'),
+    path('posts/<int:year>/<int:month>/', main_website_views.BeaversPostMonthArchiveView.as_view(month_format='%m'), name="beavers_blog_post_archive_month"),
     #path('post/tag/<slug:slug>/', views.tagged, name="cubs_blog_post_tags"),
 ]

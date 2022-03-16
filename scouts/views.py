@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views import generic
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView, MonthArchiveView
 
 class PostList(LoginRequiredMixin, ListView):
     queryset = Post.objects.filter(status=1).order_by('-date_posted')
@@ -161,6 +161,11 @@ def PostLikeView(request, slug):
         post.likes.add(request.user)
         liked = True
     return HttpResponseRedirect(reverse('scouts_blog_post_detail', args=[str(slug)]))
+
+class PostMonthArchiveView(MonthArchiveView):
+    queryset = Post.objects.all()
+    date_field = "date_posted"
+    allow_future = True
 
 @login_required
 def upload(request):

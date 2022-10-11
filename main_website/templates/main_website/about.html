@@ -3,7 +3,7 @@
 {% block content %}
 <div class="content-section">
     <h1>About Us</h1>
-    <p>1st Woodhall Scout Group is located at 1st Pudsey (Parish Church) Group Headquarters, Greenside, Pudsey, LS28 8LP and has been established since 1957. We’re  part of the West Leeds District within the Central Yorkshire Scout County. Our necker colours are black with a white border.
+    <p>1st Woodhall Scouts is located at <a href="https://www.google.com/maps/place/1st+Woodhall+Scout+Group+Beavers/@53.789575,-1.670506,19z/data=!4m5!3m4!1s0x0:0x58991ed1eb5aeeca!8m2!3d53.7895675!4d-1.6702323?hl=en-US" target="_blank">1st Pudsey (Parish Church) Group Headquarters, Greenside, Pudsey, LS28 8LP</a> and has been established since 1957. We’re part of the West Leeds District within the Central Yorkshire Scout County. Our necker colours are black with a white border.
     <p style="text-align: center;"><img class="group_necker" src="{% static 'main_website/img/necker_transparent.png' %}" alt="Group Necker"></p>
     <p>Within 1st Woodhall we have active Beaver, Cub and Scout sections.</p>    
     <p>Scouting is a world wide value based institution. It welcomes all youths of all backgrounds and all religious beliefs, both male and female.</p>
@@ -12,6 +12,7 @@
         <thead>
         <tr>
             <th>Section</th>
+            <th>Ages</th>
             <th>Meeting Day</th>
             <th>Meeting Time</th>
         </tr>
@@ -19,18 +20,21 @@
         <tbody>
         <tr>
             <td>Beavers</td>
+            <td>6 to 8 years old</td>
             <td>Friday</td>
-            <td>5:30pm – 6:30pm</td>
+            <td>17:30 - 18:30</td>
         </tr>
         <tr>
             <td>Cubs</td>
+            <td>8 to 11 years old</td>
             <td>Thursday</td>
-            <td>7:00pm – 8:30pm</td>
+            <td>18:30 - 20:00</td>
         </tr>
         <tr>
             <td>Scouts</td>
+            <td>11 to 14 years old</td>
             <td>Friday</td>
-            <td>7:00pm – 9:00pm</td>
+            <td>19:00 - 21:00</td>
         </tr>
         </tbody>
     </table>
@@ -40,12 +44,12 @@
     <script>
     function myMap() {
         var mapProp= {
-            center: new google.maps.LatLng(53.789602, -1.670731),
+            center: new google.maps.LatLng(53.789575, -1.670506),
             zoom : 20,
             mapTypeId: 'satellite',
         };
         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        var marker = new google.maps.Marker({position: { lat: 53.789602, lng: -1.670731 }, map: map});
+        var marker = new google.maps.Marker({position: { lat: 53.789575, lng: -1.670506 }, map: map});
     }
     </script>
 

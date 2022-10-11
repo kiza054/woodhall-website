@@ -162,19 +162,10 @@ def PostLikeView(request, slug):
         liked = True
     return HttpResponseRedirect(reverse('cubs_blog_post_detail', args=[str(slug)]))
 
-class PostArchiveView(LoginRequiredMixin, generic.View):
-    def get(self, request):
-        return render(request, 'cubs/post_archive.html')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
-        context['articles'] = articles
-        context['title'] = 'Post Archive'
-        return context
-
-    def get_queryset(self):
-        return Post.objects.all().order_by('-date_posted')
+class PostArchiveView(MonthArchiveView):
+    queryset = Post.objects.all()
+    date_field = "date_posted"
+    allow_future = True
 
 @login_required
 def upload(request):

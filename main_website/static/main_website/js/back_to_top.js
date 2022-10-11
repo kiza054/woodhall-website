@@ -1,5 +1,5 @@
 // Get the button:
-button = document.getElementById("back_to_top");
+const button = document.getElementById("back_to_top");
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -13,5 +13,5 @@ function scrollFunction() {
 // When the user clicks on the button, scroll to the top of the document
 function scroll_to_top() {
     document.body.scrollTop = 0; // for Safari
-    document.documentElement.scrollTop = 0; // for Chrome, Firefox, IE and Opera
+    document.documentElement.scrollTop = 0; // for Chrome, Firefox, MS Edge and Opera
 }

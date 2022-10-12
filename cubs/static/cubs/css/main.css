@@ -14,8 +14,8 @@
 
 body {
     font-family: "Product Sans Regular", sans-serif;
-    background: #37ab47;
-    /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
+    /* background: #37ab47; */
+    background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #ffffff;
     position: relative;
 }
@@ -447,7 +447,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #37ab47;
+    /* background-color: #37ab47; */
 }
 
 .sitemap-link {
@@ -455,5 +455,5 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #37ab47;
+    /* background-color: #37ab47; */
 }

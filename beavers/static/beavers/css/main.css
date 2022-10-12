@@ -18,8 +18,8 @@
 
 body {
     font-family: "Product Sans Regular", sans-serif;
-    background: #0095c8;
-    /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
+    /* background: #0095c8; */
+    background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #fff;
     position: relative;
 }
@@ -156,6 +156,38 @@ small {
 }
 
 .btn-outline-info#beavers_search:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
+.btn-custom-purple, 
+.btn-custom-purple:active, 
+.btn-custom-purple:active:focus, 
+.btn-custom-purple:visited {
+    color: #ffffff !important;
+    border-color: #0095c8 !important;
+    background-color: #0095c8 !important;
+}
+
+.btn-custom-purple#beavers_search,
+.btn-custom-purple#beavers_search:active,
+.btn-custom-purple#beavers_search:active:focus,
+.btn-custom-purple#beavers_search:visited {
+    color: #fff !important;
+    border-color: #0095c8 !important;
+    background-color: #0095c8 !important;
+    width: 92px;
+    font-size: 15px;
+}
+
+.btn-custom-purple:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
+.btn-custom-purple#beavers_search:hover {
     color: #ffffff !important;
     border-color: #27887e !important;
     background-color: #27887e !important;
@@ -430,7 +462,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #0095c8;
+    /* background-color: #0095c8; */
 }
 
 .sitemap-link {
@@ -438,5 +470,5 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #0095c8;
+    /* background-color: #0095c8; */
 }

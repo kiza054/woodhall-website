@@ -125,19 +125,19 @@ small {
     margin-top: 20px;
 }
 
-.btn-custom-turquoise, 
-.btn-custom-turquoise:active, 
-.btn-custom-turquoise:active:focus, 
-.btn-custom-turquoise:visited {
+.btn-outline-info, 
+.btn-outline-info:active, 
+.btn-outline-info:active:focus, 
+.btn-outline-info:visited {
     color: #ffffff !important;
     border-color: #0095c8 !important;
     background-color: #0095c8 !important;
 }
 
-.btn-custom-turquoise#beavers_search,
-.btn-custom-turquoise#beavers_search:active,
-.btn-custom-turquoise#beavers_search:active:focus,
-.btn-custom-turquoise#beavers_search:visited {
+.btn-outline-info#beavers_search,
+.btn-outline-info#beavers_search:active,
+.btn-outline-info#beavers_search:active:focus,
+.btn-outline-info#beavers_search:visited {
     color: #fff !important;
     border-color: #0095c8 !important;
     background-color: #0095c8 !important;
@@ -145,13 +145,13 @@ small {
     font-size: 15px;
 }
 
-.btn-custom-turquoise:hover {
+.btn-outline-info:hover {
     color: #ffffff !important;
     border-color: #27887e !important;
     background-color: #27887e !important;
 }
 
-.btn-custom-turquoise#beavers_search:hover {
+.btn-outline-info#beavers_search:hover {
     color: #ffffff !important;
     border-color: #27887e !important;
     background-color: #27887e !important;

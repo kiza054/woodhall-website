@@ -43,7 +43,7 @@
 				{% if liked %}
 				<form action="{% url 'cubs_blog_post_like' post.slug %}" method="POST">
 					{% csrf_token %}
-					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-custom-green btn-sm mt-1 mb-1 position-relative">
+					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
 						<i class="fa-duotone fa-thumbs-down fa-lg"></i>
 						Unlike Post
 						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
@@ -52,7 +52,7 @@
 				{% else %}
 				<form action="{% url 'cubs_blog_post_like' post.slug %}" method="POST">
 					{% csrf_token %}
-					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-custom-green btn-sm mt-1 mb-1 position-relative">
+					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
 						<i class="fa-duotone fa-thumbs-up fa-lg"></i>
 						Like Post
 						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
@@ -94,7 +94,7 @@
 				<form method="post" style="margin-top: 1.3em;">
 					{{ comment_form | crispy }}
 					{% csrf_token %}
-					<button type="submit" class="btn btn-custom-green btn-me"><i class="fa-duotone fa-circle-check"></i> Submit</button>
+					<button type="submit" class="btn btn-outline-info btn-me"><i class="fa-duotone fa-circle-check"></i> Submit</button>
 				</form>
 			</div>
 		</div>

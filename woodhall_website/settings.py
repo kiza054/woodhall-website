@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') or '0890a21f94a04c73d94a8654029271b723
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') or 'True')
 
-ALLOWED_HOSTS = ['*', '127.0.0.1', '.ngrok.io', '.herokuapp.com']
+ALLOWED_HOSTS = ['*', '127.0.0.1', '.ngrok.io', '.1stwoodhall.co.uk']
 
 # Application definition
 
@@ -92,8 +92,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                'main_website.context_processors.posts',
             ],
         },
     },

@@ -4,17 +4,14 @@ from django.db.models import Q
 from django.conf import settings
 from django.views import generic
 from django.contrib import messages
-from cubs.models import Post as CubPosts
-from scouts.models import Post as ScoutPosts
-from beavers.models import Post as BeaverPosts
 from main_website.utils import Calendar, get_date, prev_month, next_month
 from django.utils.safestring import mark_safe
 from datetime import datetime, timedelta, date
 from django.contrib.auth.decorators import login_required
 from main_website.models import Article, Event, ImageGallery, ImageGalleryCategory
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView, MonthArchiveView
 from main_website.forms import ArticleForm, WaitingListForm, EventForm, UploadImageForm, AddImageCategoryForm
 
 class IndexView(generic.View):
@@ -312,21 +309,6 @@ class ImageCategoryAddView(LoginRequiredMixin, generic.View):
             form.save()
             messages.success(request, 'Category Successfully Added')
             return redirect('main_website_gallery')
-
-class BeaversPostMonthArchiveView(MonthArchiveView):
-    queryset = BeaverPosts.objects.all()
-    date_field = "date_posted"
-    allow_future = True
-
-class CubsPostMonthArchiveView(MonthArchiveView):
-    queryset = CubPosts.objects.all()
-    date_field = "date_posted"
-    allow_future = True
-
-class ScoutsPostMonthArchiveView(MonthArchiveView):
-    queryset = ScoutPosts.objects.all()
-    date_field = "date_posted"
-    allow_future = True
 
 def error_403_view(request, exception):
     data = {}

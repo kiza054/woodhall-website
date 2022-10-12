@@ -23,7 +23,7 @@
             <p class="card-text">{{ article.content | safe | slice:":200" }}</p>
         </div>
         <hr class="my-4">
-        <a href="{{ article.get_absolute_url }}" class="btn btn-custom-purple">Read More &rarr;</a>
+        <a href="{{ article.get_absolute_url }}" class="btn btn-outline-info">Read More &rarr;</a>
     </div>
 </article>
 {% endfor %}

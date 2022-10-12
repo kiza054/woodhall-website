@@ -411,7 +411,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    */ background-color: #43737a; */
+    /* background-color: #43737a; */
 }
 
 .sitemap-link {

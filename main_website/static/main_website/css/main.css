@@ -18,8 +18,8 @@
 
 body {
     font-family: "Product Sans Regular", sans-serif;
-    background: #7414dc;
-    /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
+    /* background: #7414dc; */
+    background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #ffffff;
     position: relative;
 }
@@ -598,7 +598,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #7414dc;
+    /* background-color: #7414dc; */
 }
 
 .sitemap-link {
@@ -606,7 +606,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #7414dc;
+    /* background-color: #7414dc; */
 }
 
 /* (A) FIXED WRAPPER */

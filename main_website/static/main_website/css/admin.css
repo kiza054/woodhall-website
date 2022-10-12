@@ -91,7 +91,7 @@ p {
 body {
     margin: 0;
     padding: 0;
-    color: #343a40;
+    color: #ffffff;
     background: #7414dc;
 }
 
@@ -244,12 +244,13 @@ div.breadcrumbs {
 }
 
 #changelist-filter h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
     padding: 13.5px 15px !important;
-    margin-bottom: 12px;
-    border-bottom: none;
+    margin-bottom: 12px !important;
+    border-bottom: none !important;
+    height: 16px !important;
 }
 
 #changelist-filter h3 {

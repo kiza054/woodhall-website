@@ -1,4 +1,5 @@
 from django import forms
+from accounts.models import User
 from taggit.forms import TagField
 from django.forms import DateInput
 from taggit_labels.widgets import LabelWidget
@@ -6,6 +7,7 @@ from main_website.models import Article, WaitingList, Event, ImageGallery, Image
 
 class ArticleForm(forms.ModelForm):
     tags = TagField(required=False, widget=LabelWidget)
+    author = forms.ModelChoiceField(queryset=User.objects.filter(is_staff=True))
     class Meta:
         model = Article
         fields = ('article_name', 'author', 'content', 'tags', 'status')

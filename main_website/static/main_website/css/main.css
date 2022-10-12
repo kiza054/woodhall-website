@@ -20,7 +20,7 @@ body {
     font-family: "Product Sans Regular", sans-serif;
     background: #7414dc;
     /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
-    color: #fff;
+    color: #ffffff;
     position: relative;
 }
 
@@ -35,33 +35,34 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.mb-1 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.bold {
     font-weight: bold;
 }
 
-p.mb-1 {
-    color: #fff;
+p, p.mb-1 {
+    color: #ffffff;
 }
 
 a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     background-color: transparent;
 }
 
 a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
 }
 
-ul {
+li, ul {
+    color: #ffffff;
     margin: 0;
 }
 
@@ -69,11 +70,11 @@ hr.my-1,
 hr.my-2,
 hr.my-3,
 hr.my-4 {
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 small {
-    color: #fff;
+    color: #ffffff;
 }
 
 .navbar-custom {
@@ -102,12 +103,12 @@ small {
 }
 
 .badge-info {
-    color: #fff;
+    color: #ffffff;
     background-color: #7414dc !important;
 }
 
 .badge-info:hover {
-    color: #fff;
+    color: #ffffff;
     border-color: #530f9b !important;
     background-color: #530f9b !important;
 }
@@ -140,7 +141,7 @@ small {
 .btn-outline-info#search:active,
 .btn-outline-info#search:active:focus,
 .btn-outline-info#search:visited {
-    color: #fff !important;
+    color: #ffffff !important;
     border-color: #7414dc !important;
     background-color: #7414dc !important;
     width: 92px;
@@ -172,7 +173,7 @@ small {
 .btn-custom-purple#search:active,
 .btn-custom-purple#search:active:focus,
 .btn-custom-purple#search:visited {
-    color: #fff !important;
+    color: #ffffff !important;
     border-color: #7414dc !important;
     background-color: #7414dc !important;
     width: 92px;
@@ -439,7 +440,7 @@ table.inventory_table thead {
 .accordion-flush .accordion-item .accordion-button {
     border-radius: 0;
     background-color: #454d55 !important;
-    color: #fff !important;
+    color: #ffffff !important;
 }
 
 .accordion-body {
@@ -555,7 +556,7 @@ input[type='file']::-webkit-file-upload-button {
 }
 
 .list-group-flush > .list-group-item {
-    color: #fff !important;
+    color: #ffffff !important;
     border-width: 0 0 1px;
     border-radius: 0.25rem;
 }
@@ -585,7 +586,7 @@ input[type='file']::-webkit-file-upload-button {
 
 .img-thumbnail {
     padding: 0.25rem;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     max-width: 100%;

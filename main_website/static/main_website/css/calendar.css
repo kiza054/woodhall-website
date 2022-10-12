@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
     font-family: system;
     font-style: normal;
     font-weight: 300;
@@ -6,7 +14,7 @@
 }
 
 body {
-    font-family: "system";
+    font-family: "Product Sans Regular", sans-serif;
 }
 
 .calendar-section {

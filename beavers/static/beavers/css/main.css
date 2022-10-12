@@ -1,19 +1,23 @@
 @font-face {
-    font-family: system;
-    font-style: normal;
-    font-weight: 300;
-    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Product Sans Regular';
+    font-family: system;
     font-style: normal;
-    font-weight: normal;
-    src: local('Product Sans Regular'), url('fonts/ProductSans-Regular.woff') format('woff');
+    font-weight: 300;
+    src: local('Product Sans Regular'), local('.SFNSText-Light'),
+      local('.HelveticaNeueDeskInterface-Light'), local('.LucidaGrandeUI'),
+      local('Ubuntu Light'), local('Segoe UI Light'), local('Roboto-Light'),
+      local('DroidSans'), local('Tahoma');
 }
 
 body {
-    font-family: "system";
+    font-family: "Product Sans Regular", sans-serif;
     background: #0095c8;
     /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
     color: #fff;

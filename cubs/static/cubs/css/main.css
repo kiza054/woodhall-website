@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: "system";
+    font-family: "Product Sans Regular", sans-serif;
     background: #37ab47;
     /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
     color: #fff;
@@ -150,45 +150,6 @@ small {
     border-color: #0d4d0e !important;
     background-color: #0d4d0e !important;
 }
-
-.btn-custom-purple#cubs_search:hover {
-    color: #ffffff !important;
-    border-color: #0d4d0e !important;
-    background-color: #0d4d0e !important;
-    }
-
-.btn-custom-purple, 
-.btn-custom-purple:active, 
-.btn-custom-purple:active:focus, 
-.btn-custom-purple:visited {
-    color: #ffffff !important;
-    border-color: #37ab47 !important;
-    background-color: #37ab47 !important;
-}
-
-.btn-custom-purple#cubs_search,
-.btn-custom-purple#cubs_search:active,
-.btn-custom-purple#cubs_search:active:focus,
-.btn-custom-purple#cubs_search:visited {
-    color: #fff !important;
-    border-color: #37ab47 !important;
-    background-color: #37ab47 !important;
-    width: 92px;
-    font-size: 15px;
-}
-
-.btn-custom-purple:hover {
-    color: #ffffff !important;
-    border-color: #0d4d0e !important;
-    background-color: #0d4d0e !important;
-}
-
-.btn-custom-purple#cubs_search:hover {
-    color: #ffffff !important;
-    border-color: #0d4d0e !important;
-    background-color: #0d4d0e !important;
-}
-    
 
 .btn-info {
     color: #fff;

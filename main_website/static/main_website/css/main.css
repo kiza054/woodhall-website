@@ -17,7 +17,7 @@
 }
 
 body {
-    font-family: 'system';
+    font-family: "Product Sans Regular", sans-serif;
     background: #7414dc;
     /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
     color: #fff;

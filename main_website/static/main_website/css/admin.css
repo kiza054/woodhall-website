@@ -1,12 +1,20 @@
 @font-face {
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
     font-family: system;
     font-style: normal;
     font-weight: 300;
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
-body {
-    font-family: "system";
+body, a {
+    font-family: "Product Sans Regular", sans-serif;
 }
 
 #container {
@@ -53,6 +61,11 @@ body {
 
 #user-tools {
     color: #ffffff;
+}
+
+#user-tools a, #logout-form button {
+    font-family: "Product Sans Regular", sans-serif;
+    border-bottom: 1px solid #ffffff;
 }
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {

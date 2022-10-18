@@ -19,7 +19,7 @@ class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
     section = forms.ChoiceField(label='Childs Section', choices=SECTION, help_text='Please select the section that your child currently attends.')
     second_section = forms.ChoiceField(label='Childs Second Section', choices=SECOND_SECTION, 
-        help_text='Please only use this if you have a child in another section, otherwise select N/A.')
+        help_text='Please only use this if you have a child in another section, otherwise select "Not Applicable".')
 
     class Meta:
         model = User
@@ -37,7 +37,7 @@ class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
     section = forms.ChoiceField(label='Childs Section', choices=SECTION, help_text='Please select the section that your child currently attends.')
     second_section = forms.ChoiceField(label='Childs Second Section', choices=SECOND_SECTION, 
-        help_text='Please only use this if you have a child in another section, otherwise select N/A.')
+        help_text='Please only use this if you have a child in another section, otherwise select "Not Applicable".')
 
     class Meta:
         model = User

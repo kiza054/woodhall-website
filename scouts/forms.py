@@ -8,6 +8,7 @@ from scouts.models import Post, PostImage, Comment, File
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(widget=SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}))
+    author = forms.ModelChoiceField(queryset=User.objects.filter(is_staff=True))
     #image = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={'multiple': True}))
     class Meta:
         model = Post

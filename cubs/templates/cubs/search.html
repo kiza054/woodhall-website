@@ -4,6 +4,12 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="search">
         <button id="cubs_search" class="btn btn-outline-info my-2 my-sm-0"><i class="fa-duotone fa-magnifying-glass"></i> Search</button>
     </form>
+    {% if user.is_superuser or user.is_staff %}
+    <hr class="my-2">
+    <div class="list-group list-group-flush">
+        <li class="list-group-item"><a href="{% url 'cubs_blog_post_create' %}">Create Cubs Blog Post</a></li>
+    </div>
+    {% endif %}
     <hr class="my-2">
     <div class="list-group list-group-flush">
         <li class="list-group-item"><a href="{% url 'cubs_blog_downloads' %}">Download Files</a></li>

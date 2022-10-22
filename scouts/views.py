@@ -52,9 +52,10 @@ class PostDetail(LoginRequiredMixin, DetailView):
         form = self.form_class(instance=self.object)
         return form
 
-    def post(self, request, slug): 
+    def post(self, slug, *args, **kwargs): 
         new_comment = None
-        post = get_object_or_404(Post)
+        pk = self.kwargs.get('pk')
+        post = get_object_or_404(Post, pk=pk)
         form = CommentForm(request.POST) 
         if form.is_valid(): 
             # Create new_comment object but don't save to the database yet
@@ -68,9 +69,10 @@ class PostDetail(LoginRequiredMixin, DetailView):
         else: 
             return render(request, self.template_name, {'form': form}) 
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, *args, **kwargs):
+        slug = self.kwargs.get('slug')
         context = super().get_context_data(**kwargs)
-        post = get_object_or_404(Post)
+        post = get_object_or_404(Post, slug=slug)
         comments = post.scouts_blog_comments.filter(active=True).order_by('-date_posted')
         articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
         

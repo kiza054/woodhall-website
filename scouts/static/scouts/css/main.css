@@ -163,6 +163,24 @@ small {
     border-color: #1a2d30 !important;
 }
 
+.page-link {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #43737a;
+    border: #43737a;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.page-link:hover {
+    color: #ffffff !important;
+    border-color: #1a2d30 !important;
+    background-color: #1a2d30 !important;
+}
+
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
     border-color: #43737a !important;

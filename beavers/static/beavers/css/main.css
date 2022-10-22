@@ -199,6 +199,24 @@ small {
     border-color: #27887e !important;
 }
 
+.page-link {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0095c8;
+    border: #0095c8;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.page-link:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
     border-color: #0095c8 !important;

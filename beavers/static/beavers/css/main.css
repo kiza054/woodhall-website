@@ -74,6 +74,10 @@ small {
     color: #fff;
 }
 
+.navbar {
+    border-top: 5px solid #0095c8 !important;
+}
+
 .beaver_logo {
     height: 200px !important;
     width: 680px !important;

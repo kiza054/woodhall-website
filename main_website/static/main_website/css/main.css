@@ -77,8 +77,8 @@ small {
     color: #ffffff;
 }
 
-.navbar-custom {
-    height: 40px;
+.navbar {
+    border-top: 5px solid #7414dc !important;
 }
 
 .easyfundraising_img {

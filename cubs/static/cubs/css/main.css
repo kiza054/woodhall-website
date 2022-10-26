@@ -70,6 +70,10 @@ small {
     color: #ffffff;
 }
 
+.navbar {
+    border-top: 5px solid #37ab47 !important;
+}
+
 .cub_logo {
     height: 170px !important;
     width: 600px !important;

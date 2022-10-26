@@ -70,6 +70,10 @@ small {
     color: #fff;
 }
 
+.navbar {
+    border-top: 5px solid #43737a !important;
+}
+
 .scouts_logo {
     height: 160px !important;
     width: 650px !important;

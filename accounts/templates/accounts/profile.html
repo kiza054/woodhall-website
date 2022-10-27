@@ -13,30 +13,6 @@
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'admin:index' %}"><i class="fa-duotone fa-folder-gear"></i> Administrators Dashboard</a>
 					</button>
-					{% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'beavers_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Beavers Blog Post</a>
-					</button>
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'beavers_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Beavers</a>
-					</button>
-					{% endif %}
-					{% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'cubs_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Cubs Blog Post</a>
-					</button>
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'cubs_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Cubs</a>
-					</button>
-					{% endif %}
-					{% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'scouts_blog_post_create' %}"><i class="fa-duotone fa-circle-plus"></i> Create Scouts Blog Post</a>
-					</button>
-					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'scouts_blog_file_upload' %}"><i class="fa-duotone fa-upload"></i> Upload Files for Scouts</a>
-					</button>
-					{% endif %}
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
 						<a href="{% url 'main_website_article_create' %}"><i class="fa-duotone fa-newspaper"></i> Create News Article</a>
 					</button>

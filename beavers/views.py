@@ -52,10 +52,10 @@ class PostDetail(LoginRequiredMixin, DetailView):
         form = self.form_class(instance=self.object)
         return form
 
-    def post(self, slug, *args, **kwargs): 
+    def post(self, request, *args, **kwargs):
         new_comment = None
-        pk = self.kwargs.get('pk')
-        post = get_object_or_404(Post, pk=pk)
+        slug = self.kwargs.get('slug')
+        post = get_object_or_404(Post, slug=slug)
         form = CommentForm(request.POST) 
         if form.is_valid(): 
             # Create new_comment object but don't save to the database yet
@@ -65,7 +65,7 @@ class PostDetail(LoginRequiredMixin, DetailView):
             # Save the comment to the database
             new_comment.save()
             messages.warning(request, "Your comment is awaiting moderation, once moderated it will be published")
-            return redirect('beavers_blog_post_detail', slug=slug) 
+            return redirect(post.get_absolute_url()) 
         else: 
             return render(request, self.template_name, {'form': form}) 
 

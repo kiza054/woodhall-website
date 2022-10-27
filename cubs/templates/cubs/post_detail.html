@@ -27,7 +27,7 @@
 				</div>
 			</div>
 			<hr class="my-4">
-			{% if post.author == user or is_staff or is_superuser %}
+			{% if post.author == user or user.is_staff or user.is_superuser %}
 			<div class="crud-buttons" style="float: right;">
 				<button class="btn btn-secondary btn-sm mt-1 mb-1">
 					<i class="fa-duotone fa-pen fa-lg"></i>

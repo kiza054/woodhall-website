@@ -46,7 +46,7 @@
 					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
 						<i class="fa-duotone fa-thumbs-down fa-lg"></i>
 						Unlike Post
-						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }} Like{{ total_likes|pluralize }}</span>
 					</button>
 				</form>
 				{% else %}
@@ -55,7 +55,7 @@
 					<button type="submit" name="cubs_blog_post_slug" value="{{ post.slug }}" class="btn btn-outline-info btn-sm mt-1 mb-1 position-relative">
 						<i class="fa-duotone fa-thumbs-up fa-lg"></i>
 						Like Post
-						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }}</span>
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ total_likes }} Like{{ total_likes|pluralize }}</span>
 					</button>
 				</form>
 				{% endif %}

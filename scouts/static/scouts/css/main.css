@@ -14,7 +14,7 @@
 
 body {
     font-family: "Product Sans Regular", sans-serif;
-    /* background: #43737a; */
+    /* background: #004851; */
     background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #ffffff;
     position: relative;
@@ -27,11 +27,11 @@ body::after {
   }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.mb-1 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.bold {
@@ -39,22 +39,22 @@ h5.bold {
 }
 
 p.mb-1 {
-    color: #fff;
+    color: #ffffff;
 }
 
 a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     background-color: transparent;
 }
 
 a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
 }
 
 .article-metadata a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline !important;
 }
 
@@ -63,15 +63,15 @@ ul {
 }
 
 hr.my-1, hr.my-2, hr.my-3, hr.my-4 {
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 small {
-    color: #fff;
+    color: #ffffff;
 }
 
 .navbar {
-    border-top: 5px solid #43737a !important;
+    border-top: 5px solid #004851 !important;
 }
 
 .scouts_logo {
@@ -104,14 +104,14 @@ small {
 }
 
 .badge-info {
-    color: #fff;
-    background-color: #43737a !important;
+    color: #ffffff;
+    background-color: #004851 !important;
 }
 
 .badge-info:hover {
-    color: #fff;
-    border-color: #1a2d30 !important;
-    background-color: #1a2d30 !important;
+    color: #ffffff;
+    border-color: #43737a !important;
+    background-color: #43737a !important;
 }
 
 .list-group-item {
@@ -134,8 +134,8 @@ small {
 .btn-outline-info:active:focus, 
 .btn-outline-info:visited {
     color: #ffffff !important;
-    border-color: #43737a !important;
-    background-color: #43737a !important;
+    border-color: #004851 !important;
+    background-color: #004851 !important;
 }
 
 .btn-outline-info#scouts_search,
@@ -143,28 +143,28 @@ small {
 .btn-outline-info#scouts_search:active:focus,
 .btn-outline-info#search:visited {
     color: #fff !important;
-    border-color: #43737a !important;
-    background-color: #43737a !important;
+    border-color: #004851 !important;
+    background-color: #004851 !important;
     width: 92px;
     font-size: 15px;
 }
 
 .btn-outline-info:hover {
     color: #ffffff !important;
-    border-color: #1a2d30 !important;
-    background-color: #1a2d30 !important;
+    border-color: #43737a !important;
+    background-color: #43737a !important;
 }
 
 .btn-outline-info#scouts_search:hover {
     color: #ffffff !important;
-    border-color: #1a2d30 !important;
-    background-color: #1a2d30 !important;
+    border-color: #43737a !important;
+    background-color: #43737a !important;
 }
 
 .btn-info {
-    color: #fff;
-    background-color: #1a2d30 !important;
-    border-color: #1a2d30 !important;
+    color: #ffffff;
+    background-color: #43737a !important;
+    border-color: #43737a !important;
 }
 
 .page-link {
@@ -174,26 +174,26 @@ small {
     font-size: var(--bs-pagination-font-size);
     color: #ffffff;
     text-decoration: none;
-    background-color: #43737a;
-    border: #43737a;
+    background-color: #004851;
+    border: #004851;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .page-link:hover {
     color: #ffffff !important;
-    border-color: #1a2d30 !important;
-    background-color: #1a2d30 !important;
-}
-
-.taggit-labels.taggit-list .taggit-tag.selected {
-    color: #ffffff;
     border-color: #43737a !important;
     background-color: #43737a !important;
 }
 
+.taggit-labels.taggit-list .taggit-tag.selected {
+    color: #ffffff;
+    border-color: #004851 !important;
+    background-color: #004851 !important;
+}
+
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
-    border-color:  #43737a !important;
+    border-color:  #004851 !important;
     background-color: transparent !important;
 }
 
@@ -259,20 +259,20 @@ table.download_table {
     background-color: #383838;
     border-collapse: collapse;
     border-width: 2px;
-    border-color: #43737a;
+    border-color: #004851;
     border-style: solid;
     color: #ffffff;
 }
 
 table.download_table td, table.download_table th {
     border-width: 2px;
-    border-color: #43737a;
+    border-color: #004851;
     border-style: solid;
     padding: 3px;
 }
 
 table.download_table thead {
-    background-color: #43737a;
+    background-color: #004851;
 }
 
 .accordion-flush .accordion-item .accordion-button {
@@ -332,7 +332,7 @@ table.download_table thead {
     background-color: #454d55;
     border-color: #454d55;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem #43737a;
+    box-shadow: 0 0 0 0.1rem #004851;
 }
 
 .form-check-input[type=radio] {
@@ -362,20 +362,20 @@ table.download_table thead {
 }
 
 .form-check-input:checked {
-    background-color: #43737a !important;
-    border-color: #43737a !important;
+    background-color: #004851 !important;
+    border-color: #004851 !important;
 }
 
 /* Other Browsers */
 input[type='file']::file-selector-button {
     color: #ffffff !important;
-    background-color: #43737a !important;
+    background-color: #004851 !important;
 }
 
 /* Chrome, Edge & Safari */
 input[type='file']::-webkit-file-upload-button {
     color: #ffffff !important;
-    background-color: #43737a !important;
+    background-color: #004851 !important;
 }
 
 @media (min-width: 576px) {
@@ -422,7 +422,7 @@ input[type='file']::-webkit-file-upload-button {
 
 .img-thumbnail {
     padding: .25rem;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #dee2e6;
     border-radius: .25rem;
     max-width: 100%;
@@ -434,7 +434,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    /* background-color: #43737a; */
+    /* background-color: #004851; */
 }
 
 .sitemap-link {
@@ -442,5 +442,5 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    /* background-color: #43737a; */
+    /* background-color: #004851; */
 }

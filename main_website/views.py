@@ -314,7 +314,7 @@ def error_403_view(request, exception):
     data = {}
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]
     context = {
-        'title': '404 Error',
+        'title': '403 Error',
         'articles': articles,
     }
     return render(request, 'main_website/errors/403_error.html', context, status=403)

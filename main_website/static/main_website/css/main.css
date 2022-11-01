@@ -81,6 +81,10 @@ small {
     border-top: 5px solid #7414dc !important;
 }
 
+#duo_icons {
+    color: #7414dc;
+}
+
 .easyfundraising_img {
     display: block;
     margin-left: auto;

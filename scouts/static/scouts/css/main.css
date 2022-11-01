@@ -74,6 +74,10 @@ small {
     border-top: 5px solid #004851 !important;
 }
 
+#duo_icons {
+    color: #004851;
+}
+
 .scouts_logo {
     height: 160px !important;
     width: 650px !important;

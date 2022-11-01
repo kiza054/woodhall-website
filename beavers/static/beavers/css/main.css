@@ -18,7 +18,7 @@
 
 body {
     font-family: "Product Sans Regular", sans-serif;
-    /* background: #0095c8; */
+    /* background: #006ddf; */
     background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #fff;
     position: relative;
@@ -75,7 +75,11 @@ small {
 }
 
 .navbar {
-    border-top: 5px solid #0095c8 !important;
+    border-top: 5px solid #006ddf !important;
+}
+
+#duo_icons {
+    color: #006ddf;
 }
 
 .beaver_logo {
@@ -109,7 +113,7 @@ small {
 
 .badge-info {
     color: #fff;
-    background-color: #0095c8 !important;
+    background-color: #006ddf !important;
 }
 
 .badge-info:hover {
@@ -138,8 +142,8 @@ small {
 .btn-outline-info:active:focus, 
 .btn-outline-info:visited {
     color: #ffffff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
 }
 
 .btn-outline-info#beavers_search,
@@ -147,8 +151,8 @@ small {
 .btn-outline-info#beavers_search:active:focus,
 .btn-outline-info#beavers_search:visited {
     color: #fff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
     width: 92px;
     font-size: 15px;
 }
@@ -170,8 +174,8 @@ small {
 .btn-custom-purple:active:focus, 
 .btn-custom-purple:visited {
     color: #ffffff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
 }
 
 .btn-custom-purple#beavers_search,
@@ -179,8 +183,8 @@ small {
 .btn-custom-purple#beavers_search:active:focus,
 .btn-custom-purple#beavers_search:visited {
     color: #fff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
     width: 92px;
     font-size: 15px;
 }
@@ -210,8 +214,8 @@ small {
     font-size: var(--bs-pagination-font-size);
     color: #ffffff;
     text-decoration: none;
-    background-color: #0095c8;
-    border: #0095c8;
+    background-color: #006ddf;
+    border: #006ddf;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
@@ -223,13 +227,13 @@ small {
 
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
 }
 
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
-    border-color:  #0095c8 !important;
+    border-color:  #006ddf !important;
     background-color: transparent !important;
 }
 
@@ -295,20 +299,20 @@ table.download_table {
     background-color: #383838;
     border-collapse: collapse;
     border-width: 2px;
-    border-color: #0095c8;
+    border-color: #006ddf;
     border-style: solid;
     color: #ffffff;
 }
 
 table.download_table td, table.download_table th {
     border-width: 2px;
-    border-color: #0095c8;
+    border-color: #006ddf;
     border-style: solid;
     padding: 3px;
 }
 
 table.download_table thead {
-    background-color: #0095c8;
+    background-color: #006ddf;
 }
 
 .accordion-flush .accordion-item .accordion-button {
@@ -383,7 +387,7 @@ table.download_table thead {
     background-color: #454d55;
     border-color: #454d55;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem #0095c8;
+    box-shadow: 0 0 0 0.1rem #006ddf;
 }
 
 .form-check-input[type=radio] {
@@ -413,20 +417,20 @@ table.download_table thead {
 }
 
 .form-check-input:checked {
-    background-color: #0095c8 !important;
-    border-color: #0095c8 !important;
+    background-color: #006ddf !important;
+    border-color: #006ddf !important;
 }
 
 /* Other Browsers */
 input[type='file']::file-selector-button {
     color: #ffffff !important;
-    background-color: #0095c8 !important;
+    background-color: #006ddf !important;
 }
 
 /* Chrome, Edge & Safari */
 input[type='file']::-webkit-file-upload-button {
     color: #ffffff !important;
-    background-color: #0095c8 !important;
+    background-color: #006ddf !important;
 }
 
 @media (min-width: 576px) {
@@ -485,7 +489,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    /* background-color: #0095c8; */
+    /* background-color: #006ddf; */
 }
 
 .sitemap-link {
@@ -493,5 +497,5 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    /* background-color: #0095c8; */
+    /* background-color: #006ddf; */
 }

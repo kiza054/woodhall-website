@@ -22,65 +22,68 @@
 	</head>
     <body>
         <!-- Nav class creates a navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #383838;">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="background-color: #383838;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'main_website_home' %}">1st Woodhall Scout Group</a>
+                <a class="navbar-brand" href="{% url 'main_website_home' %}">
+                    <img src="{% static 'main_website/img/scout_logo_alt.png' %}" alt="Logo" width="35" height="35" style="border-radius: 50%;">
+                    1st Woodhall Scout Group
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fa-duotone fa-house-chimney"></span> Home</a>
+                            <a class="nav-link" href="{% url 'main_website_home' %}"><span class="fa-duotone fa-house-chimney" id="duo_icons"></span> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_about' %}"><span class="fa-duotone fa-circle-info"></span> About Us</a>
+                            <a class="nav-link" href="{% url 'main_website_about' %}"><span class="fa-duotone fa-circle-info" id="duo_icons"></span> About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><span class="fa-duotone fa-calendar-days"></span> Events</a>
+                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><span class="fa-duotone fa-calendar-days" id="duo_icons"></span> Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fa-duotone fa-handshake-angle"></span> Help Us</a>
+                            <a class="nav-link" href="{% url 'main_website_help_us' %}"><span class="fa-duotone fa-handshake-angle" id="duo_icons"></span> Help Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <span class="fa-duotone fa-money-bill-1-wave"></span> Donate</a>
+                            <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <span class="fa-duotone fa-money-bill-1-wave" id="duo_icons"></span> Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fa-duotone fa-images"></span> Gallery</a>
+                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><span class="fa-duotone fa-images" id="duo_icons"></span> Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><span class="fa-duotone fa-address-card"></span> Contact Us</a>
+                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><span class="fa-duotone fa-address-card" id="duo_icons"></span> Contact Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><span class="fa-duotone fa-blog"></span> Beavers Blog</a>
+                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><span class="fa-duotone fa-blog" id="duo_icons"></span> Beavers Blog</a>
                         </li>
                         {% endif %}
                         {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><span class="fa-duotone fa-blog"></span> Cubs Blog</a>
+                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><span class="fa-duotone fa-blog" id="duo_icons"></span> Cubs Blog</a>
                         </li>
                         {% endif %}
                         {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'scouts_blog_home' %}"><span class="fa-duotone fa-blog"></span> Scouts Blog</a>
+                            <a class="nav-link" href="{% url 'scouts_blog_home' %}"><span class="fa-duotone fa-blog" id="duo_icons"></span> Scouts Blog</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}"><span class="fa-duotone fa-user-check"></span> Profile</a>
+                            <a class="nav-link" href="{% url 'profile' %}"><span class="fa-duotone fa-user-check" id="duo_icons"></span> Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}"><span class="fa-duotone fa-arrow-right-from-bracket"></span> Logout</a>
+                            <a class="nav-link" href="{% url 'logout' %}"><span class="fa-duotone fa-arrow-right-from-bracket" id="duo_icons"></span> Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}"><span class="fa-duotone fa-arrow-right-to-bracket"></span> Login</a>
+                            <a class="nav-link" href="{% url 'login' %}"><span class="fa-duotone fa-arrow-right-to-bracket" id="duo_icons"></span> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}"><span class="fa-duotone fa-user-plus"></span> Register</a>
+                            <a class="nav-link" href="{% url 'register' %}"><span class="fa-duotone fa-user-plus" id="duo_icons"></span> Register</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -89,7 +92,7 @@
         </nav>
         <nav class="navbar navbar-expand-lg navbar-custom navbar-dark" style="background-color: #454d55;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'executive_home' %}">1st Woodhall Scout Group Executive Comittee</a>
+                <a class="navbar-brand" href="{% url 'executive_home' %}">Executive Comittee</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -97,12 +100,12 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
 							<a class="nav-link" href="{% url 'executive_quartermaster_database' %}">
-                                <i class="fa-duotone fa-database"></i> Quartermasters Database
+                                <i class="fa-duotone fa-database" id="duo_icons"></i> Quartermasters Database
                             </a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">
-                                <i class="fa-duotone fa-screen-users"></i> Meet the Team
+                                <i class="fa-duotone fa-screen-users" id="duo_icons"></i> Meet the Team
                             </a>
 						</li>
                     </ul>

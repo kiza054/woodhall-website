@@ -1,10 +1,12 @@
 from django.db import models
 from django.urls import reverse
-from accounts.models import User
 from django.utils import timezone
 from django.utils.text import slugify
-from taggit.managers import TaggableManager
 from django.utils.translation import gettext_lazy as _
+from taggit.managers import TaggableManager
+
+from accounts.models import User
+
 
 class Article(models.Model):
 

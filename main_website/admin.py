@@ -1,10 +1,15 @@
 import csv
-from taggit.admin import Tag
+
 from django.contrib import admin
 from django.http import HttpResponse
 from django_summernote.models import Attachment
+from taggit.admin import Tag
 from taggit_helpers.admin import TaggitStackedInline
-from main_website.models import Article, Event, ImageGallery, ImageGalleryCategory, WaitingList, UrgentAnnouncements
+
+from main_website.models import (Article, Event, ImageGallery,
+                                 ImageGalleryCategory, UrgentAnnouncements,
+                                 WaitingList)
+
 
 class ExportCSVMixin:
     def export_as_csv(self, request, queryset):

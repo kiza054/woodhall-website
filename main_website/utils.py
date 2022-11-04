@@ -1,7 +1,9 @@
 import calendar
 from calendar import HTMLCalendar
+from datetime import date, datetime, timedelta
+
 from main_website.models import Event
-from datetime import datetime, timedelta, date
+
 
 class Calendar(HTMLCalendar):
 	def __init__(self, year=None, month=None):

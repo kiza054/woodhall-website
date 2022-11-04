@@ -1,13 +1,15 @@
-from django.views import generic
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from main_website.models import Article
-from django.core.exceptions import PermissionDenied
-from executive.models import QuartermastersItemInventory
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
 from executive.forms import QuartermastersItemInventoryForm
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from executive.models import QuartermastersItemInventory
+from main_website.models import Article
+
 
 class ExecutiveIndexView(generic.View, LoginRequiredMixin):
     def get(self, request):

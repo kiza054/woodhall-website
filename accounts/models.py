@@ -1,12 +1,14 @@
-from PIL import Image
-from django.db import models
-from django.utils import timezone
-from django.dispatch import receiver
-from django.utils.http import urlencode
+from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
+                                        PermissionsMixin)
 from django.core.mail import send_mail
+from django.db import models
 from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.utils import timezone
+from django.utils.http import urlencode
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from PIL import Image
+
 
 class UserManager(BaseUserManager):
 	def _create_user(self, username, email, password, is_staff, is_executive, is_superuser, **extra_fields):

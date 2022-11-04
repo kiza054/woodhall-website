@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
+
 class QuartermastersItemInventory(models.Model):
 
     class Categories(models.TextChoices):

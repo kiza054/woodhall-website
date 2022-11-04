@@ -1,11 +1,14 @@
 import csv
+
 from django.contrib import admin
-from django.http import HttpResponse
-from accounts.models import User, Profile
-from django.utils.html import format_html
-from django.contrib.auth.models import Group
-from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.admin import UserAdmin as CustomUserAdmin
+from django.contrib.auth.models import Group
+from django.http import HttpResponse
+from django.utils.html import format_html
+from django.utils.translation import gettext_lazy as _
+
+from accounts.models import Profile, User
+
 
 class ExportCSVMixin:
     def export_as_csv(self, request, queryset):

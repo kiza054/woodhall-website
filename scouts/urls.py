@@ -1,12 +1,8 @@
-from scouts import views
 from django.urls import path
-from scouts.views import (
-    PostList,
-    PostCreate,
-    PostUpdate,
-    PostDelete,
-    UserPostList
-)
+
+from scouts import views
+from scouts.views import (PostCreate, PostDelete, PostList, PostUpdate,
+                          UserPostList)
 
 urlpatterns = [
     path('', PostList.as_view(), name='scouts_blog_home'),

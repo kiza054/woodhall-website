@@ -1,6 +1,8 @@
-from django.shortcuts import reverse
-from main_website.models import Article
 from django.contrib.sitemaps import Sitemap
+from django.shortcuts import reverse
+
+from main_website.models import Article
+
 
 class StaticViewSitemap(Sitemap):    
     def items(self):

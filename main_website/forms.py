@@ -1,9 +1,12 @@
 from django import forms
-from accounts.models import User
-from taggit.forms import TagField
 from django.forms import DateInput
+from taggit.forms import TagField
 from taggit_labels.widgets import LabelWidget
-from main_website.models import Article, WaitingList, Event, ImageGallery, ImageGalleryCategory
+
+from accounts.models import User
+from main_website.models import (Article, Event, ImageGallery,
+                                 ImageGalleryCategory, WaitingList)
+
 
 class ArticleForm(forms.ModelForm):
     tags = TagField(required=False, widget=LabelWidget)

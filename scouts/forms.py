@@ -1,10 +1,13 @@
 import os
-from accounts.models import User
+
 from django import forms
-from taggit_labels.widgets import LabelWidget
+from django.core.mail import EmailMultiAlternatives, send_mail
 from django_summernote.widgets import SummernoteWidget
-from django.core.mail import send_mail, EmailMultiAlternatives
-from scouts.models import Post, PostImage, Comment, File
+from taggit_labels.widgets import LabelWidget
+
+from accounts.models import User
+from scouts.models import Comment, File, Post, PostImage
+
 
 class PostForm(forms.ModelForm):
     content = forms.CharField(widget=SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '400px'}}))

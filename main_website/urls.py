@@ -1,25 +1,13 @@
 from django.urls import path
 
 from main_website import views
-from main_website.views import (
-    IndexView, 
-    AboutView, 
-    ArticleCreateView, 
-    ArticleUpdateView, 
-    ArticleDeleteView,
-    TaggedView, 
-    CalendarView,
-    EventView,
-    EditEventView, 
-    HelpUsView, 
-    SearchView, 
-    ContactUsView,
-    DonateView,
-    ImageGalleryView,
-    ImageDetailView,
-    ImageAddView,
-    ImageCategoryAddView
-)
+from main_website.views import (AboutView, ArticleCreateView,
+                                ArticleDeleteView, ArticleUpdateView,
+                                CalendarView, ContactUsView, DonateView,
+                                EditEventView, EventView, HelpUsView,
+                                ImageAddView, ImageCategoryAddView,
+                                ImageDetailView, ImageGalleryView, IndexView,
+                                SearchView, TaggedView)
 
 urlpatterns = [
     path('', IndexView.as_view(), name='main_website_home'),

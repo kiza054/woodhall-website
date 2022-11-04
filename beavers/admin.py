@@ -1,6 +1,8 @@
-from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
-from beavers.models import Post, PostImage, Comment, File
+from django_summernote.admin import SummernoteModelAdmin
+
+from beavers.models import Comment, File, Post, PostImage
+
 
 class PostImageInline(admin.StackedInline):
     model = PostImage

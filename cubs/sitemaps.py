@@ -1,6 +1,8 @@
-from cubs.models import Post
-from django.shortcuts import reverse
 from django.contrib.sitemaps import Sitemap
+from django.shortcuts import reverse
+
+from cubs.models import Post
+
 
 class CubsStaticViewSitemap(Sitemap):
     def items(self):

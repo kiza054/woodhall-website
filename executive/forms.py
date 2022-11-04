@@ -1,5 +1,7 @@
 from django import forms
+
 from executive.models import QuartermastersItemInventory
+
 
 class QuartermastersItemInventoryForm(forms.ModelForm):
     class Meta:

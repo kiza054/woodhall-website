@@ -1,9 +1,9 @@
 from django.urls import path
-from executive.views import (ExecutiveIndexView, 
-                            QuartermastersDatabaseView, 
-                            QuartermastersDatabaseAddView, 
-                            QuartermastersDatabaseEditView, 
-                            QuartermastersDatabaseDeleteView)
+
+from executive.views import (ExecutiveIndexView, QuartermastersDatabaseAddView,
+                             QuartermastersDatabaseDeleteView,
+                             QuartermastersDatabaseEditView,
+                             QuartermastersDatabaseView)
 
 urlpatterns = [
     path('home/', ExecutiveIndexView.as_view(), name='executive_home'),

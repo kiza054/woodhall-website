@@ -15,15 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-import main_website
-from django.contrib import admin
 from django.conf import settings
-from django.urls import include, path
 from django.conf.urls.static import static
-from django.contrib.sitemaps.views import sitemap
+from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from cubs.sitemaps import CubsStaticViewSitemap, CubsBlogPostsSitemap
-from main_website.sitemaps import StaticViewSitemap, NewsUpdatesSitemap
+from django.contrib.sitemaps.views import sitemap
+from django.urls import include, path
+
+import main_website
+from cubs.sitemaps import CubsBlogPostsSitemap, CubsStaticViewSitemap
+from main_website.sitemaps import NewsUpdatesSitemap, StaticViewSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,

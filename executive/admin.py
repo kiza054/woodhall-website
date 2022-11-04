@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from executive.models import QuartermastersItemInventory
+
 
 class QuartermastersItemInventoryAdmin(admin.ModelAdmin):
     ordering = ('id',)

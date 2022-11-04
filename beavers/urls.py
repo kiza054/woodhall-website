@@ -1,12 +1,8 @@
-from beavers import views
 from django.urls import path
-from beavers.views import (
-    PostList,
-    PostCreate,
-    PostUpdate,
-    PostDelete,
-    UserPostList
-)
+
+from beavers import views
+from beavers.views import (PostCreate, PostDelete, PostList, PostUpdate,
+                           UserPostList)
 
 urlpatterns = [
     path('', PostList.as_view(), name='beavers_blog_home'),

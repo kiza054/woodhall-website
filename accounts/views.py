@@ -1,9 +1,11 @@
 from django.contrib import messages
-from main_website.models import Article
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, resolve_url
-from accounts.forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.shortcuts import redirect, render, resolve_url
+
+from accounts.forms import ProfileUpdateForm, UserRegisterForm, UserUpdateForm
+from main_website.models import Article
+
 
 def register(request):
     articles = Article.objects.filter(status=1).order_by('-date_posted')[:2]

@@ -1,18 +1,23 @@
 import calendar
-from taggit.models import Tag
-from django.db.models import Q
+from datetime import date, datetime, timedelta
+
 from django.conf import settings
-from django.views import generic
 from django.contrib import messages
-from main_website.utils import Calendar, get_date, prev_month, next_month
-from django.utils.safestring import mark_safe
-from datetime import datetime, timedelta, date
 from django.contrib.auth.decorators import login_required
-from main_website.models import Article, Event, ImageGallery, ImageGalleryCategory
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from main_website.forms import ArticleForm, WaitingListForm, EventForm, UploadImageForm, AddImageCategoryForm
+from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect, render
+from django.utils.safestring import mark_safe
+from django.views import generic
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from taggit.models import Tag
+
+from main_website.forms import (AddImageCategoryForm, ArticleForm, EventForm,
+                                UploadImageForm, WaitingListForm)
+from main_website.models import (Article, Event, ImageGallery,
+                                 ImageGalleryCategory)
+from main_website.utils import Calendar, get_date, next_month, prev_month
+
 
 class IndexView(generic.View):
     def get(self, request):

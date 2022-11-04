@@ -1,12 +1,8 @@
-from cubs import views
 from django.urls import path
-from cubs.views import (
-    PostList,
-    PostCreate,
-    PostUpdate,
-    PostDelete,
-    UserPostList
-)
+
+from cubs import views
+from cubs.views import (PostCreate, PostDelete, PostList, PostUpdate,
+                        UserPostList)
 
 urlpatterns = [
     path('', PostList.as_view(), name='cubs_blog_home'),

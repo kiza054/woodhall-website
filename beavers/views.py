@@ -1,16 +1,19 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from beavers.models import Post, File
-from beavers.forms import PostForm, CommentForm, UploadFileForm
-from accounts.models import User
-from main_website.models import Article
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views import generic
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
-from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views import generic
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
+
+from accounts.models import User
+from beavers.forms import CommentForm, PostForm, UploadFileForm
+from beavers.models import File, Post
+from main_website.models import Article
+
 
 class PostList(LoginRequiredMixin, ListView):
     queryset = Post.objects.filter(status=1).order_by('-date_posted')

@@ -219,6 +219,17 @@ class EventView(LoginRequiredMixin, generic.View):
         }
         return render(request, 'calendar/event.html', context)
 
+    def post(self, request):
+        instance = Event()
+        form = EventForm(request.POST or None, instance=instance)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Event successfully added")
+            return redirect('main_website_calendar')
+        else:
+            messages.error(request, "An error occurred, please try again")
+            return redirect('main_website_calendar_new_event')
+
 class EditEventView(LoginRequiredMixin, generic.View):
     def get(self, request, event_id=None):
         instance = Event()
@@ -236,12 +247,15 @@ class EditEventView(LoginRequiredMixin, generic.View):
         }
         return render(request, 'calendar/edit_event.html', context)
 
-    def post(self, request):
-        instance = Event()
+    def post(self, request, event_id):
+        instance = get_object_or_404(Event, pk=event_id)
         form = EventForm(request.POST or None, instance=instance)
         if form.is_valid():
             form.save()
             return redirect('main_website_calendar')
+        else:
+            messages.error(request, "An error occurred, please try again")
+            return redirect('main_website_calendar_edit_event')
 
 class TaggedView(LoginRequiredMixin, generic.View):
     def get(self, request, slug):

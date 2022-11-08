@@ -592,6 +592,14 @@ input[type='file']::-webkit-file-upload-button {
     background-color: #7414dc !important;
 }
 
+::-webkit-calendar-picker-indicator {
+    filter: invert(14%) sepia(98%) saturate(4513%) hue-rotate(269deg) brightness(84%) contrast(107%);
+}
+  
+::-webkit-calendar-picker-indicator:hover {
+    opacity: 1
+}
+
 @media (min-width: 576px) {
     .form-inline .form-control {
       display: inline-block;

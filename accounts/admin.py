@@ -34,7 +34,7 @@ class UserAdmin(CustomUserAdmin, ExportCSVMixin):
     # that reference the removed 'username' field
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password')}),
-        (_('Personal Information'), {'fields': ('first_name', 'last_name', 'section', 'second_section')}),
+        (_('Personal Information'), {'fields': ('first_name', 'last_name', 'section', 'second_section', 'photo_permission')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_executive', 'is_superuser', 'user_permissions')}), # 'groups'
         (_('Important Dates'), {'fields': ('last_login', 'date_joined')}),
     )
@@ -44,9 +44,9 @@ class UserAdmin(CustomUserAdmin, ExportCSVMixin):
             'fields': ('email', 'password1', 'password2')}
         ),
     )
-    list_display = ('email', 'first_name', 'last_name', 'section', 'second_section', 'is_staff', 'is_executive', 'is_superuser')
-    list_filter = ('is_staff', 'is_superuser', 'is_executive', 'is_active', 'section')
-    search_fields = ('email', 'first_name', 'last_name', 'section')
+    list_display = ('email', 'first_name', 'last_name', 'section', 'second_section', 'photo_permission', 'is_staff', 'is_executive', 'is_superuser')
+    list_filter = ('is_staff', 'is_superuser', 'is_executive', 'is_active', 'section', 'second_section', 'photo_permission')
+    search_fields = ('email', 'first_name', 'last_name', 'section', 'second_section', 'photo_permission')
     ordering = ('id', 'email')
     actions = ["export_as_csv"]
 

@@ -38,6 +38,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	last_name = models.CharField(_('last name'), max_length=30, blank=True)
 	section = models.CharField(max_length=30)
 	second_section = models.CharField(max_length=30, blank=True)
+	photo_permission = models.CharField(_('photographic permission'), max_length=5)
 	is_active = models.BooleanField(_('active'), default=True,
 		help_text=_('Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
 	is_staff = models.BooleanField(_('staff status'), default=False,

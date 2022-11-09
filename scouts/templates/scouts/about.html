@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="content-section">
-        <center><img class="scouts_logo" src="{% static 'scouts/img/scouts.png' %}" alt="Scouts Logo"></center>
+        <img class="scouts_logo" src="{% static 'scouts/img/scouts.png' %}" alt="Scouts Logo">
         <br>
         <hr class="my-2">
         <h1 class="display-4">About Us!</h1>
@@ -10,28 +10,28 @@
         <p>'Scouting' is about outdoor activities: camping, caving, abseiling, getting wet for the fun of it, cooking skills, bivouacking (camping without a tent), and camping in winter. Scouts wear a dark green long sleeved shirt and can be purchased from West Leeds Scout Shop (our Necker is black with a white border).</p>
         <p>As with the other sections, scouts work towards awards & activity badges, with the highest award being the Gold Chief Scout’s Award, which involves completing a number of activities and challenges during their time in the Scout Section. The scouts will learn many skills old & new which (including first aid) which could well be useful for them later in life.</p>
         <p>Young people can join from the age of about ten and move on to Explorers at thirteen and a half. Like cubs they are organised into small groups called Patrols each of which has a Patrol Leader in charge.</p>
-        <p>1st Woodhall scouts are lead by a team of volunteers: Alan & Brian</p>
+        <p>1st Woodhall scouts are lead by a team of volunteers: Alan, Brian and Hannah</p>
         <table class="meeting_table">
-          <thead>
-          <tr>
-              <th>Section</th>
-              <th>Meeting Day</th>
-              <th>Meeting Time</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-              <td>Scouts (10-14yrs)</td>
-              <td>Friday</td>
-              <td>7:00pm – 9:00pm</td>
-          </tr>
-          </tbody>
-      </table>
-      <hr class="my-4">
-      <h3>Want to join our Troop?</h3>
-      <p>Click this button to Register for our waiting list</p>
-      <button class="btn btn-outline-info">
-        <a class="button_link" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
-      </button>
-      </div>
+            <thead>
+            <tr>
+                <th>Ages</th>
+                <th>Meeting Day</th>
+                <th>Meeting Time</th>
+            </tr>
+            </thead>
+            <tbody class="scouts">
+            <tr>
+                <td>10 1/2 to 14 years old</td>
+                <td>Friday</td>
+                <td>19:00 - 21:00</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr class="my-4">
+        <h3>Want to join our Troop?</h3>
+        <p>Click this button to Register for our waiting list</p>
+        <button class="btn btn-outline-info">
+            <a class="button_link" href="{% url 'main_website_waiting_list_register' %}" role="button"><i class="fa-duotone fa-user-plus"></i> Register</a>
+        </button>
+    </div>
 {% endblock content %}

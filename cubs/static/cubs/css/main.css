@@ -105,7 +105,9 @@ small {
 .cub_logo {
     height: 170px !important;
     width: 600px !important;
-    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .cub_badge_placement {
@@ -320,6 +322,30 @@ tr:last-of-type td:last-of-type {
 
 tr.files {
     background-color: #454d55;
+}
+
+tbody.cubs {
+    background-color: #454d55;
+}
+
+table.meeting_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+table.meeting_table thead tr {
+    background-color: #009a44;
+    color: #ffffff;
+    text-align: center;
+}
+
+table.meeting_table th,
+table.meeting_table td {
+    padding: 12px 15px;
 }
 
 table.download_table {

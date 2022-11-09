@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="content-section">
-        <center><img class="beaver_logo" src="{% static 'beavers/img/beavers_rgb.png' %}" alt="Beavers Logo"></center>
+        <img class="beaver_logo" src="{% static 'beavers/img/beavers_rgb.png' %}" alt="Beavers Logo">
         <br>
         <hr class="my-2">
         <h1 class="display-4">About Us!</h1>
@@ -14,27 +14,26 @@
         <p>The cost of attending Beavers is £2 per week (the first 4 weeks are free). Unfortunately, we have to ask for subs for any missed weeks. This is because the District, County and National teams charge 1st Woodhall fees on a per member basis, and we do have to make sure the group can cover these costs.</p>
         <p>Beavers will need a uniform before they can be invested into the colony. Uniforms can be purchased from West Leeds Scout Shop. Currently, we only ask that Beavers have a uniform sweatshirt and necker (our necker is black with a white border).</p>
         <table class="meeting_table">
-          <thead>
-          <tr>
-              <th>Section</th>
-              <th>Meeting Day</th>
-              <th>Meeting Time</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-              <td>Beavers (5yrs 9mths to 8yrs)</td>
-              <td>Friday</td>
-              <td>5:30pm – 6:30pm</td>
-          </tr>
-          </tbody>
-      </table>
-      <hr class="my-4">
-      <h3>Want to join our Colony?</h3>
-      <p>Click this button to Register for our waiting list</p>
-      <button class="btn btn-outline-info">
-        <a class="button_link" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
-      </button>
-      
-      </div>
+            <thead>
+            <tr>
+                <th>Ages</th>
+                <th>Meeting Day</th>
+                <th>Meeting Time</th>
+            </tr>
+            </thead>
+            <tbody class="beavers">
+            <tr>
+                <td>6 to 8 years old</td>
+                <td>Friday</td>
+                <td>17:30 - 18:30</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr class="my-4">
+        <h3>Want to join our Colony?</h3>
+        <p>Click this button to Register for our waiting list</p>
+        <button class="btn btn-outline-info">
+            <a class="button_link" href="{% url 'main_website_waiting_list_register' %}" role="button"><i class="fa-duotone fa-user-plus"></i> Register</a>
+        </button>      
+    </div>
 {% endblock content %}

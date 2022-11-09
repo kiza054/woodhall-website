@@ -176,7 +176,7 @@ def upload(request):
             instance = form.save(commit=False)
             instance.save()
             messages.success(request, 'File Successfully Uploaded')
-            return redirect('scoits_blog_file_upload')
+            return redirect('scouts_blog_file_upload')
     else:
         form = UploadFileForm()
 

@@ -37,6 +37,8 @@ class CommentForm(forms.ModelForm):
         fields = ('name', 'email', 'comment')
 
 class UploadFileForm(forms.ModelForm):
+    name = forms.CharField(help_text='Name of file to be uploaded (e.g. camp_form.docx)')
+    description = forms.CharField(help_text='What is the file used for, add some explanation.')
     class Meta:
         model = File
         fields = ('name', 'description', 'file')

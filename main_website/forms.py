@@ -43,6 +43,8 @@ class ContactForm(forms.Form):
         self.fields['content'].label = "Your Query:"
 
 class EventForm(forms.ModelForm):
+    title = forms.CharField(help_text='Name of event')
+    description = forms.CharField(widget=forms.Textarea, help_text='Description of event, describe whats happening at the event')
     class Meta:
         model = Event
         # datetime-local is a HTML5 input type, format to make date time show on fields

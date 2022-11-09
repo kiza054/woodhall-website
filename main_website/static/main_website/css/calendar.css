@@ -28,13 +28,16 @@ body {
 }
 
 .calendar {
+    background-color: #454d55;
+    border-radius: 0.25rem;
+    overflow: hidden;
     width: 100%;
     margin: auto;
     font-size: 13px;
 }
   
 .calendar tr, .calendar td {
-    border: 1px solid #ffffff;
+    border: 2px solid #7414dc;
 }
   
 .calendar th {

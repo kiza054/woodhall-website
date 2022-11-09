@@ -12,23 +12,29 @@
 					<th scope="col">Category</th>
 					<th scope="col">Added On</th>
                     <th scope="col">Updated On</th>
+					<th scope="col">Edit Item?</th>
+					<th scope="col">Delete Item?</th>
 				</thead>
 				{% for q in queryset %}
-				<tr>
+				<tr class="items">
 					<td>{{ q.item_name }}</td>
                     <td>{{ q.item_quantity }}</td>
                     <td>{{ q.category }}</td>
                     <td>{{ q.added_on }}</td>
                     <td>{{ q.updated_on }}</td>
                     <td>
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'executive_quartermaster_database_edit' q.slug %}">
-                            <i class="fa-duotone fa-pen"></i> Update Item
-                        </a>
+						<button type="button" class="btn btn-secondary btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+							<a href="{% url 'executive_quartermaster_database_edit' q.slug %}">
+								<i class="fa-duotone fa-pen"></i> Update Item
+							</a>
+						</button>
                     </td>
                     <td>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'executive_quartermaster_database_delete' q.slug %}">
-                            <i class="fa-duotone fa-trash-can-check"></i> Delete Item
-                        </a>
+						<button type="button" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+							<a href="{% url 'executive_quartermaster_database_delete' q.slug %}">
+								<i class="fa-duotone fa-trash-can-check"></i> Delete Item
+							</a>
+						</button>
                     </td>
 				</tr>
 				{% endfor %}

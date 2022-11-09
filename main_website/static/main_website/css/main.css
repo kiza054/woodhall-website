@@ -500,24 +500,31 @@ table.meeting_table td {
 }
 
 table.inventory_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
-    background-color: #383838;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    color: #ffffff;
+    text-align: center;
 }
 
-table.inventory_table td, table.inventory_table th {
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    padding: 3px;
+table.inventory_table td, 
+table.inventory_table th {
+    padding: 12px 15px;
 }
 
-table.inventory_table thead {
+table.inventory_table thead tr {
     background-color: #7414dc;
+    color: #ffffff;
+    text-align: center;
+}
+
+tr.items {
+    background-color: #454d55;
+}
+
+tbody.leaders {
+    background-color: #454d55;
 }
 
 .accordion-flush .accordion-item .accordion-button {

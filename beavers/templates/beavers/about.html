@@ -6,7 +6,7 @@
         <br>
         <hr class="my-2">
         <h1 class="display-4">About Us!</h1>
-        <h5>Please note that we have had a lot of success as a Colony recently. This has led to a period of Growth. As a result of this, we now need to operate a waiting list for places. Please <a href="{% url 'main_website_contact_us' %}" target="_blank">contact</a> the Beaver Leader team for more information.</h5>
+        <!--<h5>Please note that we have had a lot of success as a Colony recently. This has led to a period of Growth. As a result of this, we now need to operate a waiting list for places. Please <a href="{% url 'main_website_contact_us' %}" target="_blank">contact</a> the Beaver Leader team for more information.</h5>-->
         <p>Our Beavers meet every Friday during term time between 18:00 and 19:10 in the church hall at 1st Pudsey (Parish Church) Group Headquarters, Greenside, Pudsey, LS28 8LP</p>
         <p>At 1st Woodhall, the Beaver leaders are Robin and sometimes assisted by parents (Thank You!). Being based at Greenside, we are easy to get to from West Leeds and East Bradford, including Pudsey, Thornbury, Farsley, Calverley, Rodley and Bramley.</p>
         <p>Beavers, or more correctly Beaver Scouts, are the youngest group of the Scouting family aged from five years and nine months to eight years. Their activities are based around being creative, crafty things, learning about camping, playing games, getting out and about and finding out about nature, learning how to be a good scout, and especially how to be a good friend.
@@ -32,6 +32,9 @@
       <hr class="my-4">
       <h3>Want to join our Colony?</h3>
       <p>Click this button to Register for our waiting list</p>
-      <a class="btn btn-outline-info" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+      <button class="btn btn-outline-info">
+        <a class="button_link" href="{% url 'main_website_waiting_list_register' %}" role="button">Register</a>
+      </button>
+      
       </div>
 {% endblock content %}

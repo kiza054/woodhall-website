@@ -12,7 +12,9 @@
                 <a href="{% url 'main_website_article_tags' tag.slug %}" class="mr-1 badge badge-pill badge-info">{{ tag }}</a>
             {% endfor %}
             <hr class="my-1">
-            <a href="{% url 'main_website_article_detail' article.slug  %}" class="btn btn-outline-info btn-sm mt-1 mb-1"><i class="fa-duotone fa-book-open-reader"></i> Read More</a>
+            <button class="btn btn-custom-turquoise btn-sm mt-1 mb-1">
+                <a class="button_link" href="{% url 'main_website_article_detail' article.slug  %}"><i class="fa-duotone fa-book-open-reader"></i> Read More</a>
+            </button>
         </div>
         {% empty %}
         <div class="list-group-item rounded-sm">

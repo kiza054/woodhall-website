@@ -11,18 +11,18 @@
 					<h5 class="text-secondary">{{ user.email }}</h5>
 					{% if user.is_superuser or user.is_staff %}
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'admin:index' %}"><i class="fa-duotone fa-folder-gear"></i> Administrators Dashboard</a>
+						<a class="button_link" href="{% url 'admin:index' %}"><i class="fa-duotone fa-folder-gear"></i> Administrators Dashboard</a>
 					</button>
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'main_website_article_create' %}"><i class="fa-duotone fa-newspaper"></i> Create News Article</a>
+						<a class="button_link" href="{% url 'main_website_article_create' %}"><i class="fa-duotone fa-newspaper"></i> Create News Article</a>
 					</button>
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="https://www.onlinescoutmanager.co.uk/login.php"><i class="fa-duotone fa-cloud-arrow-up"></i> OSM</a>
+						<a class="button_link" href="https://www.onlinescoutmanager.co.uk/login.php" target="_blank"><i class="fa-duotone fa-cloud-arrow-up"></i> OSM</a>
 					</button>
 					{% endif %}
 					{% if user.is_superuser or user.is_executive %}
 					<button class="btn btn-sm btn-custom-purple my-1" role="button" aria-pressed="true">
-						<a href="{% url 'executive_home' %}"><i class="fa-duotone fa-user-tie"></i> Executive Page</a>
+						<a class="button_link" href="{% url 'executive_home' %}"><i class="fa-duotone fa-user-tie"></i> Executive Page</a>
 					</button>
 					{% endif %}
 				</div>

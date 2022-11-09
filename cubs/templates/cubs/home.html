@@ -15,7 +15,9 @@
       <br>
       <p class="card-text">{{ post.content | safe | slice:":200" }}</p>
     </div>
-    <a href="{% url 'cubs_blog_post_detail' post.slug  %}" class="btn btn-outline-info">Read More <i class="fa-duotone fa-book-open-reader fa-lg"></i></a>
+    <button class="btn btn-outline-info">
+      <a class="button_link" href="{% url 'cubs_blog_post_detail' post.slug  %}" class="btn btn-outline-info">Read More <i class="fa-duotone fa-book-open-reader"></i></a>
+    </button>
   </div>
 </article>
 {% endfor %}

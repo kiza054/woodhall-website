@@ -48,6 +48,30 @@ a {
     background-color: transparent;
 }
 
+a.button_link:link { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a.button_link:visited { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:hover { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:active { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 a:hover {
     color: #ffffff;
     text-decoration: underline;

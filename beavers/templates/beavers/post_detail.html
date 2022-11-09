@@ -31,11 +31,11 @@
 			<div class="crud-buttons" style="float: right;">
 				<button class="btn btn-secondary btn-sm mt-1 mb-1">
 					<i class="fa-duotone fa-pen fa-lg"></i>
-					<a href="{% url 'beavers_blog_post_update' post.slug %}">Update Post</a>
+					<a class="button_link" href="{% url 'beavers_blog_post_update' post.slug %}">Update Post</a>
 				</button>
 				<button class="btn btn-danger btn-sm mt-1 mb-1">
 					<i class="fa-duotone fa-trash-can-check fa-lg"></i>
-					<a href="{% url 'beavers_blog_post_delete' post.slug %}">Delete Post</a>
+					<a class="button_link" href="{% url 'beavers_blog_post_delete' post.slug %}">Delete Post</a>
 				</button>
 			</div>
 			{% endif %}

@@ -20,7 +20,9 @@
       		<hr class="my-4">
       		<p class="card-text">{{ article.content | safe | slice:":200" }}</p>
     	</div>
-    	<a href="{% url 'main_website_article_detail' article.slug  %}" class="btn btn-outline-info">Read More &rarr;</a>
+		<button class="btn btn-outline-info">
+			<a class="button_link" href="{% url 'main_website_article_detail' article.slug  %}"><i class="fa-duotone fa-book-open-reader"></i> Read More</a>
+		</button>   	
   	</div>
 </article>
 {% endfor %}

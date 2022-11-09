@@ -16,8 +16,12 @@
     </div>
 	{% if article.author == user %}
 	<div>
-		<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'main_website_article_update' article.slug %}">Update Article</a>
-		<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'main_website_article_delete' article.slug %}">Delete Article</a>
+		<button class="btn btn-secondary btn-sm mt-1 mb-1">
+			<a class="button_link" href="{% url 'main_website_article_update' article.slug %}"><i class="fa-duotone fa-pen"></i> Update Article</a>
+		</button>
+		<button class="btn btn-danger btn-sm mt-1 mb-1">
+			<a class="button_link" href="{% url 'main_website_article_delete' article.slug %}"><i class="fa-duotone fa-trash"></i> Delete Article</a>
+		</button>
 	</div>
 	{% endif %}
 </article>

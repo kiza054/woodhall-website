@@ -23,7 +23,9 @@
             <p class="card-text">{{ article.content | safe | slice:":200" }}</p>
         </div>
         <hr class="my-4">
-        <a href="{{ article.get_absolute_url }}" class="btn btn-outline-info">Read More &rarr;</a>
+        <button class="btn btn-outline-info">
+			<a class="button_link" href="{{ article.get_absolute_url }}"><i class="fa-duotone fa-book-open-reader"></i> Read More</a>
+		</button>
     </div>
 </article>
 {% endfor %}

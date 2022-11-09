@@ -13,7 +13,9 @@
                         <br>
                         <small>Date Uploaded: {{ image.date_time_stamp }}</small>
                     </div>
-                    <a href="{% url 'main_website_gallery_image_detail' image.id %}" class="btn btn-outline-info btn-sm">View Image</a>
+                    <button class="btn btn-outline-info btn-sm">
+                        <a class="button_link" href="{% url 'main_website_gallery_image_detail' image.id %}">View Image</a>
+                    </button>
                 </div>
             </div>
             {% empty %}

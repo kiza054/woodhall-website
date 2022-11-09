@@ -8,8 +8,10 @@
                 <h2>Are you sure you want to delete the post "{{ object.title }}"</h2>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
-                <a class="btn btn-outline-secondary" href="{% url 'scouts_blog_post_detail' post.slug %}">Cancel</a>
+                <button class="btn btn-danger btn-sm" type="submit"><i class="fa-duotone fa-trash"></i> Yes, Delete</button>
+                <button class="btn btn-secondary btn-sm">
+                    <a class="button_link" href="{% url 'scouts_blog_post_detail' post.slug %}"><i class="fa-duotone fa-ban"></i> Cancel</a>
+                </button>
             </div>
         </form>
     </div>

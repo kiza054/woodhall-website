@@ -16,9 +16,11 @@
 					<td>{{ file_item.name }}</td>
 					<td>{{ file_item.description }}</td>
 					<td>
-						<a class="btn btn-outline-info btn-sm" href="{{ file_item.file.url }}" target="_blank" role="button">
-							<i class="fa-duotone fa-download"></i> Download
-						</a>
+						<button class="btn btn-outline-info btn-sm">
+							<a class="button_link" href="{{ file_item.file.url }}" target="_blank" role="button">
+								<i class="fa-duotone fa-download"></i> Download
+							</a>
+						</button>						
 					</td>
 				</tr>
 				{% endfor %}

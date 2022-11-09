@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY') or '0890a21f94a04c73d94a8654029271b72342c06a23056936'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') or 'True')
+DEBUG = (os.environ.get('DEBUG_VALUE') or 'False')
 
 ALLOWED_HOSTS = ['*', '127.0.0.1', '.ngrok.io', '.1stwoodhall.co.uk']
 

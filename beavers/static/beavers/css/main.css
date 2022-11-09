@@ -294,25 +294,44 @@ small {
     color: #ffffff;
 }
 
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+  
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+  
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+tr.files {
+    background-color: #454d55;
+}
+
 table.download_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
-    background-color: #383838;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #006ddf;
-    border-style: solid;
-    color: #ffffff;
+    text-align: center;
 }
 
-table.download_table td, table.download_table th {
-    border-width: 2px;
-    border-color: #006ddf;
-    border-style: solid;
-    padding: 3px;
-}
-
-table.download_table thead {
+table.download_table thead tr {
     background-color: #006ddf;
+    color: #ffffff;
+    text-align: center;
+}
+
+table.download_table th,
+table.download_table td {
+    padding: 12px 15px;
 }
 
 .accordion-flush .accordion-item .accordion-button {

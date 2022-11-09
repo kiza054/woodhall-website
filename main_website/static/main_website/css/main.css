@@ -451,26 +451,52 @@ label.form-label {
     color: #ffffff;
 }
 
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+  
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+  
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+tr.beavers {
+    background-color: #006ddf;
+}
+
+tr.cubs {
+    background-color: #009a44;
+}
+
+tr.scouts {
+    background-color: #004851;
+}
+
 table.meeting_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
-    background-color: #383838;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    color: #ffffff;
+    text-align: center;
 }
 
-table.meeting_table td,
-table.meeting_table th {
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    padding: 3px;
-}
-
-table.meeting_table thead {
+table.meeting_table thead tr {
     background-color: #7414dc;
+    color: #ffffff;
+    text-align: center;
+}
+
+table.meeting_table th,
+table.meeting_table td {
+    padding: 12px 15px;
 }
 
 table.inventory_table {

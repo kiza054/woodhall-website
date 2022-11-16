@@ -19,6 +19,7 @@ django-debug-toolbar
 django-flat-responsive
 django-flat-theme
 django-heroku
+django-mailjet
 django-modeladmin-reorder
 django-storages
 django-summernote

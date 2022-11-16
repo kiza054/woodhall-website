@@ -12,6 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 from accounts.models import User
 from cubs.forms import CommentForm, PostForm, UploadFileForm
 from cubs.models import File, Post
+from cubs.tasks import sleepy, send_email_task
 from main_website.models import Article
 
 
@@ -105,8 +106,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        form.send_email_task.delay()
         form.save()
-        #form.send_email()
         return super().form_valid(form)
     
     def get_context_data(self, **kwargs):

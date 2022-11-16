@@ -13,14 +13,23 @@
                 <button class="btn btn-outline-info" type="submit">
                     <i class="fa-duotone fa-arrow-right-to-bracket"></i> Login
                 </button>
-                <small class="text-muted ml-2">
-                    <a href="{% url 'password_reset' %}">Forgot Password?</a>
-                </small>
             </div>
         </form>
+        <br>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                Need An Account? 
+                <button class="btn btn-sm btn-outline-info">
+                    <a class="button_link" href="{% url 'register' %}" role="button"><i class="fa-duotone fa-user-plus"></i> Register</a>
+                </button>
+            </small>
+            <br> 
+            <br>
+            <small class="text-muted">
+                Forgotten Your Password?
+                <button class="btn btn-sm btn-outline-info">
+                    <a class="button_link" href="{% url 'password_reset' %}" role="button"><i class="fa-duotone fa-arrows-rotate"></i> Reset Your Password Here</a>
+                </button>
             </small>
         </div>
     </div>

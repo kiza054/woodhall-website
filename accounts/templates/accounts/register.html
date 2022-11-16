@@ -14,10 +14,15 @@
                 </button>
             </div>
         </form>
+        <br>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Already have an Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                Already have an Account? 
+                <button class="btn btn-sm btn-outline-info">
+                    <a class="button_link" href="{% url 'login' %}" role="button"><i class="fa-duotone fa-arrow-right-to-bracket"></i> Login</a>
+                </button>
             </small>
         </div>
+
     </div>
 {% endblock content %}

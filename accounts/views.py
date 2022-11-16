@@ -1,9 +1,18 @@
 from django.contrib import messages
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import BadHeaderError, send_mail
+from django.db.models.query_utils import Q
+from django.http import HttpResponse
 from django.shortcuts import redirect, render, resolve_url
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
 
 from accounts.forms import ProfileUpdateForm, UserRegisterForm, UserUpdateForm
+from accounts.models import User
 from main_website.models import Article
 
 

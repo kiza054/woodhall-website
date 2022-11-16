@@ -251,9 +251,9 @@ django_heroku.settings(locals())
 
 # Django Celery Settings
 
-CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL') # "redis://localhost:6379"
-CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND')
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = "redis://localhost:6379" # os.environ.get('CELERY_RESULT_BACKEND')
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Europe/London'
+CELERY_TIMEZONE = TIME_ZONE

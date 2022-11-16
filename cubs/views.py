@@ -106,8 +106,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.send_email_task.delay()
         form.save()
+        send_email_task.delay()
         return super().form_valid(form)
     
     def get_context_data(self, **kwargs):

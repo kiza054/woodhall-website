@@ -18,8 +18,8 @@ def send_email_task():
     sleep(10)
     sender = os.environ.get('EMAIL_USER')
     subject = '1st Woodhall Beavers Blog | New Blog Post'
-    text_content = 'Hello there, there has been a new post published on the blog. Check it out!'
-    html_content = '<p>Hello there, there has been a new post published on the blog. Check it out!</p>'
+    text_content = 'Hello there, there has been a new post published on the blog. Check it out at https://www.1stwoodhall.co.uk/blog/beavers/'
+    html_content = '<p>Hello there, there has been a new post published on the blog. Check it out at https://www.1stwoodhall.co.uk/blog/beavers/</p>'
     recipients = []
     
     for users in User.objects.filter(Q(section='Beavers') | Q(second_section='Beavers')):

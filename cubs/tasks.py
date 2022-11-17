@@ -2,6 +2,7 @@ import os
 from time import sleep
 
 from celery import shared_task
+from django.core.mail import EmailMultiAlternatives
 from django.db.models import Q
 
 from accounts.models import User

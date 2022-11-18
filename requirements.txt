@@ -37,6 +37,7 @@ google-api-python-client
 gunicorn
 idna
 jmespath
+oauth2client
 pbr
 Pillow
 psycopg2-binary

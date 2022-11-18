@@ -54,6 +54,32 @@ body.menu-pinned #branding-pin {
    color: #ffffff;
 }
 
+.changeform-navigation-button, .changeform-navigation-button:visited, .changeform-navigation-button:hover {
+    width: 120px;
+    color: #ffffff;
+    background-color: #343a40;
+    vertical-align: middle;
+    box-sizing: border-box;
+    text-transform: lowercase;
+}
+
+.changeform-navigation-button-label {
+    display: block;
+    opacity: 0.5;
+    transition: opacity .3s;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+}
+
+.segmented-button.disabled {
+    background-color: #616161 !important;
+    color: #6f7e95;
+    opacity: 0.5;
+}
+
 .user-tools ul li.user-tools-welcome-msg:before {
     font-family: 'jet-icons';
     font-style: normal;
@@ -84,6 +110,14 @@ body.menu-pinned #branding-pin {
     color: #ffffff;
     text-decoration: none;
     background-color: #343a40;
+}
+
+.user-tools ul li.user-tools-contrast-block {
+    display: none;
+    padding: 8px 14px;
+    background: #343a40;
+    color: #ffffff;
+    white-space: normal;
 }
 
 .user-tools-link:last-child {
@@ -223,6 +257,75 @@ td, th {
     -moz-appearance: none;
     appearance: none;
     transition: background .3s;
+}
+
+.changeform-tabs {
+    margin: 0;
+    padding: 0 0 0 16px;
+    border-bottom: none;
+    color: #ffffff;
+    background-color: #454d55;
+    border-radius: 4px 4px 0 0;
+}
+
+.changeform-tabs-item.selected a, .changeform-tabs-item.selected a:hover, .changeform-tabs-item.selected a:visited {
+    color: #ffffff;
+    border-color: #7414dc;
+}
+
+.changeform-tabs ~ .module.selected, .changeform-tabs ~ .inline-group.selected {
+    background-color: #343a40;
+    display: block !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], textarea, select, .vTextField {
+    border-radius: 4px;
+    font-size: 13px;
+    height: 32px;
+    white-space: nowrap;
+    outline: 0;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #454d55;
+    color: #ffffff;
+    border: none;
+    padding: 0 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: background .3s, box-shadow .3s, border .3s;
+}
+
+.button.default, input[type="submit"].default, input[type="button"].default, .object-tools a.default {
+    font-weight: lighter;
+    background-color: #343a40;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 8px 0 0;
+    padding: 0 20px;
+}
+
+.submit-row a.deletelink, .submit-row a.deletelink:visited, .submit-row a.deletelink:hover {
+    display: inline-block;
+    background-color: #dc3545;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    outline: 0;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0 20px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    transition: background .3s, box-shadow .3s, border .3s;
+}
+
+.submit-row a.deletelink:active {
+    background-color: #343a40;
+    color: #ffffff;
 }
 
 .dashboard {
@@ -475,6 +578,7 @@ div.breadcrumbs.initialized {
 #toolbar form input[type="submit"], #toolbar form input[type="submit"]:visited, #toolbar form input[type="submit"]:hover {
     background-color: #454d55;
     color: #ffffff;
+    border: none;
     font-size: 12px;
     font-weight: lighter;
     padding: 0 20px;

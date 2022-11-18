@@ -1,3 +1,5 @@
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.forms import \
@@ -31,10 +33,15 @@ class UserRegisterForm(UserCreationForm):
     second_section = forms.ChoiceField(label='Childs Second Section', choices=SECOND_SECTION, 
         help_text='Please only use this if you have a child in another section, otherwise select "Not Applicable".')
     photo_permission = forms.ChoiceField(label='Photographic Permission', choices=PERMISSION, help_text='Please let us know whether we have your permission to share your childs photos on this website.')
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox(
+        attrs={
+            'data-theme': 'dark',
+        }
+    ))
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section', 'second_section', 'photo_permission']
+        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2', 'section', 'second_section', 'photo_permission', 'captcha']
 
 class UserLoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(

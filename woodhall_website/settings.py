@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'admin_reorder',
     'crispy_forms',
     'storages',
+    'captcha',
     'taggit',
 ]
 
@@ -255,3 +256,9 @@ django_heroku.settings(locals())
 
 CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
 CELERY_TIMEZONE = TIME_ZONE
+
+# Google reCAPTCHA Settings
+
+RECAPTCHA_PUBLIC_KEY = str(os.environ.get('RECAPTCHA_PUBLIC_KEY'))
+RECAPTCHA_PRIVATE_KEY = str(os.environ.get('RECAPTCHA_PRIVATE_KEY'))
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']

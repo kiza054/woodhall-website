@@ -28,6 +28,7 @@ django-summernote
 django-taggit
 django-taggit-helpers
 django-taggit-labels
+django-recaptcha
 docutils
 feedparser
 gitdb

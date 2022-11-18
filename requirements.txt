@@ -20,6 +20,7 @@ django-debug-toolbar
 django-flat-responsive
 django-flat-theme
 django-heroku
+django-jet-reboot
 django-mailjet
 django-modeladmin-reorder
 django-storages
@@ -28,8 +29,10 @@ django-taggit
 django-taggit-helpers
 django-taggit-labels
 docutils
+feedparser
 gitdb
 GitPython
+google-api-python-client
 gunicorn
 idna
 jmespath

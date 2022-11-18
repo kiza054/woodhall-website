@@ -34,6 +34,8 @@ sitemaps = {
 }
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     path('blog/beavers/', include('beavers.urls')),
     path('blog/cubs/', include('cubs.urls')),

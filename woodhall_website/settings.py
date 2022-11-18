@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'executive.apps.ExecutiveConfig',
     'main_website.apps.MainWebsiteConfig',
 
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.sites',

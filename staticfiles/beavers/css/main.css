@@ -1,21 +1,25 @@
 @font-face {
-    font-family: system;
-    font-style: normal;
-    font-weight: 300;
-    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Product Sans Regular';
+    font-family: system;
     font-style: normal;
-    font-weight: normal;
-    src: local('Product Sans Regular'), url('fonts/ProductSans-Regular.woff') format('woff');
+    font-weight: 300;
+    src: local('Product Sans Regular'), local('.SFNSText-Light'),
+      local('.HelveticaNeueDeskInterface-Light'), local('.LucidaGrandeUI'),
+      local('Ubuntu Light'), local('Segoe UI Light'), local('Roboto-Light'),
+      local('DroidSans'), local('Tahoma');
 }
 
 body {
-    font-family: "system";
-    background: #0095c8;
-    /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
+    font-family: "Product Sans Regular", sans-serif;
+    /* background: #006ddf; */
+    background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
     color: #fff;
     position: relative;
 }
@@ -48,6 +52,30 @@ a {
     background-color: transparent;
 }
 
+a.button_link:link { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a.button_link:visited { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:hover { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:active { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 a:hover {
     color: #fff;
     text-decoration: underline;
@@ -70,10 +98,20 @@ small {
     color: #fff;
 }
 
+.navbar {
+    border-top: 5px solid #006ddf !important;
+}
+
+#duo_icons {
+    color: #006ddf;
+}
+
 .beaver_logo {
     height: 200px !important;
     width: 680px !important;
-    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .beaver_badge_placement {
@@ -101,7 +139,7 @@ small {
 
 .badge-info {
     color: #fff;
-    background-color: #0095c8 !important;
+    background-color: #006ddf !important;
 }
 
 .badge-info:hover {
@@ -130,8 +168,8 @@ small {
 .btn-outline-info:active:focus, 
 .btn-outline-info:visited {
     color: #ffffff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
 }
 
 .btn-outline-info#beavers_search,
@@ -139,8 +177,8 @@ small {
 .btn-outline-info#beavers_search:active:focus,
 .btn-outline-info#beavers_search:visited {
     color: #fff !important;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
     width: 92px;
     font-size: 15px;
 }
@@ -157,21 +195,71 @@ small {
     background-color: #27887e !important;
 }
 
+.btn-custom-purple, 
+.btn-custom-purple:active, 
+.btn-custom-purple:active:focus, 
+.btn-custom-purple:visited {
+    color: #ffffff !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
+}
+
+.btn-custom-purple#beavers_search,
+.btn-custom-purple#beavers_search:active,
+.btn-custom-purple#beavers_search:active:focus,
+.btn-custom-purple#beavers_search:visited {
+    color: #fff !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
+    width: 92px;
+    font-size: 15px;
+}
+
+.btn-custom-purple:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
+.btn-custom-purple#beavers_search:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
 .btn-info {
     color: #fff;
     background-color: #27887e !important;
     border-color: #27887e !important;
 }
 
+.page-link {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #006ddf;
+    border: #006ddf;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.page-link:hover {
+    color: #ffffff !important;
+    border-color: #27887e !important;
+    background-color: #27887e !important;
+}
+
 .taggit-labels.taggit-list .taggit-tag.selected {
     color: #ffffff;
-    border-color: #0095c8 !important;
-    background-color: #0095c8 !important;
+    border-color: #006ddf !important;
+    background-color: #006ddf !important;
 }
 
 .taggit-labels.taggit-list .taggit-tag:hover {
     color: #ffffff !important;
-    border-color:  #0095c8 !important;
+    border-color:  #006ddf !important;
     background-color: transparent !important;
 }
 
@@ -232,25 +320,68 @@ small {
     color: #ffffff;
 }
 
-table.download_table {
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+  
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+  
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+tr.files {
+    background-color: #454d55;
+}
+
+tbody.beavers {
+    background-color: #454d55;
+}
+
+table.meeting_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
-    background-color: #383838;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #0095c8;
-    border-style: solid;
+    text-align: center;
+}
+
+table.meeting_table thead tr {
+    background-color: #006ddf;
     color: #ffffff;
+    text-align: center;
 }
 
-table.download_table td, table.download_table th {
-    border-width: 2px;
-    border-color: #0095c8;
-    border-style: solid;
-    padding: 3px;
+table.meeting_table th,
+table.meeting_table td {
+    padding: 12px 15px;
 }
 
-table.download_table thead {
-    background-color: #0095c8;
+table.download_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+table.download_table thead tr {
+    background-color: #006ddf;
+    color: #ffffff;
+    text-align: center;
+}
+
+table.download_table th,
+table.download_table td {
+    padding: 12px 15px;
 }
 
 .accordion-flush .accordion-item .accordion-button {
@@ -317,7 +448,7 @@ table.download_table thead {
     -moz-appearance: none;
     appearance: none;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .form-control:focus {
@@ -325,7 +456,7 @@ table.download_table thead {
     background-color: #454d55;
     border-color: #454d55;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem #0095c8;
+    box-shadow: 0 0 0 0.1rem #006ddf;
 }
 
 .form-check-input[type=radio] {
@@ -351,11 +482,24 @@ table.download_table thead {
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .form-check-input:checked {
-    background-color: #7414dc !important;
-    border-color: #7414dc !important;
+    background-color: #006ddf !important;
+    border-color: #006ddf !important;
+}
+
+/* Other Browsers */
+input[type='file']::file-selector-button {
+    color: #ffffff !important;
+    background-color: #006ddf !important;
+}
+
+/* Chrome, Edge & Safari */
+input[type='file']::-webkit-file-upload-button {
+    color: #ffffff !important;
+    background-color: #006ddf !important;
 }
 
 @media (min-width: 576px) {
@@ -414,7 +558,7 @@ table.download_table thead {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #0095c8;
+    /* background-color: #006ddf; */
 }
 
 .sitemap-link {
@@ -422,5 +566,5 @@ table.download_table thead {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #0095c8;
+    /* background-color: #006ddf; */
 }

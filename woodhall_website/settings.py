@@ -117,7 +117,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATIC_URL = '/static/'
 
 # Whitenoise Variables
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 WHITENOISE_MIMETYPES = {
     '.css': 'text/css',
     '.html': 'text/html'
@@ -140,25 +140,41 @@ ADMIN_REORDER = (
 # Django Summernote Variables
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-SUMMERNOTE_THEME = 'bs4'
+SUMMERNOTE_THEME = 'lite'
 SUMMERNOTE_CONFIG = {
     'iframe': True,
     'summernote': {
-        # As an example, using Summernote Air-mode
         'airMode': False,
         # Change editor size
         #'width': '100%',
         'height': '400',
+        # Toolbar customization
+        # https://summernote.org/deep-dive/#custom-toolbar-popover
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['forecolor', ['forecolor']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+        'lang': 'en-GB',
     },
-    'codemirror': {
-        'mode': 'htmlmixed',
-        'lineNumbers': 'true',
-    },
-    'lazy': False,
     # You can add custom css for SummernoteWidget.
     'css': (
-        '/main_website/static/main_website/css/summernote/summernote.css',
+        '/static/main_website/css/summernote/themes/woodhall/woodhall.css',
     ),
+    'codemirror': {
+            'mode': 'htmlmixed',
+            'lineNumbers': 'true',
+            # You have to include theme file in 'css' or 'css_for_inplace' before using it.
+            'theme': 'woodhall',
+    },
+    'lazy': False,
 }
 
 # Database

@@ -17,10 +17,10 @@
 }
 
 body {
-    font-family: 'system';
-    background: #7414dc;
-    /*background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;*/
-    color: #fff;
+    font-family: "Product Sans Regular", sans-serif;
+    /* background: #7414dc; */
+    background: #ffffff url(../img/bodybg.jpg) bottom center repeat-x fixed !important;
+    color: #ffffff;
     position: relative;
 }
 
@@ -35,33 +35,58 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.mb-1 {
-    color: #fff;
+    color: #ffffff;
 }
 
 h5.bold {
     font-weight: bold;
 }
 
-p.mb-1 {
-    color: #fff;
+p, p.mb-1 {
+    color: #ffffff;
 }
 
 a {
-    color: #fff;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a.button_link:link { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a.button_link:visited { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:hover { 
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent; 
+}
+
+a.button_link:active { 
+    color: #ffffff;
     text-decoration: none;
     background-color: transparent;
 }
 
 a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
 }
 
-ul {
+li, ul {
+    color: #ffffff;
     margin: 0;
 }
 
@@ -69,11 +94,19 @@ hr.my-1,
 hr.my-2,
 hr.my-3,
 hr.my-4 {
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 small {
-    color: #fff;
+    color: #ffffff;
+}
+
+#navbar {
+    border-top: 5px solid #7414dc !important;
+}
+
+#duo_icons {
+    color: #7414dc;
 }
 
 .easyfundraising_img {
@@ -98,12 +131,12 @@ small {
 }
 
 .badge-info {
-    color: #fff;
+    color: #ffffff;
     background-color: #7414dc !important;
 }
 
 .badge-info:hover {
-    color: #fff;
+    color: #ffffff;
     border-color: #530f9b !important;
     background-color: #530f9b !important;
 }
@@ -136,7 +169,7 @@ small {
 .btn-outline-info#search:active,
 .btn-outline-info#search:active:focus,
 .btn-outline-info#search:visited {
-    color: #fff !important;
+    color: #ffffff !important;
     border-color: #7414dc !important;
     background-color: #7414dc !important;
     width: 92px;
@@ -150,6 +183,38 @@ small {
 }
 
 .btn-outline-info#search:hover {
+    color: #ffffff !important;
+    border-color: #530f9b !important;
+    background-color: #530f9b !important;
+}
+
+.btn-custom-purple,
+.btn-custom-purple:active,
+.btn-custom-purple:active:focus,
+.btn-custom-purple:visited {
+    color: #ffffff !important;
+    border-color: #7414dc !important;
+    background-color: #7414dc !important;
+}
+
+.btn-custom-purple#search,
+.btn-custom-purple#search:active,
+.btn-custom-purple#search:active:focus,
+.btn-custom-purple#search:visited {
+    color: #ffffff !important;
+    border-color: #7414dc !important;
+    background-color: #7414dc !important;
+    width: 92px;
+    font-size: 15px;
+}
+
+.btn-custom-purple:hover {
+    color: #ffffff !important;
+    border-color: #530f9b !important;
+    background-color: #530f9b !important;
+}
+
+.btn-custom-purple#search:hover {
     color: #ffffff !important;
     border-color: #530f9b !important;
     background-color: #530f9b !important;
@@ -241,8 +306,8 @@ label.form-label {
 }
 
 .profile-picture {
-    height: 125px;
-    width: 125px;
+    height: 110px;
+    width: 110px;
     display: table-cell;
     vertical-align: top;
     margin-right: 10px;
@@ -253,79 +318,132 @@ label.form-label {
     vertical-align: top;
 }
 
-@media (width: 375px) {
-    /* This width is iPhone 6/7/8 & iPhone X specific */
-    .profile-picture {
-      height: 100px;
-      width: 100px;
-      display: table-cell;
-      vertical-align: top;
-      margin-right: 10px;
+/* 2340x1080 pixels at 476ppi */
+@media only screen 
+    and (device-width: 375px) 
+    and (device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        /* This width is iPhone 13 mini, iPhone 12 mini, iPhone 11 Pro, iPhone Xs, and iPhone X specific */
+        .profile-picture {
+            height: 100px;
+            width: 100px;
+            display: table-cell;
+            vertical-align: top;
+            margin-right: 10px;
+        }
+
+        .profile-details {
+            transform: scale(0.9);
+            -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+            -moz-transform: scale(0.9); /* Firefox 3.5+ */
+            -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+            -o-transform: scale(0.9); /* Opera 10.5+ */
+        }
     }
 
-    .profile-details {
-      transform: scale(0.9);
-      -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
-      -moz-transform: scale(0.9); /* Firefox 3.5+ */
-      -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-    }
-}
+/* 2532x1170 pixels at 460ppi */
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        /* This width is iPhone 13, iPhone 12 and iPhone 12 Pro specific */
+        .profile-picture {
+            height: 100px;
+            width: 100px;
+            display: table-cell;
+            vertical-align: top;
+            margin-right: 10px;
+        }
 
-@media (width: 400px) {
-    /* This width suits most mobile phones */
-    .profile-picture {
-      height: 100px;
-      width: 100px;
-      display: table-cell;
-      vertical-align: top;
-      margin-right: 10px;
-    }
-
-    .profile-details {
-      transform: scale(0.9);
-      -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
-      -moz-transform: scale(0.9); /* Firefox 3.5+ */
-      -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-    }
-}
-
-@media (width: 414px) {
-    /* This width is iPhone 6/7/8 Plus specific */
-    .profile-picture {
-      height: 100px;
-      width: 100px;
-      display: table-cell;
-      vertical-align: top;
-      margin-right: 10px;
+        .profile-details {
+            transform: scale(0.9);
+            -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+            -moz-transform: scale(0.9); /* Firefox 3.5+ */
+            -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+            -o-transform: scale(0.9); /* Opera 10.5+ */
+        }
     }
 
-    .profile-details {
-      transform: scale(0.9);
-      -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
-      -moz-transform: scale(0.9); /* Firefox 3.5+ */
-      -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
-    }
-}
+/* 2778x1284 pixels at 458ppi */
+@media only screen 
+    and (device-width: 428px) 
+    and (device-height: 926px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        /* This width is iPhone 13 Pro Max and iPhone 12 Pro Max specific */
+        .profile-picture {
+            height: 100px;
+            width: 100px;
+            display: table-cell;
+            vertical-align: top;
+            margin-right: 10px;
+        }
 
-@media (width: 480px) {
+        .profile-details {
+            transform: scale(0.9);
+            -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+            -moz-transform: scale(0.9); /* Firefox 3.5+ */
+            -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+            -o-transform: scale(0.9); /* Opera 10.5+ */
+        }
+    }
+
+@media only screen 
+    and (-webkit-min-device-pixel-ratio: 4) {
     /* This width is Samsung Galaxy S20/S20 Ultra specific */
     .profile-picture {
-      height: 100px;
-      width: 100px;
-      display: table-cell;
-      vertical-align: top;
-      margin-right: 10px;
+        height: 100px;
+        width: 100px;
+        display: table-cell;
+        vertical-align: top;
+        margin-right: 10px;
     }
-
+  
     .profile-details {
-      transform: scale(0.9);
-      -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
-      -moz-transform: scale(0.9); /* Firefox 3.5+ */
-      -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
-      -o-transform: scale(0.9); /* Opera 10.5+ */
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+        -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+        -o-transform: scale(0.9); /* Opera 10.5+ */
+    }
+}
+
+@media only screen 
+    and (-webkit-min-device-pixel-ratio: 3) {
+    /* This width is Samsung Galaxy S21/S21 Ultra specific */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+  
+    .profile-details {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+        -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+        -o-transform: scale(0.9); /* Opera 10.5+ */
+    }
+}
+
+@media only screen 
+    and (-webkit-min-device-pixel-ratio: 3) {
+    /* This width is Samsung Galaxy S22/S22 Ultra specific */
+    .profile-picture {
+        height: 100px;
+        width: 100px;
+        display: table-cell;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+  
+    .profile-details {
+        transform: scale(0.9);
+        -webkit-transform: scale(0.9); /* Safari 3.1+, Chrome */
+        -moz-transform: scale(0.9); /* Firefox 3.5+ */
+        -ms-transform: scale(0.9); /* IE9, Microsoft Edge */
+        -o-transform: scale(0.9); /* Opera 10.5+ */
     }
 }
 
@@ -357,32 +475,86 @@ label.form-label {
     color: #ffffff;
 }
 
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+  
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px;
+}
+  
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px;
+}
+
+tr.beavers {
+    background-color: #006ddf;
+}
+
+tr.cubs {
+    background-color: #009a44;
+}
+
+tr.scouts {
+    background-color: #004851;
+}
+
 table.meeting_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
     width: 100%;
-    background-color: #383838;
-    border-collapse: collapse;
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    color: #ffffff;
+    text-align: center;
 }
 
-table.meeting_table td,
-table.meeting_table th {
-    border-width: 2px;
-    border-color: #7414dc;
-    border-style: solid;
-    padding: 3px;
-}
-
-table.meeting_table thead {
+table.meeting_table thead tr {
     background-color: #7414dc;
+    color: #ffffff;
+    text-align: center;
+}
+
+table.meeting_table th,
+table.meeting_table td {
+    padding: 12px 15px;
+}
+
+table.inventory_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+table.inventory_table td, 
+table.inventory_table th {
+    padding: 12px 15px;
+}
+
+table.inventory_table thead tr {
+    background-color: #7414dc;
+    color: #ffffff;
+    text-align: center;
+}
+
+tr.items {
+    background-color: #454d55;
+}
+
+tbody.leaders {
+    background-color: #454d55;
 }
 
 .accordion-flush .accordion-item .accordion-button {
     border-radius: 0;
     background-color: #454d55 !important;
-    color: #fff !important;
+    color: #ffffff !important;
 }
 
 .accordion-body {
@@ -457,6 +629,7 @@ table.meeting_table thead {
     -moz-appearance: none;
     appearance: none;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .form-check-input:checked {
@@ -474,6 +647,14 @@ input[type='file']::file-selector-button {
 input[type='file']::-webkit-file-upload-button {
     color: #ffffff !important;
     background-color: #7414dc !important;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(14%) sepia(98%) saturate(4513%) hue-rotate(269deg) brightness(84%) contrast(107%);
+}
+  
+::-webkit-calendar-picker-indicator:hover {
+    opacity: 1
 }
 
 @media (min-width: 576px) {
@@ -498,6 +679,7 @@ input[type='file']::-webkit-file-upload-button {
 }
 
 .list-group-flush > .list-group-item {
+    color: #ffffff !important;
     border-width: 0 0 1px;
     border-radius: 0.25rem;
 }
@@ -506,7 +688,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     align-items: center;
     padding: 0.375rem 0.75rem;
-    width: 100px !important;
+    width: 104px !important;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -527,7 +709,7 @@ input[type='file']::-webkit-file-upload-button {
 
 .img-thumbnail {
     padding: 0.25rem;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     max-width: 100%;
@@ -539,7 +721,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #7414dc;
+    /* background-color: #7414dc; */
 }
 
 .sitemap-link {
@@ -547,7 +729,7 @@ input[type='file']::-webkit-file-upload-button {
     display: flex;
     justify-content: center;
     bottom: 0;
-    background-color: #7414dc;
+    /* background-color: #7414dc; */
 }
 
 /* (A) FIXED WRAPPER */

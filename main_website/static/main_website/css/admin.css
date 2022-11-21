@@ -189,7 +189,7 @@ a, a:visited, a:hover, a:focus {
 
 #branding {
     display: none;
-    background-color: #343a36;
+    background-color: #343a40;
     color: #ffffff;
     padding: 14px 32px 14px 36px;
     text-align: center;
@@ -448,6 +448,15 @@ ul.sidebar-dependent.opened {
     transition: color .3s;
 }
 
+.sidebar-wrapper {
+    background-color: #343a40;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
 .sidebar-popup {
     position: absolute;
     top: 0;
@@ -515,12 +524,13 @@ ul.sidebar-dependent.opened {
 }
 
 .select2-container--jet .select2-selection .select2-selection__rendered {
-    background-color: #343a40;
+    background-color: #454d55;
     padding-right: 70px;
     color: #ffffff;
     line-height: 32px;
     font-size: 13px;
-    text-transform: lowercase;
+    width: 14em;
+    text-transform: none;
     border-radius: 0.28rem 0.28rem 0.28rem 0.28rem;
 }
 
@@ -593,6 +603,79 @@ ul.sidebar-dependent.opened {
     outline: 0;
 }
 
+.select2-container--jet .select2-selection--multiple .select2-selection__rendered li {
+    list-style-type: revert;
+    background-color: #454d55;
+    color: #ffffff;
+}
+
+.select2-container--jet .select2-selection--multiple .select2-selection__choice__remove {
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.select2-container .select2-search--inline {
+    border-radius: 0.28rem 0.28rem 0.28rem 0.28rem;
+    float: left;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 27px;
+    width: 190px;
+}
+
+.select2-container--jet .select2-selection--multiple {
+    background-color: #454d55 !important;
+    border: none;
+    cursor: text;
+    height: auto;
+    min-height: 32px;
+    width: 18.6em;
+}
+
+.select2-container--jet .select2-buttons {
+    background-color: #343a40;
+    text-align: left;
+    padding: 6px;
+}
+
+.select2-container--jet .select2-buttons-button, .select2-container--jet .select2-buttons-button:visited, .select2-container--jet .select2-buttons-button:hover {
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+input[type="checkbox"] + label::before {
+    font-family: jet-icons;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    color: #7414dc;
+    font-size: 0.85714rem;
+    letter-spacing: 0.35714rem;
+    font-variant: normal;
+}
+
+form .aligned p.help:last-child {
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+form .aligned p.help {
+    clear: left;
+    margin-top: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
 fieldset.module {
     background-color: #343a40;
     border-radius: 4px;
@@ -647,6 +730,36 @@ div.breadcrumbs.initialized {
     background: #7414dc;
 }
 
+.vDateField-link span, .vTimeField-link span {
+    width: 32px;
+    height: 32px;
+    line-height: 32px !important;
+    background-color: #7414dc;
+    color: #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 0 4px 4px 0;
+}
+
+.related-popup-back, .related-popup-back:visited, .related-popup-back:hover {
+    display: none;
+    background: #7414dc;
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    left: 250px;
+    z-index: 5;
+    width: 100px;
+    padding: 14px 6px 14px 0;
+    text-align: center;
+    margin-left: -100px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    border-radius: 6px 0 0 6px;
+    transition: background-color .3s, color .3s;
+}
+
 .addlink::before {
     display: inline-block;
     font-style: normal;
@@ -682,6 +795,7 @@ div.breadcrumbs.initialized {
 }
 
 .icon-clock::before {
+    padding-right: 4px;
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -690,6 +804,18 @@ div.breadcrumbs.initialized {
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 400; 
     content: "\f017";
+}
+
+.icon-calendar:before {
+    padding-right: 4px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Pro"; 
+    font-weight: 400; 
+    content: "\f073";
 }
 
 .icon-cross::before {

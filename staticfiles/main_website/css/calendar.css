@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
+}
+
+@font-face {
     font-family: system;
     font-style: normal;
     font-weight: 300;
@@ -6,7 +14,17 @@
 }
 
 body {
-    font-family: "system";
+    font-family: "Product Sans Regular", sans-serif;
+}
+
+#calendar_only {
+    width: 1250px !important;
+    font-size: 15px;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    margin: 0 auto;
+    height: 60px !important;
+    padding: 1rem 1.25rem;
 }
 
 .calendar-section {
@@ -16,17 +34,20 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 1100px;
-  }
+    width: 1250px !important;
+}
 
 .calendar {
+    background-color: #454d55;
+    border-radius: 0.25rem;
+    overflow: hidden;
     width: 100%;
     margin: auto;
     font-size: 13px;
-  }
+}
   
 .calendar tr, .calendar td {
-    border: 1px solid #ffffff;
+    border: 2px solid #7414dc;
 }
   
 .calendar th {
@@ -55,7 +76,7 @@ ul {
 }
   
 a {
-    color: #17a2b8;
+    color: #fff;
 }
 
 .left {
@@ -66,8 +87,10 @@ a {
     float: right;
 }
 
-.footer#calendar_footer {
+.footer-container {
     position: relative;
-    bottom: -800px !important;
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    background-color: #7414dc;
 }

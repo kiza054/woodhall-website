@@ -134,7 +134,6 @@ body.menu-pinned #branding-pin {
     display: inline-block;
     content: "";
     font-weight: normal;
-    float: right;
     color: #ffffff;
     font-size: 24px;
     vertical-align: middle;
@@ -485,7 +484,6 @@ ul.sidebar-dependent.opened {
 
 .sidebar-link-label {
     font-size: 16px;
-    vertical-align: middle;
     display: block;
     transition: -webkit-transform .3s;
     transition: transform .3s;
@@ -568,6 +566,7 @@ ul.sidebar-dependent.opened {
     height: 32px;
     height: 2.28571rem;
     -webkit-appearance: textfield;
+    appearance: textfield;
     box-shadow: none;
     border-radius: 0rem 0.28rem 0rem 0.28rem;
 }

@@ -18,7 +18,6 @@
     text-transform: none;
     -webkit-font-smoothing: antialiased;
     text-rendering: auto;
-    speak: none;
     -moz-osx-font-smoothing: grayscale
 }
 
@@ -600,7 +599,8 @@ button.close {
     cursor: pointer;
     border: 0;
     background: transparent;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 button.note-color-select.btn.btn-light.btn-default {
@@ -1053,7 +1053,6 @@ a.note-dropdown-item {
     opacity: .95;
     color: #87cefa;
     background-color: #343a40;
-    pointer-event: none
 }
 
 .note-editor .note-dropzone .note-dropzone-message {

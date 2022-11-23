@@ -39,6 +39,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 	section = models.CharField(max_length=30)
 	second_section = models.CharField(max_length=30, blank=True)
 	photo_permission = models.CharField(_('photographic permission'), max_length=5)
+	theme = models.CharField(_('theme'), max_length=20, default='Dark',
+		help_text=_('Please select your colour theme.'))
 	is_active = models.BooleanField(_('active'), default=True,
 		help_text=_('Designates whether this user should be treated as active. Unselect this instead of deleting accounts.'))
 	is_staff = models.BooleanField(_('staff status'), default=False,

@@ -81,7 +81,7 @@ a.button_link:active {
 }
 
 a:hover {
-    color: #ffffff;
+    color: #000000;
     text-decoration: underline;
 }
 

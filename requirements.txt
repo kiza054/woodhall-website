@@ -3,6 +3,7 @@ asgiref
 bandit
 boto3
 botocore
+bugsnag
 celery
 certifi
 chardet

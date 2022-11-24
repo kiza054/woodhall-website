@@ -18,7 +18,7 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=Status.choices, default=Status.Draft)
-    likes = models.ManyToManyField(User, related_name="cubs_blog_posts_likes")
+    likes = models.ManyToManyField(User, blank=True, related_name="cubs_blog_posts_likes")
 
     class Meta:
         ordering = ['-date_posted']

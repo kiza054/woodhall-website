@@ -781,6 +781,80 @@ div.breadcrumbs.initialized {
     content: "\f044";
 }
 
+.aligned .form-row input {
+    font-family: "Product Sans Regular", sans-serif;
+    margin-bottom: 0;
+    margin-left: -120px;
+    margin-top: 4px;
+}
+
+.inline-related h3 {
+    font-family: "Product Sans Regular", sans-serif;
+    margin: 0;
+    background: #454d55;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 20px 24px 0 24px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.inline-related h3 .inline_label {
+    font-family: "Product Sans Regular", sans-serif;
+    display: inline-block;
+    background: #7414dc;
+    color: #ffffff;
+    margin-right: 10px;
+    margin-top: -4px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.inline-related h3 span.delete, .inline-related h3 .inline-deletelink {
+    float: right;
+    margin-left: 10px;
+    display: inline-block;
+    background: #ff0000;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+form .aligned ul {
+    background: #343a40;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 160px;
+    padding-left: 10px;
+}
+
+.errornote {
+    display: block;
+    margin: 0 0 10px 0;
+    border-radius: 6px;
+    padding: 10px;
+    background: #dc3545;
+    color: #ffffff;
+}
+
+ul.messagelist li.success {
+    background: #198754;
+    color: #ffffff;
+}
+
 .icon-user::before {
     padding-right: 4px;
     display: inline-block;

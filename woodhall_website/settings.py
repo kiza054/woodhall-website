@@ -268,15 +268,15 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_TIMEOUT = 30
-DEFAULT_FROM_EMAIL = 'Kiran Sarda <k.sarda.scouts@gmail.com>'
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 # Google Maps API Settings
 
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 # Amazon S3 Settings/Variables
-# When in development comment out lines 226-231
-# When in production uncomment lines 226-230 and comment out line 234
+# When in development comment out lines 281-288
+# When in production uncomment lines 281-288 and comment out line 289
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')

@@ -1,17 +1,25 @@
 @font-face {
-    font-family: "summernote";
+    font-family: 'summernote';
     font-style: normal;
     font-weight: 400;
-    src: url("/static/summernote/font/summernote.eot"),
-        url("/static/summernote/font/summernote.eot?#iefix") format("embedded-opentype"),
-        url("/static/summernote/font/summernote.woff") format("woff"),
-        url("/static/summernote/font/summernote.ttf") format("truetype")
+    src: url('/static/summernote/font/summernote.eot'),
+        url('/static/summernote/font/summernote.eot?#iefix') format('embedded-opentype'),
+        url('/static/summernote/font/summernote.woff') format('woff'),
+        url('/static/summernote/font/summernote.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Product Sans Regular' !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    src: local('Product Sans Regular'),
+      url('fonts/ProductSans-Regular.woff') format('woff');
 }
 
 [class^='note-icon-']:before,
 [class*=' note-icon-']:before {
-    font: normal normal normal 14px summernote;
-    font-size: inherit;
+    font-family: "Product Sans Regular", sans-serif;
+    font-size: 14px;
     display: inline-block;
     vertical-align: middle;
     text-decoration: inherit;
@@ -74,7 +82,7 @@
 .note-icon-unorderedlist:before,
 .note-icon-video:before {
     color: #ffffff;
-    font-family: "Font Awesome 6 Pro";
+    font-family: 'Font Awesome 6 Pro';
     font-weight: 200;
     font-style: normal;
     display: inline-block;
@@ -82,316 +90,316 @@
 }
 
 .note-icon-align-center:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
-    content: "\f037";
+    content: '\f037';
 }
 
 .note-icon-align-indent:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f03c'
 }
 
 .note-icon-align-justify:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f039'
 }
 
 .note-icon-align-left:before {
     padding-right: 4px;
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f036'
 }
 
 .note-icon-align-outdent:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f03b'
 }
 
 .note-icon-align-right:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f038'
 }
 
 .note-icon-align:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f846'
 }
 
 .note-icon-arrow-circle-down:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f0ab'
 }
 
 .note-icon-arrow-circle-left:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f0a8'
 }
 
 .note-icon-arrow-circle-right:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f0a9'
 }
 
 .note-icon-arrow-circle-up:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f0aa'
 }
 
 .note-icon-arrows-alt:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f0b2'
 }
 
 .note-icon-arrows-h:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f07e'
 }
 
 .note-icon-arrows-v:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f07d'
 }
 
 .note-icon-bold:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f032'
 }
 
 .note-icon-caret:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f0d7'
 }
 
 .note-icon-chain-broken:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f127'
 }
 
 .note-icon-circle:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f111'
 }
 
 .note-icon-close:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f00d'
 }
 
 .note-icon-code:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f121'
 }
 
 .note-icon-col-after:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f115'
 }
 
 .note-icon-col-before:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f116'
 }
 
 .note-icon-col-remove:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f117'
 }
 
 .note-icon-eraser:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f12d'
 }
 
 .note-icon-font:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f031'
 }
 
 .note-icon-frame:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f11a'
 }
 
 .note-icon-italic:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f11b'
 }
 
 .note-icon-link:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f0c1'
 }
 
 .note-icon-magic:before {
     padding-right: 4px;
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f0d0'
 }
 
 .note-icon-menu-check:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f11e'
 }
 
 .note-icon-minus:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f11f'
 }
 
 .note-icon-orderedlist:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f0cb'
 }
 
 .note-icon-pencil:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f303'
 }
 
 .note-icon-picture:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f03e'
 }
 
 .note-icon-question:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f05a'
 }
 
 .note-icon-redo:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f2f9'
 }
 
 .note-icon-row-above:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f125'
 }
 
 .note-icon-row-below:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f126'
 }
 
 .note-icon-row-remove:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f127'
 }
 
 .note-icon-special-character:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f128'
 }
 
 .note-icon-square:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f129'
 }
 
 .note-icon-strikethrough:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f0cc'
 }
 
 .note-icon-subscript:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f12c'
 }
 
 .note-icon-summernote:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f12c'
 }
 
 .note-icon-superscript:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f12b'
 }
 
 .note-icon-table:before {
     padding-right: 4px;
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
-    content: '\f12e'
+    content: '\f0ce'
 }
 
 .note-icon-text-height:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f12f'
 }
 
 .note-icon-trash:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f130'
 }
 
 .note-icon-underline:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
-    content: '\f131'
+    content: '\f0cd'
 }
 
 .note-icon-undo:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200; 
     content: '\f132'
 }
 
 .note-icon-unorderedlist:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f03a'
 }
 
 .note-icon-video:before {
-    font-family: "Font Awesome 6 Pro"; 
+    font-family: 'Font Awesome 6 Pro'; 
     font-weight: 200;
     content: '\f03d'
 }
@@ -701,7 +709,7 @@ a.note-dropdown-item {
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    border: 1px solid #ededef
+    border: none;
 }
 
 .note-modal-header .close {
@@ -734,6 +742,9 @@ a.note-dropdown-item {
 }
 
 .note-modal-footer .note-btn {
+    background-color: #ff0000;
+    margin-top: -10px;
+    border-radius: 4px;
     float: right
 }
 
@@ -1524,7 +1535,16 @@ a.note-dropdown-item {
     border: 1px solid #343a40;
 }
 
+.note-modal-title {
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 0;
+    text-align: left;
+    color: #ffffff;
+}
+
 .note-modal .note-modal-body label {
+    color: #ffffff;
     display: inline-block;
     margin-bottom: 2px;
     padding: 2px 5px

@@ -1,15 +1,20 @@
 {% extends 'main_website/base.html' %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% block content %}
 <div class="content-section">
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form | crispy }}
-        <button class="btn btn-outline-info" type="submit">
-            <i class="fa-duotone fa-upload fa-lg"></i> Upload Images
-        </button>
-        <button class="btn btn-outline-info my-3">
-            <a href="{% url 'main_website_gallery' %}"><i class="fa-duotone fa-angles-left"></i> Go Back to Gallery</a>
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Upload Images</legend>
+            <!--{{ form | crispy }}-->
+            {% crispy form %}
+        </fieldset>
+        <hr class="my-2">
+        <button class="btn btn-custom-purple my-3">
+            <a id="back" href="{% url 'main_website_gallery' %}">
+                <i class="fa-duotone fa-angles-left"></i> Go Back to Gallery
+            </a>
         </button>
     </form>
 

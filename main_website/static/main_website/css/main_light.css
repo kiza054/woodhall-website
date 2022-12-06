@@ -56,6 +56,12 @@ a {
     background-color: transparent;
 }
 
+a#back {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 a.button_link:link { 
     color: #ffffff;
     text-decoration: none;

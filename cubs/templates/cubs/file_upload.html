@@ -1,13 +1,22 @@
 {% extends 'cubs/base.html' %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% load static %}
 
 {% block content %}
 <div class="content-section">
 	<form method="post" enctype="multipart/form-data">
 		{% csrf_token %}
-		{{ form | crispy }}
-		<button class="btn btn-outline-info" type="submit"><i class="fa-duotone fa-upload"></i> Upload</button>
+		<fieldset class="form-group">
+            <legend class="border-bottom mb-4">Upload File</legend>
+            <!--{{ form | crispy }}-->
+            {% crispy form %}
+        </fieldset>
+		<!--
+		<button class="btn btn-outline-info" type="submit">
+			<i class="fa-duotone fa-upload"></i> Upload
+		</button>
+		-->
 	</form>
 
 	{% if uploaded_file_url %}

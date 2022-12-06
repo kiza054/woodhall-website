@@ -1,19 +1,23 @@
 {% extends "cubs/base.html" %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% block content %}
 <div class="content-section">
     <form method="POST" autocomplete="off">
         {% csrf_token %}
         {{ form.media }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Blog Post</legend>
-            {{ form | crispy }}
+            <legend class="border-bottom mb-4">Create Blog Post</legend>
+            <!--{{ form | crispy }}-->
+            {% crispy form %}
         </fieldset>
+        <!--
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">
                 <i class="fa-duotone fa-mailbox"></i> Post
             </button>
         </div>
+        -->
     </form>
 </div>
 {% endblock content %}

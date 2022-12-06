@@ -1,17 +1,15 @@
 {% extends "main_website/base.html" %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% block content %}
     <div class="content-section">
         <form method="POST" autocomplete="off">
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Register</legend>
-                {{ form | crispy }}
+                {% crispy form %}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">
-                    <i class="fa-duotone fa-user-plus"></i> Sign Up
-                </button>
             </div>
         </form>
         <br>

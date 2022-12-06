@@ -1,5 +1,6 @@
 {% extends 'cubs/base.html' %} 
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% block content %}
 <article class="media content-section">
 	<div class="media-body">
@@ -91,10 +92,16 @@
 		<div class="article-metadata">
 			<div class="card-body">
 				<h3>Please Leave a Comment</h3>
+				<hr class="my-4">
 				<form method="post" style="margin-top: 1.3em;">
-					{{ comment_form | crispy }}
+					<!--{{ comment_form | crispy }}-->
+					{% crispy comment_form %}
 					{% csrf_token %}
-					<button type="submit" class="btn btn-outline-info btn-me"><i class="fa-duotone fa-circle-check"></i> Submit</button>
+					<!--
+					<button type="submit" class="btn btn-outline-info btn-me">
+						<i class="fa-duotone fa-circle-check"></i> Submit
+					</button>
+					-->
 				</form>
 			</div>
 		</div>

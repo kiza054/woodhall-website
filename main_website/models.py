@@ -9,11 +9,6 @@ from accounts.models import User
 
 
 class Article(models.Model):
-
-    class Status(models.IntegerChoices):
-        Draft = 0
-        Published = 1
-
     article_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news_updates')
@@ -21,7 +16,7 @@ class Article(models.Model):
     content = models.TextField()
     tags = TaggableManager()
     date_posted = models.DateTimeField(default=timezone.now)
-    status = models.IntegerField(choices=Status.choices, default=Status.Draft, help_text=_('Decide whether you want to Publish the news article or save it as a Draft'))
+    status = models.CharField(max_length=10, help_text=_('Decide whether you want to Publish the news article or save it as a Draft'))
 
     class Meta:
         ordering = ['-date_posted']
@@ -37,17 +32,10 @@ class Article(models.Model):
         super(Article, self).save(*args, **kwargs)
 
 class WaitingList(models.Model):
-
-    class Sections(models.IntegerChoices):
-        Beavers = 0
-        Cubs = 1
-        Scouts = 2
-        Unsure_of_Section = 3
-
     first_name = models.CharField(_('first name'), max_length=200)
     last_name = models.CharField(_('last name'), max_length=200)
     date_of_birth = models.DateField(_('date of birth'), max_length=200, help_text=_('DD/MM/YYYY or DD-MM-YYYY'))
-    section_of_interest = models.IntegerField(choices=Sections.choices, default=Sections.Unsure_of_Section, help_text=_('Section that your child wants to join'))
+    section_of_interest = models.CharField(max_length=30, help_text=_('Section that your child wants to join'))
     name_of_parent_carer = models.CharField(_('name of parent/carer'), max_length=200)
     parent_carer_email = models.EmailField(_('email of parent/carer'), max_length=254)
     parent_carer_phone_number = models.CharField(_('phone number of parent/carer'), max_length=20)

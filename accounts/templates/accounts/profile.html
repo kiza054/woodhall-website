@@ -1,5 +1,6 @@
 {% extends "main_website/base.html" %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 {% block content %}
 <div class="content-section">
 	<div class="media">
@@ -34,7 +35,8 @@
 		{% csrf_token %}
 		<fieldset class="form-group">
 			<legend class="">Profile Information</legend>
-			{{ user_form | crispy }}
+			<!--{{ user_form | crispy }}-->
+			{% crispy user_form %}
 			{{ profile_form | crispy }}
 		</fieldset>	
 		<div class="form-group">

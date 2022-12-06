@@ -1,16 +1,20 @@
 {% extends 'calendar/base.html' %}
 {% load crispy_forms_tags %}
+{% load crispy_forms_field %}
 
 {% block content %}
 <div class="calendar-section">
     <form method="POST">
         {% csrf_token %}
         <legend class="border-bottom mb-4">Create New Event</legend>
-        {{ form | crispy }}
+        {% crispy form %}
+        <!--{{ form | crispy }}-->
+        <!--
         <button type="submit" class="btn btn-custom-purple">
             <i class="fa-duotone fa-calendar-plus"></i> 
             Submit
         </button>
+        -->
     </form>
     <hr>
     <button class="btn btn-custom-purple">

@@ -1,11 +1,15 @@
 {% block content %}
 <div class="content-section">
-    <form action="{% url 'main_website_search' %}" class="form-inline my-2 my-lg-0" id="searchar" autocomplete="off">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="search">
-        <button id="search" class="btn btn-custom-purple my-2 my-sm-0"><i class="fa-duotone fa-magnifying-glass"></i> Search</button>
+    <form action="{% url 'main_website_search' %}" class="form-inline my-2 my-lg-0" id="searchar" autocomplete="off"></form>
+        <div class="input-group mb-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search..." name="search">
+            <div class="input-group-append">
+                <button id="search" class="btn btn-custom-purple my-2 my-sm-0"><i class="fa-duotone fa-magnifying-glass"></i> Search</button>
+            </div>
+        </div>
     </form>
     {% if user.is_superuser or user.is_staff %}
-    <hr class="my-2">
+    <hr id="search" class="my-2">
     <div class="list-group list-group-flush">
         <li class="list-group-item"><a href="{% url 'main_website_gallery_upload' %}">Upload Images to Gallery</a></li>
         <li class="list-group-item"><a href="{% url 'main_website_gallery_add_category' %}">Add Image Category</a></li>

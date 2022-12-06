@@ -97,6 +97,11 @@ hr.my-4 {
     background-color: #ffffff;
 }
 
+hr.my-2#search {
+    margin-top: -0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
 small {
     color: #ffffff;
 }
@@ -185,7 +190,9 @@ small {
     border-color: #7414dc !important;
     background-color: #7414dc !important;
     width: 92px;
+    height: 100%;
     font-size: 15px;
+    border-radius: 0px 4px 4px 0px;
 }
 
 .btn-outline-info:hover {
@@ -217,7 +224,9 @@ small {
     border-color: #7414dc !important;
     background-color: #7414dc !important;
     width: 92px;
+    height: 100%;
     font-size: 15px;
+    border-radius: 0px 4px 4px 0px;
 }
 
 .btn-custom-purple:hover {

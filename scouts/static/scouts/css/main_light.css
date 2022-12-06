@@ -242,7 +242,9 @@ small {
     border-color: #004851 !important;
     background-color: #004851 !important;
     width: 92px;
+    height: 100%;
     font-size: 15px;
+    border-radius: 0px 4px 4px 0px;
 }
 
 .btn-custom-purple:hover {
@@ -540,6 +542,22 @@ input[type='file']::-webkit-file-upload-button {
 .list-group-flush > .list-group-item {
     color: #000000 !important;
     border-width: 0 0 1px;
+    border-radius: 0.25rem;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.75rem;
+    width: 104px !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #004851;
+    border: 1px solid #004851;
     border-radius: 0.25rem;
 }
 

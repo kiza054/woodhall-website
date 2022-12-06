@@ -748,12 +748,16 @@ input[type='file']::-webkit-file-upload-button {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     white-space: nowrap;
     background-color: #7414dc;
     border: 1px solid #7414dc;
     border-radius: 0.25rem;
+}
+
+input[type=file]::file-selector-button {
+    color: #ffffff !important;
 }
 
 .tickertape {

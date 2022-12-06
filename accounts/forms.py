@@ -125,8 +125,8 @@ class UserUpdateForm(forms.ModelForm):
             'second_section',
             'photo_permission',
             'theme',
-            HTML('<button class="btn btn-outline-info" type="submit">'
-                '<i class="fa-duotone fa-circle-check"></i> Submit'
+            HTML('<button class="btn btn-custom-purple" type="submit">'
+                '<i class="fa-duotone fa-square-pen fa-lg"></i> Update'
                 '</button>')
         )
 

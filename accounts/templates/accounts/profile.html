@@ -35,15 +35,10 @@
 		{% csrf_token %}
 		<fieldset class="form-group">
 			<legend class="">Profile Information</legend>
+			{{ profile_form | crispy }}
 			<!--{{ user_form | crispy }}-->
 			{% crispy user_form %}
-			{{ profile_form | crispy }}
 		</fieldset>	
-		<div class="form-group">
-			<button class="btn btn-custom-purple" type="submit">
-				<i class="fa-duotone fa-square-pen fa-lg"></i> Update
-			</button>
-		</div>
 	</form>
 </div>
 {% endblock content %}

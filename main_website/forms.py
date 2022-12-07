@@ -179,6 +179,8 @@ class UploadImageForm(forms.ModelForm):
         self.fields['description'].label = ''
 
 class AddImageCategoryForm(forms.ModelForm):
+    user = forms.ModelChoiceField(queryset=User.objects.filter(is_staff=True))
+
     def __init__(self, *args, **kwargs):
         super(AddImageCategoryForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()

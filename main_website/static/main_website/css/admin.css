@@ -430,10 +430,14 @@ ul.sidebar-dependent.opened {
 }
 
 .sidebar-right-arrow {
-    color: #ffffff;
+    color: #7414dc;
     font-size: 16px;
     font-weight: bold !important;
     transition: color .3s, opacity .3s;
+}
+
+.sidebar-link:hover .sidebar-right-arrow {
+    color: #7414dc;
 }
 
 .sidebar-left-pin, .sidebar-left-pin:visited, .sidebar-left-pin:hover, .sidebar-left-unpin, .sidebar-left-unpin:visited, .sidebar-left-unpin:hover {
@@ -443,7 +447,7 @@ ul.sidebar-dependent.opened {
     top: 0.07143rem;
     font-size: 14px;
     font-size: 1rem;
-    color: #ffffff;
+    color: #7414dc;
     transition: color .3s;
 }
 
@@ -534,6 +538,7 @@ ul.sidebar-dependent.opened {
 
 .select2-container--jet .select2-results__option {
     font-size: 13px;
+    text-transform: lowercase !important;
     background-color: #454d55;
     color: #ffffff;
 }
@@ -591,7 +596,7 @@ ul.sidebar-dependent.opened {
     color: #ffffff;
     font-size: 14px;
     padding-right: 4px;
-    content: "\f063";
+    content: "\f107";
     line-height: 32px;
 }
 
@@ -666,6 +671,7 @@ form .aligned p.help:last-child {
     text-align: left;
     margin-bottom: 0;
     padding-bottom: 0;
+    font-weight: bold;
 }
 
 form .aligned p.help {
@@ -739,6 +745,8 @@ div.breadcrumbs.initialized {
     vertical-align: middle;
     text-align: center;
     border-radius: 0 4px 4px 0;
+    padding-bottom: 0px;
+    margin-top: 4px;
 }
 
 .related-popup-back, .related-popup-back:visited, .related-popup-back:hover {
@@ -767,7 +775,7 @@ div.breadcrumbs.initialized {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 900; 
-    content: "\2b";
+    content: "\f055";
 }
 
 .changelink::before {
@@ -784,8 +792,14 @@ div.breadcrumbs.initialized {
 .aligned .form-row input {
     font-family: "Product Sans Regular", sans-serif;
     margin-bottom: 0;
-    margin-left: -120px;
+    margin-left: 0;
     margin-top: 4px;
+}
+
+.form-row img {
+    vertical-align: middle;
+    height: 15px;
+    width: 15px;
 }
 
 .inline-related h3 {
@@ -820,10 +834,9 @@ div.breadcrumbs.initialized {
 }
 
 .inline-related h3 span.delete, .inline-related h3 .inline-deletelink {
-    float: right;
     margin-left: 10px;
     display: inline-block;
-    background: #ff0000;
+    background: #dc3545;
     color: #ffffff;
     padding: 8px 16px;
     border-radius: 5px;
@@ -853,6 +866,34 @@ form .aligned ul {
 ul.messagelist li.success {
     background: #198754;
     color: #ffffff;
+}
+
+.user-tools ul li.user-tools-welcome-msg:before {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    content: "\f107";
+    color: #ffffff;
+    font-size: 24px;
+    vertical-align: middle;
+    line-height: 30px;
+    transition: color .3s;
+    margin-left: 5px;
+}
+
+.icon-grid:before {
+    padding-right: 4px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Pro"; 
+    font-weight: 400; 
+    content: "\f00a";
 }
 
 .icon-user::before {
@@ -903,6 +944,41 @@ ul.messagelist li.success {
     content: "\f057";
 }
 
+.related-widget-wrapper-icon:before {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400; 
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.add-related .related-widget-wrapper-icon:before, .add-another .related-widget-wrapper-icon:before {
+    content: "\f055" !important;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.change-related .related-widget-wrapper-icon:before {
+    content: "\f013";
+}
+
+.deletelink:before {
+    padding-right: 4px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Pro"; 
+    font-weight: 400; 
+    content: "\f057";
+}
+
 .icon-edit::before {
     padding-right: 8px;
     display: inline-block;
@@ -923,9 +999,10 @@ ul.messagelist li.success {
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 6 Pro"; 
-    font-weight: 400; 
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400;
     content: "\f015";
+    color: #7414dc;
 }
 
 .icon-menu::before {
@@ -950,6 +1027,7 @@ ul.messagelist li.success {
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 400; 
     content: "\f08d";
+    color: #7414dc;
 }
 
 .icon-star::before {
@@ -974,7 +1052,7 @@ ul.messagelist li.success {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 200; 
-    content: "\f062";
+    content: "\f106";
 }
 
 .icon-arrow-down::before {
@@ -987,7 +1065,7 @@ ul.messagelist li.success {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 200; 
-    content: "\f063";
+    content: "\f107";
 }
 
 .icon-arrow-right::before {
@@ -1000,7 +1078,7 @@ ul.messagelist li.success {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 400; 
-    content: "\f061";
+    content: "\f105";
 }
 
 .icon-arrow-left::before {
@@ -1013,7 +1091,7 @@ ul.messagelist li.success {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 400; 
-    content: "\f060";
+    content: "\f105";
 }
 
 .icon-open-external::before {
@@ -1039,7 +1117,8 @@ ul.messagelist li.success {
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-family: "Font Awesome 6 Pro"; 
-    font-weight: 200; 
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 200;
     content: "\f14c";
+    color: #7414dc;
 }

@@ -15,23 +15,23 @@
 					<th scope="col">Edit Item?</th>
 					<th scope="col">Delete Item?</th>
 				</thead>
-				{% for q in queryset %}
+				{% for item in queryset %}
 				<tr class="items">
-					<td>{{ q.item_name }}</td>
-                    <td>{{ q.item_quantity }}</td>
-                    <td>{{ q.category }}</td>
-                    <td>{{ q.added_on }}</td>
-                    <td>{{ q.updated_on }}</td>
+					<td>{{ item.item_name }}</td>
+                    <td>{{ item.item_quantity }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.added_on }}</td>
+                    <td>{{ item.updated_on }}</td>
                     <td>
 						<button type="button" class="btn btn-secondary btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-							<a href="{% url 'executive_quartermaster_database_edit' q.slug %}">
+							<a class="button_link" href="{% url 'executive_quartermaster_database_edit' item.slug %}">
 								<i class="fa-duotone fa-pen"></i> Update Item
 							</a>
 						</button>
                     </td>
                     <td>
 						<button type="button" class="btn btn-danger btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-							<a href="{% url 'executive_quartermaster_database_delete' q.slug %}">
+							<a class="button_link" href="{% url 'executive_quartermaster_database_delete' item.slug %}">
 								<i class="fa-duotone fa-trash-can-check"></i> Delete Item
 							</a>
 						</button>

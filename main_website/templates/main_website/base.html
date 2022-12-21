@@ -50,7 +50,13 @@
                             <a class="nav-link" href="{% url 'main_website_about' %}"><i class="fa-duotone fa-circle-info" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #7414dc;"></i> About Us</a>
                         </li>
                         <li class="nav-item">
+                            {% if user.theme == 'Dark' %}
                             <a class="nav-link" href="{% url 'main_website_calendar' %}"><i class="fa-duotone fa-calendar-days" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #7414dc;"></i> Events</a>
+                            {% elif user.theme == 'Light' %}
+                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><i class="fa-duotone fa-calendar-days" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #000000; --fa-secondary-color: #7414dc;"></i> Events</a>
+                            {% else %}
+                            <a class="nav-link" href="{% url 'main_website_calendar' %}"><i class="fa-duotone fa-calendar-days" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #7414dc;"></i> Events</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'main_website_help_us' %}"><i class="fa-duotone fa-handshake-angle" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #F2CCB7; --fa-secondary-color: #D19477;"></i> Help Us</a>
@@ -59,21 +65,21 @@
                             <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <i class="fa-duotone fa-money-bill-1-wave" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #A7D066; --fa-secondary-color: #42AB46;"></i> Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><i class="fa-duotone fa-images" style="--fa-secondary-opacity: 1.0; --fa-primary-color: lightblue; --fa-secondary-color: grey;"></i> Gallery</a>
+                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><i class="fa-duotone fa-images" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #808080; --fa-secondary-color: #ADD8E6;"></i> Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><i class="fa-duotone fa-address-card" style="--fa-secondary-opacity: 1.0; --fa-primary-color: red; --fa-secondary-color: grey;"></i> Contact Us</a>
+                            <a class="nav-link" href="{% url 'main_website_contact_us' %}"><i class="fa-duotone fa-address-card" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Contact Us</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
                         {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #006ddf; --fa-secondary-color: #006ddf;"></i> Beavers Blog</a>
+                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #006DDF; --fa-secondary-color: #006DDF;"></i> Beavers Blog</a>
                         </li>
                         {% endif %}
                         {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #009a44; --fa-secondary-color: #009a44;"></i> Cubs Blog</a>
+                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #009A44; --fa-secondary-color: #009A44;"></i> Cubs Blog</a>
                         </li>
                         {% endif %}
                         {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
@@ -83,17 +89,29 @@
                         {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Profile</a>
+                            {% if user.theme == 'Dark' %}
+                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Profile</a>
+                            {% elif user.theme == 'Light' %}
+                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #000000; --fa-secondary-color: #808080;"></i> Profile</a>
+                            {% else %}
+                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Profile</a>
+                            {% endif %}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Logout</a>
+                            {% if user.theme == 'Dark' %}
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Logout</a>
+                            {% elif user.theme == 'Light' %}
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #000000; --fa-secondary-color: #808080;"></i> Logout</a>
+                            {% else %}
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Logout</a>
+                            {% endif %}
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}"><i class="fa-duotone fa-arrow-right-to-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Login</a>
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fa-duotone fa-arrow-right-to-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}"><i class="fa-duotone fa-user-plus" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Register</a>
+                            <a class="nav-link" href="{% url 'register' %}"><i class="fa-duotone fa-user-plus" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Register</a>
                         </li>
                         {% endif %}
                     </ul>

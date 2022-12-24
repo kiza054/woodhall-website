@@ -22,8 +22,9 @@ def send_email_task():
     html_content = '<p>Hello there, there has been a new post published on the blog. Check it out at https://www.1stwoodhall.co.uk/blog/cubs/</p>'
     recipients = []
     
-    #for users in User.objects.filter(Q(section='Cubs') | Q(second_section='Cubs')):
-    for users in User.objects.filter(is_superuser=True):
+    for users in User.objects.filter(Q(section='Cubs') | Q(second_section='Cubs')):
+    # The line below is used for testing purposes only
+    # for users in User.objects.filter(is_superuser=True):
         recipients.append(users.email)
 
     msg = EmailMultiAlternatives(subject, text_content, sender, recipients)

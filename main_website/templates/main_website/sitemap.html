@@ -1,24 +1,46 @@
 {% extends 'main_website/base.html' %}
 {% load static %}
-
 {% block content %}
-<?xml version="1.0" encoding="UTF-8" type="text/css" href="{% static 'main_website/css/main.css' %}"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-{% spaceless %}
-{% for url in urlset %}
-  <url>
-    <loc>{{ url.location }}</loc>
-    {% if url.lastmod %}<lastmod>{{ url.lastmod|date:"Y-m-d" }}</lastmod>{% endif %}
-    {% if url.changefreq %}<changefreq>{{ url.changefreq }}</changefreq>{% endif %}
-    {% if url.priority %}<priority>{{ url.priority }}</priority>{% endif %}
-    <!-- 
-    <news:news>
-      <news:tag1> blabla  </news:tag1>
-      <news:tag2> blabla </news:tag2>
-    </news:news>
-    -->
-   </url>
-{% endfor %}
-{% endspaceless %}
-</urlset>
+<div class="content-section">
+	<h1 class="display-4">Sitemap</h1>
+    <h4>To find a specific page, please navigate through this sitemap</h4>
+	<div class="container">
+		<?xml version="1.0" encoding="UTF-8"?>
+		<urlset
+		xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+		xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+		{% spaceless %}
+		<div class="table-responsive">
+			<table class="table-sm sitemap_table">
+				<thead>
+				<tr>
+					<th>Page</th>
+					<th>Page Last Modified</th>
+					<th>Page Link</th>
+				</tr>
+				</thead>
+				{% for url in urlset %}
+				<tbody class="sitemap_link">
+				<tr>
+					<td>
+						<url>
+							<loc>{{ url.location }}</loc>
+						</url>
+					</td>
+					<td>
+						<lastmod>{{ url.lastmod|date:"d/m/Y" }}</lastmod>
+					</td>
+					<td>
+						<button class="btn btn-sm btn-custom-purple">
+							<a class="button_link" href="{{ url.location }}" role="button"><i class="fa-duotone fa-link"></i> Link</a>
+						</button>
+					</td>
+				</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+		</div>
+		{% endspaceless %}
+	</div>
+</div>
 {% endblock %}

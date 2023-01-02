@@ -23,14 +23,24 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
 import main_website
+from accounts.sitemaps import AccountsStaticViewSitemap
+from beavers.sitemaps import BeaversBlogPostsSitemap, BeaversStaticViewSitemap
 from cubs.sitemaps import CubsBlogPostsSitemap, CubsStaticViewSitemap
+from executive.sitemaps import ExecutiveStaticViewSitemap
 from main_website.sitemaps import NewsUpdatesSitemap, StaticViewSitemap
+from scouts.sitemaps import ScoutsBlogPostsSitemap, ScoutsStaticViewSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
+    'accounts_static': AccountsStaticViewSitemap,
+    'beavers_static': BeaversStaticViewSitemap,
+    'beavers_blog_posts': BeaversBlogPostsSitemap,
     'cubs_static': CubsStaticViewSitemap,
-    'news_updates': NewsUpdatesSitemap,
-    'cubs_blog_posts': CubsBlogPostsSitemap
+    'cubs_blog_posts': CubsBlogPostsSitemap,
+    'scouts_static': ScoutsStaticViewSitemap,
+    'scouts_blog_posts': ScoutsBlogPostsSitemap,
+    'executive_static': ExecutiveStaticViewSitemap,
+    'news_updates': NewsUpdatesSitemap
 }
 
 urlpatterns = [
@@ -44,7 +54,7 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('main_website.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps, 'template_name':'main_website/sitemap.html', 'content_type': None}, name='django.contrib.sitemaps.views.sitemap'),
     path('admin/password_reset/', auth_views.PasswordResetView.as_view(), name='admin_password_reset'),
     path('admin/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name='accounts/password_reset.html', email_template_name='accounts/password_reset_email.html'), name='password_reset'),

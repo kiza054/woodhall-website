@@ -4,7 +4,11 @@ from django.shortcuts import reverse
 from main_website.models import Article
 
 
-class StaticViewSitemap(Sitemap):    
+class StaticViewSitemap(Sitemap):
+    changefreq = 'hourly'
+    priority = 1
+    protocol = 'https'
+
     def items(self):
         return [
                 'main_website_home', 
@@ -32,8 +36,9 @@ class StaticViewSitemap(Sitemap):
         return reverse(item)
 
 class NewsUpdatesSitemap(Sitemap):
-    changefreq = "weekly"
+    changefreq = 'hourly'
     priority = 1
+    protocol = 'https'
 
     def items(self):
         return Article.objects.all()

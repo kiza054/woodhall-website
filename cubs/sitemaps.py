@@ -5,6 +5,10 @@ from cubs.models import Post
 
 
 class CubsStaticViewSitemap(Sitemap):
+    changefreq = 'hourly'
+    priority = 1
+    protocol = 'https'
+
     def items(self):
         return [
             'cubs_blog_home',
@@ -19,8 +23,9 @@ class CubsStaticViewSitemap(Sitemap):
         return reverse(item)
 
 class CubsBlogPostsSitemap(Sitemap):
-    changefreq = "weekly"
+    changefreq = 'hourly'
     priority = 1
+    protocol = 'https'
 
     def items(self):
         return Post.objects.all()

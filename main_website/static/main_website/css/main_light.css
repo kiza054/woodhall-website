@@ -594,6 +594,26 @@ table.meeting_table td {
     padding: 12px 15px;
 }
 
+table.sitemap_table {
+    border-radius: 0.25rem;
+    overflow: hidden;
+    margin: 25px 0;
+    font-size: 0.9em;
+    width: 100%;
+    text-align: center;
+}
+
+table.sitemap_table thead tr {
+    background-color: #7414dc;
+    color: #000000;
+    text-align: center;
+}
+
+table.sitemap_table th,
+table.sitemap_table td {
+    padding: 12px 15px;
+}
+
 table.inventory_table {
     border-radius: 0.25rem;
     overflow: hidden;
@@ -620,6 +640,11 @@ tr.items {
 }
 
 tbody.leaders {
+    color: #000000 !important;
+    background-color: #FFFDD0;
+}
+
+tbody.sitemap_link {
     color: #000000 !important;
     background-color: #FFFDD0;
 }
@@ -859,4 +884,8 @@ input[type=file]::file-selector-button {
     background-color: #7414dc;
     border-radius: 50%;
     display: inline-block;
+}
+
+urlset {
+    display: grid;
 }

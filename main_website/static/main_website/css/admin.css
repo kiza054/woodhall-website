@@ -245,6 +245,8 @@ td, th {
 
 .paginator .label {
     font-size: 16px;
+    padding: 8px 0;
+    margin-top: -20px;
     color: #ffffff;
 }
 
@@ -283,7 +285,6 @@ td, th {
     border: 0;
     border-radius: 4px;
     height: 32px;
-    line-height: 32px;
     outline: 0;
     font-size: 12px;
     font-weight: normal;
@@ -532,13 +533,13 @@ ul.sidebar-dependent.opened {
     line-height: 32px;
     font-size: 13px;
     width: 14em;
-    text-transform: none;
+    text-transform: capitalize;
     border-radius: 0.28rem 0.28rem 0.28rem 0.28rem;
 }
 
 .select2-container--jet .select2-results__option {
     font-size: 13px;
-    text-transform: lowercase !important;
+    text-transform: capitalize !important;
     background-color: #454d55;
     color: #ffffff;
 }
@@ -767,6 +768,47 @@ div.breadcrumbs.initialized {
     transition: background-color .3s, color .3s;
 }
 
+.ui-widget-header {
+    border: 0;
+    background: #454d55;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.ui-widget.ui-widget-content, .ui-timepicker-table.ui-widget-content {
+    background: #343a40;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+    border: none;
+}
+
+.ui-dialog .ui-dialog-content {
+    position: relative;
+    border: 0;
+    padding: 0.5em 1em;
+    background: 0 0;
+    overflow: auto;
+    color: #FFFFFF;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: left;
+    background-color: #454d55;
+    margin-top: 0.5em;
+    padding: 0.3em 1em 0.5em 0.4em;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: 0.5em 0.4em 0.5em 0;
+    cursor: pointer;
+    background-color: #7414dc;
+}
+
+.ui-button-text-only .ui-button-text {
+    font-family: "Product Sans Regular", sans-serif;
+    padding: 0.4em 1em;
+    color: #FFFFFF;
+}
+
 .addlink::before {
     display: inline-block;
     font-style: normal;
@@ -942,6 +984,17 @@ ul.messagelist li.success {
     font-family: "Font Awesome 6 Pro"; 
     font-weight: 400; 
     content: "\f057";
+}
+
+.icon-tick:before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Pro"; 
+    font-weight: 400; 
+    content: "\f058";
 }
 
 .related-widget-wrapper-icon:before {

@@ -51,6 +51,7 @@ urlpatterns = [
     path('blog/cubs/', include('cubs.urls')),
     path('blog/scouts/', include('scouts.urls')),
     path('executive/', include('executive.urls')),
+    path('gallery/', include('gallery.urls')),
     path('', include('accounts.urls')),
     path('', include('main_website.urls')),
     path('summernote/', include('django_summernote.urls')),

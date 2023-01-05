@@ -12,10 +12,8 @@ from django.views import generic
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from taggit.models import Tag
 
-from main_website.forms import (AddImageCategoryForm, ArticleForm, EventForm,
-                                UploadImageForm, WaitingListForm)
-from main_website.models import (Article, Event, ImageGallery,
-                                 ImageGalleryCategory)
+from main_website.forms import ArticleForm, EventForm, WaitingListForm
+from main_website.models import Article, Event
 from main_website.utils import Calendar, get_date, next_month, prev_month
 
 

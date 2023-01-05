@@ -1,0 +1,21 @@
+{% block content %}
+<div class="content-section">
+    <h2>Image Categories</h2>
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a href="{% url 'gallery' %}">All Images</a>
+            </li>
+            <li class="list-group-item">
+                {% for category in categories %}
+                <span class="badge badge-info">
+                    <a href="{% url 'gallery' %}?category={{ category.name }}">
+                        {{ category.name }}
+                    </a>
+                </span>
+                {% endfor %} 
+            </li>           
+        </ul>
+    </div>
+</div>
+{% endblock content %}

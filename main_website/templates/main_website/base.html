@@ -65,7 +65,7 @@
                             <a class="nav-link" href="{% url 'main_website_ways_to_donate' %}"> <i class="fa-duotone fa-money-bill-1-wave" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #A7D066; --fa-secondary-color: #42AB46;"></i> Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'main_website_gallery' %}"><i class="fa-duotone fa-images" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #808080; --fa-secondary-color: #ADD8E6;"></i> Gallery</a>
+                            <a class="nav-link" href="{% url 'gallery' %}"><i class="fa-duotone fa-images" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #808080; --fa-secondary-color: #ADD8E6;"></i> Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'main_website_contact_us' %}"><i class="fa-duotone fa-address-card" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Contact Us</a>
@@ -135,7 +135,7 @@
                     {% if categories %}
                     {% include "main_website/search.html" %}
                     {% include "main_website/latest_news.html" %}
-                    {% include "main_website/image_navbar.html" %}
+                    {% include "gallery/image_navbar.html" %}
                     {% else %}
                     <!--{% include "main_website/tickertape.html" %}-->
                     {% include "main_website/search.html" %}

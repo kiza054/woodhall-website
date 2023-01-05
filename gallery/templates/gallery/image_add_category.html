@@ -1,0 +1,25 @@
+{% extends 'main_website/base.html' %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% block content %}
+<div class="content-section">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Add Image Category</legend>
+            <!--{{ form | crispy }}-->
+            {% crispy form %}
+        </fieldset>
+        <!--
+        <button class="btn btn-custom-purple" type="submit">
+            <i class="fa-duotone fa-plus"></i> Add Category
+        </button>
+        -->
+        <button class="btn btn-custom-purple">
+            <a class="button_link" href="{% url 'gallery' %}">
+                <i class="fa-duotone fa-angles-left"></i> Go Back to Gallery
+            </a>
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'main_website/base.html' %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% block content %}
+<div class="content-section">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Upload Images</legend>
+            <!--{{ form | crispy }}-->
+            {% crispy form %}
+        </fieldset>
+        <hr class="my-2">
+        <button class="btn btn-custom-purple my-3">
+            <a class="button_link" href="{% url 'gallery' %}">
+                <i class="fa-duotone fa-angles-left"></i> Go Back to Gallery
+            </a>
+        </button>
+    </form>
+
+    {% if uploaded_file_url %}
+    <p>Image uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+    {% endif %}
+</div>
+{% endblock %}

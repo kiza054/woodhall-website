@@ -5,9 +5,7 @@ from main_website.views import (AboutView, ArticleCreateView,
                                 ArticleDeleteView, ArticleUpdateView,
                                 CalendarView, ContactUsView, DonateView,
                                 EditEventView, EventView, HelpUsView,
-                                ImageAddView, ImageCategoryAddView,
-                                ImageDetailView, ImageGalleryView, IndexView,
-                                SearchView, TaggedView)
+                                IndexView, SearchView, TaggedView)
 
 urlpatterns = [
     path('', IndexView.as_view(), name='main_website_home'),
@@ -22,10 +20,6 @@ urlpatterns = [
     path('calendar/event/new/', EventView.as_view(), name='main_website_calendar_new_event'),
 	path('calendar/event/edit/<event_id>/', EditEventView.as_view(), name='main_website_calendar_edit_event'),
     path('waiting_list/register', views.waiting_list_register, name='main_website_waiting_list_register'),
-    path('gallery', ImageGalleryView.as_view(), name='main_website_gallery'),
-    path('gallery/upload', ImageAddView.as_view(), name='main_website_gallery_upload'),
-    path('gallery/category/add/', ImageCategoryAddView.as_view(), name='main_website_gallery_add_category'),
-    path('gallery/image/<str:pk>/', ImageDetailView.as_view(), name='main_website_gallery_image_detail'),
     path('help_us', HelpUsView.as_view(), name='main_website_help_us'),
     path('ways_to_donate', DonateView.as_view(), name='main_website_ways_to_donate'),
     path('contact_us', ContactUsView.as_view(), name='main_website_contact_us')

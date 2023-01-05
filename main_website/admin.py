@@ -6,8 +6,7 @@ from django_summernote.models import Attachment
 from taggit.admin import Tag
 from taggit_helpers.admin import TaggitStackedInline
 
-from main_website.models import (Article, Event, ImageGallery,
-                                 ImageGalleryCategory, UrgentAnnouncements,
+from main_website.models import (Article, Event, UrgentAnnouncements,
                                  WaitingList)
 
 
@@ -72,17 +71,9 @@ class WaitingListAdmin(admin.ModelAdmin, ExportCSVMixin):
     )
     actions = ["export_as_csv"]
 
-class ImageGalleryAdmin(admin.ModelAdmin):
-    list_display = ('file_name', 'image')
-
-class ImageGalleryCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'user')
-
 admin.site.unregister(Tag)
 admin.site.unregister(Attachment)
 admin.site.register(UrgentAnnouncements)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(WaitingList, WaitingListAdmin)
-admin.site.register(ImageGallery, ImageGalleryAdmin)
-admin.site.register(ImageGalleryCategory, ImageGalleryCategoryAdmin)

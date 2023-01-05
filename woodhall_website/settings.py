@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'scouts.apps.ScoutsConfig',
     'accounts.apps.AccountsConfig',
     'executive.apps.ExecutiveConfig',
+    'gallery.apps.GalleryConfig',
     'main_website.apps.MainWebsiteConfig',
 
     'jet.dashboard',
@@ -275,8 +276,8 @@ DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
 
 # Amazon S3 Settings/Variables
-# When in development comment out lines 281-288
-# When in production uncomment lines 281-288
+# When in development comment out lines 282-289
+# When in production uncomment lines 282-289
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')

@@ -49,7 +49,7 @@ class ImageAddView(LoginRequiredMixin, generic.View):
         if form.is_valid():
             form.save()
             messages.success(request, 'Image Successfully Uploaded')
-            return redirect('main_website_gallery')
+            return redirect('gallery')
 
 class ImageCategoryAddView(LoginRequiredMixin, generic.View):
     def get(self, request):

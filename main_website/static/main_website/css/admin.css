@@ -122,32 +122,10 @@ body.menu-pinned #branding-pin {
     opacity: 0.5;
 }
 
-.user-tools ul li.user-tools-welcome-msg:before {
-    font-family: 'jet-icons';
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    content: "";
-    font-weight: normal;
-    color: #ffffff;
-    font-size: 24px;
-    vertical-align: middle;
-    line-height: 30px;
-    transition: color .3s;
-    margin-left: 5px;
-}
-
 .user-tools ul li.user-tools-link a, .user-tools ul li.user-tools-link a:visited, .user-tools ul li.user-tools-link a:hover {
     display: block;
     line-height: 30px;
-    line-height: 2.14286rem;
     padding: 0 14px;
-    padding: 0 1rem;
     color: #ffffff;
     text-decoration: none;
     background-color: #343a40;
@@ -211,7 +189,7 @@ img[src$="admin/img/icon-yes.gif"]+span, img[src$="admin/img/icon-yes.svg"]+span
     color: #00ff00;
 }
 
-img[src$="admin/img/icon-unknown.gif"]+span, img[src$="admin/img/icon-unknown.svg"]+span, img[src$="admin/img/icon-unknown.gif"]+span, img[src$="admin/img/icon-unknown.svg"]+span {
+img[src$="admin/img/icon-unknown.gif"]+span, img[src$="admin/img/icon-unknown.svg"]+span {
     font-weight: bold;
     color: #d4d4d4;
 }
@@ -905,9 +883,42 @@ form .aligned ul {
     color: #ffffff;
 }
 
+.delete-confirmation #content>ul:nth-of-type(2), .delete-confirmation #content>h1+p+ul {
+    background: #454d55 !important;
+    padding: 8px;
+    border-bottom: none;
+    font-size: 13px;
+    list-style: none;   
+}
+
 ul.messagelist li.success {
     background: #198754;
     color: #ffffff;
+}
+
+ul.messagelist li.danger {
+    background: #dc3545;
+    color: #ffffff;
+}
+
+.delete-confirmation #content>h1+p+h2+ul {
+    background: #DC3545;
+    color: #FFFFFF;
+    padding: 20px;
+    list-style-type: none;
+    margin: 0;
+}
+
+.delete-confirmation #content form input[type="submit"] {
+    font-family: "Product Sans Regular", sans-serif;
+    background-color: #DC3545;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: lighter;
+    padding: 0 20px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    margin-bottom: 5px;
 }
 
 .user-tools ul li.user-tools-welcome-msg:before {

@@ -1,15 +1,16 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 from accounts.models import User
 
 
 class Post(models.Model):
 
-    class Status(models.IntegerChoices):
-        Draft = 0
-        Published = 1
+    class Status(models.TextChoices):
+        Draft = 'Draft', _('Draft')
+        Published = 'Published', _('Published')
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -17,7 +18,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=Status.choices, default=Status.Draft)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.Draft)
     likes = models.ManyToManyField(User, blank=True, related_name="cubs_blog_posts_likes")
 
     class Meta:

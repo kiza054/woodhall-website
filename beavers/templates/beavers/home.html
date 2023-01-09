@@ -13,7 +13,7 @@
       {% endfor %}
       -->
       <br>
-      <p class="card-text">{{ post.content | safe | slice:":200" }}</p>
+      <p class="card-text">{{ post.content | safe }}</p>
     </div>
     <button class="btn btn-outline-info">
       <a class="button_link" href="{% url 'beavers_blog_post_detail' post.slug  %}" class="btn btn-outline-info">Read More <i class="fa-duotone fa-book-open-reader"></i></a>

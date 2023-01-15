@@ -12,6 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 from accounts.models import User
 from main_website.models import Article
 from scouts.forms import CommentForm, PostForm, UploadFileForm
+from scouts.tasks import sleepy, send_email_task
 from scouts.models import File, Post
 
 

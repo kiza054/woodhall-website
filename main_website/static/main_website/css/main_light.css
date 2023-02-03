@@ -155,11 +155,16 @@ small {
     font-weight: var(--bs-nav-link-font-weight);
     color: #000000 !important;
     text-decoration: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
 
 .nav-link:hover {
     color: #000000;
+}
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #FFFDD0 !important;
 }
 
 #navbar {

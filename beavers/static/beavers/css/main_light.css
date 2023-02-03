@@ -134,6 +134,11 @@ small {
     color: #000000;
 }
 
+.navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #FFFDD0 !important;
+}
+
 .navbar {
     border-top: 5px solid #006ddf !important;
 }

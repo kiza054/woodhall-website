@@ -65,34 +65,52 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">
-                        {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'beavers_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #006ddf; --fa-secondary-color: #006ddf;"></i> Beavers Blog</a>
-                        </li>
-                        {% endif %}
-                        {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'cubs_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #009a44; --fa-secondary-color: #009a44;"></i> Cubs Blog</a>
-                        </li>
-                        {% endif %}
-                        {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'scouts_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #004851; --fa-secondary-color: #004851;"></i> Scouts Blog</a>
-                        </li>
-                        {% endif %}
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Logout</a>
+                        <li class="nav-item dropdown dropstart">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ user.profile.image.url }}" style="border-radius: 50%; margin-bottom: 5px;" width="35" height="35">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    {% if user.section == 'Beavers' or user.second_section == 'Beavers' %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'beavers_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #006DDF; --fa-secondary-color: #006DDF;"></i> Beavers Blog</a>
+                                    {% endif %}
+                                    {% if user.section == 'Cubs' or user.second_section == 'Cubs' %}                            
+                                    <a class="dropdown-item bg-transparent" href="{% url 'cubs_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #009A44; --fa-secondary-color: #009A44;"></i> Cubs Blog</a>                                    
+                                    {% endif %}
+                                    {% if user.section == 'Scouts' or user.second_section == 'Scouts' %}                                   
+                                    <a class="dropdown-item bg-transparent" href="{% url 'scouts_blog_home' %}"><i class="fa-duotone fa-blog" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #004851; --fa-secondary-color: #004851;"></i> Scouts Blog</a>                                    
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    {% if user.theme == 'Dark' %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Profile</a>
+                                    {% elif user.theme == 'Light' %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #000000; --fa-secondary-color: #808080;"></i> Profile</a>
+                                    {% else %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'profile' %}"><i class="fa-duotone fa-user-check" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Profile</a>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if user.theme == 'Dark' %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Logout</a>
+                                    {% elif user.theme == 'Light' %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #000000; --fa-secondary-color: #808080;"></i> Logout</a>
+                                    {% else %}
+                                    <a class="dropdown-item bg-transparent" href="{% url 'logout' %}"><i class="fa-duotone fa-arrow-right-from-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Logout</a>
+                                    {% endif %}
+                                </li>
+                            </ul>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}"><i class="fa-duotone fa-arrow-right-to-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Login</a>
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fa-duotone fa-arrow-right-to-bracket" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}"><i class="fa-duotone fa-user-plus" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: grey;"></i> Register</a>
+                            <a class="nav-link" href="{% url 'register' %}"><i class="fa-duotone fa-user-plus" style="--fa-secondary-opacity: 1.0; --fa-primary-color: #FFFFFF; --fa-secondary-color: #808080;"></i> Register</a>
                         </li>
                         {% endif %}
                     </ul>

@@ -96,3 +96,8 @@ a {
     bottom: 0;
     background-color: #7414dc;
 }
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #FFFDD0 !important;
+}

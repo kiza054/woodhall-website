@@ -94,3 +94,22 @@ a {
     bottom: 0;
     background-color: #7414dc;
 }
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    background-color: #383838 !important;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    clear: both;
+    font-weight: 400;
+    color: var(--bs-nav-link-color);
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}

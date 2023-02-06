@@ -67,8 +67,8 @@
                     <ul class="navbar-nav ms-auto">
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown dropstart">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="{{ user.profile.image.url }}" style="border-radius: 50%; margin-bottom: 5px;" width="35" height="35">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ user.profile.image.url }}" style="border-radius: 50%;" width="35" height="35">
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
